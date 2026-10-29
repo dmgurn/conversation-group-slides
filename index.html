@@ -188,6 +188,17 @@ h1{font-family:var(--font-display);font-weight:800;font-size:clamp(30px,5.2vw,48
 body.presenting #lesson{grid-template-rows:1fr;padding:0;background:#000}
 body.presenting #lesson > .rail{display:none}
 body.presenting #stage{background:#000}
+
+.rail.top{overflow:visible}
+.mid{flex:1 1 auto;min-width:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+.mid::-webkit-scrollbar{display:none}
+.mid-in{display:flex;align-items:center;gap:6px;width:max-content;margin:0 auto}
+.right{display:flex;align-items:center;gap:4px;flex:none}
+.langBtn .short{display:none}
+@media (max-width:900px){ .langBtn .long{display:none} .langBtn .short{display:inline} }
+#updateBar{position:fixed;left:50%;top:calc(10px + env(safe-area-inset-top,0px));transform:translateX(-50%);z-index:30;border:0;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-weight:700;padding:11px 18px;box-shadow:var(--shadow)}
+body.presenting #updateBar{display:none}
+.ver{font-size:13px}
 @media (prefers-reduced-motion:reduce){ *{transition:none!important} }
 </style>
 </head>
@@ -255,6 +266,7 @@ body.presenting #stage{background:#000}
       <button type="button" class="btn" id="backupBtn">Back up my marks</button>
       <button type="button" class="btn" id="restoreBtn">Restore marks from a backup</button>
     </div>
+    <p class="ver" id="verLine"></p>
   </footer>
   <input type="file" id="pickFile" accept=".zip,.pdf,application/zip,application/pdf" multiple hidden>
   <input type="file" id="pickBackup" accept=".json,application/json" hidden>
@@ -264,7 +276,7 @@ body.presenting #stage{background:#000}
   <div class="rail top" role="toolbar" aria-label="Tools">
     <button type="button" class="tb back" id="backBtn"><svg class="i"><use href="#i-back"/></svg>Lessons</button>
     <div class="where"><b id="whereTitle"></b><small id="whereSub"></small></div>
-    <div class="spacer"></div>
+    <div class="mid"><div class="mid-in">
     <div class="group" id="tools">
       <button type="button" class="tb" data-tool="pen" aria-label="Pen"><svg class="i"><use href="#i-pen"/></svg></button>
       <button type="button" class="tb" data-tool="hl" aria-label="Highlighter"><svg class="i"><use href="#i-hl"/></svg></button>
@@ -274,15 +286,17 @@ body.presenting #stage{background:#000}
     <span class="sep"></span>
     <div class="group" id="swatches"></div>
     <div class="group" id="sizes"></div>
-    <span class="sep"></span>
+    </div></div>
+    <div class="right">
     <button type="button" class="tb undo" id="undoBtn" aria-label="Undo"><svg class="i"><use href="#i-undo"/></svg></button>
     <button type="button" class="tb redo" id="redoBtn" aria-label="Redo"><svg class="i"><use href="#i-redo"/></svg></button>
     <span class="sep"></span>
-    <button type="button" class="tb langBtn">Español</button>
+    <button type="button" class="tb langBtn"><span class="long">Español</span><span class="short">ES</span></button>
     <button type="button" class="tb" id="presentBtn" aria-label="Present: hide the toolbars"><svg class="i"><use href="#i-present"/></svg></button>
     <button type="button" class="tb" id="gridBtn" aria-label="All slides"><svg class="i"><use href="#i-grid"/></svg></button>
     <span id="saveDot" title="Saved"></span>
     <button type="button" class="tb" id="moreBtn" aria-label="More options" aria-haspopup="true"><svg class="i"><use href="#i-more"/></svg></button>
+    </div>
   </div>
   <div id="stage">
     <canvas id="pdfc"></canvas>
@@ -300,7 +314,7 @@ body.presenting #stage{background:#000}
     <span class="sep"></span>
     <button type="button" class="tb undo" aria-label="Undo"><svg class="i"><use href="#i-undo"/></svg></button>
     <button type="button" class="tb" id="miniFit" aria-label="Zoom to fit"><svg class="i"><use href="#i-full"/></svg></button>
-    <button type="button" class="tb langBtn">Español</button>
+    <button type="button" class="tb langBtn"><span class="long">Español</span><span class="short">ES</span></button>
     <button type="button" class="tb done" id="miniDone">Done</button>
   </div>
   <aside id="drawer" class="panel" hidden aria-label="All slides">
@@ -315,6 +329,7 @@ body.presenting #stage{background:#000}
     <button type="button" class="mi" id="mFinger" role="menuitemcheckbox" aria-checked="false"><svg class="i"><use href="#i-hand"/></svg><span class="txt">Draw with finger<small id="mFingerSub">Off: fingers swipe between slides and a two-finger tap undoes. Apple Pencil always draws.</small></span><span class="switch"></span></button>
     <hr>
     <div id="saveText">Saved</div>
+    <div id="verText" class="ver" style="padding:0 12px 8px;color:var(--muted)"></div>
   </div>
   <div class="rail bottom">
     <button type="button" class="tb" id="prevBtn" aria-label="Previous slide"><svg class="i"><use href="#i-back"/></svg></button>
@@ -324,6 +339,7 @@ body.presenting #stage{background:#000}
   </div>
 </section>
 
+<button type="button" id="updateBar" hidden>A new version is ready. Tap to update.</button>
 <div id="toast" role="status" aria-live="polite"></div>
 
 <script src="pdf.min.js"></script>

@@ -13,6 +13,7 @@ const SIZES = { pen:[2.2,3.6,6.5], hl:[14,22,34] };   // thousandths of the page
 const SIZE_DOTS = [5,8,12];
 const Q = 4000;                                        // stored coordinate scale
 const ASPECT = 16/9;
+const APP_VERSION = 'Version 4 · October 28, 2026';
 const GAP = 16;                                        // space between slides when scrolling continuously
 const MAXZ = 4;
 const ALL_KEYS = [];
@@ -748,8 +749,9 @@ function touchDown(e){
   touches.set(e.pointerId, { x0:e.clientX, y0:e.clientY, x:e.clientX, y:e.clientY });
   if (!gesture) gesture = newGesture();
   gesture.max = Math.max(gesture.max, touches.size);
-  // A resting palm, or a touch while the pencil is writing, never moves anything.
-  if (act || performance.now() - lastPenAt < 600 || (e.width > 44 && e.height > 44)) gesture.invalid = true;
+  // A touch that lands while the pencil is writing (a resting palm) never moves anything.
+  // iPadOS already rejects most palms on its own, so finger size is not used here.
+  if ((act && act.ptype === 'pen') || performance.now() - lastPenAt < 400) gesture.invalid = true;
   if (touches.size === 2 && !gesture.invalid){
     const [a, b] = [...touches.values()];
     gesture.mode = 'pinch'; gesture.mid = mid(a, b); gesture.dist = dist(a, b);
@@ -814,7 +816,7 @@ stage.addEventListener('pointerdown', e => {
     savePrefs();
   }
   const draws = e.pointerType === 'pen' || e.pointerType === 'mouse' || (e.pointerType === 'touch' && prefs.fingerDraw && !presenting());
-  if (!draws){ touchDown(e); return; }
+  if (!draws){ touchDown(e); try { stage.setPointerCapture(e.pointerId); } catch {} return; }
   if (act){
     // A second finger while a finger is drawing turns the touch into a pinch.
     if (act.ptype === 'touch' && e.pointerType === 'touch'){
@@ -832,7 +834,7 @@ stage.addEventListener('pointerdown', e => {
   try { stage.setPointerCapture(e.pointerId); } catch {}
 });
 stage.addEventListener('pointermove', e => {
-  if (e.pointerType === 'pen') lastPenAt = performance.now();
+  if (e.pointerType === 'pen' && e.buttons) lastPenAt = performance.now();
   if (act && e.pointerId === act.id){ e.preventDefault(); moveAction(e); }
   else if (touches.has(e.pointerId)) touchMove(e);
   else if (e.pointerType === 'mouse' && presenting() && e.clientY - stage.getBoundingClientRect().top < 56) showMini();
@@ -844,6 +846,9 @@ const upHandler = cancel => e => {
 };
 stage.addEventListener('pointerup', upHandler(false));
 stage.addEventListener('pointercancel', upHandler(true));
+// If a finger lifts outside the slide area, still finish its gesture.
+window.addEventListener('pointerup', e => { if (touches.has(e.pointerId)) touchUp(e); });
+window.addEventListener('pointercancel', e => { if (touches.has(e.pointerId)){ touches.delete(e.pointerId); if (!touches.size) gesture = null; } });
 stage.addEventListener('lostpointercapture', e => { if (act && e.pointerId === act.id) endAction(false); });
 stage.addEventListener('contextmenu', e => e.preventDefault());
 stage.addEventListener('wheel', e => {
@@ -949,7 +954,10 @@ function addBoard(){
 /* ---------- Switching between the English and Spanish slides ---------- */
 function updateLangButtons(){
   const toEs = S.info && S.info.lang === 'en';
-  for (const b of document.querySelectorAll('.langBtn')){ b.textContent = toEs ? 'Español' : 'English'; b.setAttribute('aria-label', toEs ? 'Show this slide in Spanish' : 'Show this slide in English'); }
+  for (const b of document.querySelectorAll('.langBtn')){
+    b.replaceChildren(h('span', {class:'long', text: toEs ? 'Español' : 'English'}), h('span', {class:'short', text: toEs ? 'ES' : 'EN'}));
+    b.setAttribute('aria-label', toEs ? 'Show this slide in Spanish' : 'Show this slide in English');
+  }
 }
 function switchLanguage(){
   if (!S.key) return;
@@ -1153,8 +1161,23 @@ document.addEventListener('keydown', e => {
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') Saver.flushNow(); });
 window.addEventListener('pagehide', () => Saver.flushNow());
 
-/* ---------- Offline support ---------- */
-if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) navigator.serviceWorker.register('sw.js').catch(() => {});
+/* ---------- Offline support and updates ----------
+   The service worker keeps the app available offline. When a new version is published it installs in the
+   background; this page then offers a one-tap reload instead of waiting for the next launch. */
+if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')){
+  const hadController = !!navigator.serviceWorker.controller;
+  navigator.serviceWorker.register('sw.js').then(reg => {
+    reg.update().catch(() => {});
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') reg.update().catch(() => {}); });
+  }).catch(() => {});
+  navigator.serviceWorker.addEventListener('controllerchange', () => { if (hadController) $('#updateBar').hidden = false; });
+}
+$('#updateBar').addEventListener('click', () => { Saver.flushNow(); setTimeout(() => location.reload(), 300); });
+$('#verLine').textContent = APP_VERSION;
+$('#verText').textContent = APP_VERSION;
+
+/* Read-only hook for automated checks of zoom and scrolling. */
+window.__cgsView = () => ({ z: V.z, x: V.x, y: V.y, page: S.page, continuous: continuous() });
 
 /* ---------- Boot ---------- */
 (async function start(){
