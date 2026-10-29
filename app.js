@@ -5,6 +5,8 @@
 const LESSONS = {"ec1":[{"en":"Introductory Lesson","es":"Lección introductoria"},{"en":"Greetings and Introductions","es":"Saludos y presentaciones"},{"en":"Personal Introduction","es":"Presentación personal"},{"en":"Hobbies and Interests","es":"Aficiones e intereses"},{"en":"Hobbies and Interests","es":"Aficiones e intereses"},{"en":"Family","es":"Familia"},{"en":"Family","es":"Familia"},{"en":"Everyday Common Items","es":"Objetos comunes cotidianos"},{"en":"Clothing and Colors","es":"Ropa y colores"},{"en":"Daily Routines","es":"Rutinas diarias"},{"en":"Current Activities","es":"Actividades actuales"},{"en":"Time and Calendar","es":"Tiempo y calendario"},{"en":"Weather","es":"El clima"},{"en":"Jobs and Careers","es":"Trabajos y carreras profesionales"},{"en":"Jobs and Careers","es":"Trabajos y carreras profesionales"},{"en":"Food","es":"Comida"},{"en":"Food","es":"Comida"},{"en":"Food","es":"Comida"},{"en":"Money","es":"Dinero"},{"en":"Home","es":"El hogar"},{"en":"Home","es":"El hogar"},{"en":"Community","es":"Comunidad"},{"en":"Health","es":"Salud"},{"en":"Health","es":"Salud"},{"en":"Review","es":"Repaso"}],"ec2":[{"en":"Introductory Lesson","es":"Lección introductoria"},{"en":"Introductions","es":"Presentaciones"},{"en":"Interests","es":"Intereses"},{"en":"Family and Friends","es":"Familia y amigos"},{"en":"Family and Friends","es":"Familia y amigos"},{"en":"Feelings and Emotions","es":"Sentimientos y emociones"},{"en":"Interests","es":"Intereses"},{"en":"At Home","es":"En casa"},{"en":"At Home","es":"En casa"},{"en":"Daily Routines","es":"Rutinas diarias"},{"en":"Daily and Weekly Routines","es":"Rutinas diarias y semanales"},{"en":"Past Experiences","es":"Experiencias pasadas"},{"en":"Past Experiences","es":"Experiencias pasadas"},{"en":"Shopping and Food","es":"Compras y comida"},{"en":"Money and Shopping","es":"El dinero y las compras"},{"en":"In the Community","es":"En la comunidad"},{"en":"In the Community","es":"En la comunidad"},{"en":"Holidays","es":"Vacaciones"},{"en":"Going on Vacation","es":"Irse de vacaciones"},{"en":"Health and Sickness","es":"Salud y enfermedad"},{"en":"Health and Sickness","es":"Salud y enfermedad"},{"en":"Special Occasions","es":"Ocasiones especiales"},{"en":"Special Occasions","es":"Ocasiones especiales"},{"en":"Goals and Dreams","es":"Metas y sueños"},{"en":"Review","es":"Repaso"}]};
 const META = {"ec1-en-01":[30,"You Are a Child of God",[3,4,9,18,19,21,24,25]],"ec1-en-02":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,18,19]],"ec1-en-03":[29,"Take Responsibility",[2,3,8,12,17,20,23,24]],"ec1-en-04":[24,"Love and Teach One Another",[2,3,8,12,14,15,18,19]],"ec1-en-05":[27,"Learn by Study and by Faith",[2,3,8,11,15,17,20,22]],"ec1-en-06":[25,"You Are a Child of God",[3,4,8,12,15,16,19,20]],"ec1-en-07":[25,"Exercise Faith in Jesus Christ",[2,3,8,12,15,16,19,20]],"ec1-en-08":[23,"Press Forward",[2,3,8,12,13,14,17,18]],"ec1-en-09":[26,"Counsel with the Lord",[2,3,8,12,14,16,19,21]],"ec1-en-10":[26,"You Are a Child of God",[3,4,9,13,15,17,20,21]],"ec1-en-11":[27,"Exercise Faith in Jesus Christ",[2,3,8,12,16,18,21,22]],"ec1-en-12":[26,"Take Responsibility",[2,3,8,12,14,17,20,21]],"ec1-en-13":[25,"Love and Teach One Another",[2,3,8,12,14,15,18,20]],"ec1-en-14":[24,"You Are a Child of God",[3,4,9,13,14,15,18,19]],"ec1-en-15":[25,"Exercise Faith in Jesus Christ",[2,3,8,12,15,16,19,20]],"ec1-en-16":[25,"Take Responsibility",[2,3,8,12,14,16,19,20]],"ec1-en-17":[26,"Press Forward",[2,3,8,12,15,16,19,21]],"ec1-en-18":[26,"You Are a Child of God",[3,4,9,13,16,17,20,21]],"ec1-en-19":[26,"Exercise Faith in Jesus Christ",[2,3,8,12,14,17,20,21]],"ec1-en-20":[24,"Love and Teach One Another",[2,3,8,12,13,15,18,19]],"ec1-en-21":[23,"Counsel with the Lord",[2,3,7,11,12,13,16,18]],"ec1-en-22":[26,"You Are a Child of God",[2,5,10,14,15,17,20,21]],"ec1-en-23":[23,"Exercise Faith in Jesus Christ",[2,3,7,11,12,14,17,18]],"ec1-en-24":[29,"Press Forward",[2,3,8,12,16,20,23,24]],"ec1-en-25":[23,"Learn by Study and by Faith",[2,3,8,10,12,16,18,19]],"ec1-es-01":[30,"You Are a Child of God",[3,4,9,18,19,21,24,25]],"ec1-es-02":[24,"Exercise Faith in Jesus Christ",[2,3,8,13,-1,15,18,19]],"ec1-es-03":[29,"Take Responsibility",[2,3,8,12,17,20,23,24]],"ec1-es-04":[24,"Love and Teach One Another",[2,3,8,12,14,15,18,19]],"ec1-es-05":[27,"Learn by Study and by Faith",[2,3,8,11,15,17,21,22]],"ec1-es-06":[25,"You Are a Child of God",[3,4,8,12,15,16,19,20]],"ec1-es-07":[25,"Exercise Faith in Jesus Christ",[2,3,8,12,15,16,19,20]],"ec1-es-08":[24,"Press Forward",[2,3,8,12,14,15,18,19]],"ec1-es-09":[26,"Counsel with the Lord",[2,3,8,12,14,16,20,21]],"ec1-es-10":[26,"You Are a Child of God",[3,4,9,13,15,17,20,21]],"ec1-es-11":[27,"Exercise Faith in Jesus Christ",[2,3,8,12,16,18,21,22]],"ec1-es-12":[26,"Take Responsibility",[2,3,8,12,14,17,20,21]],"ec1-es-13":[25,"Love and Teach One Another",[2,3,8,12,14,15,19,20]],"ec1-es-14":[24,"You Are a Child of God",[3,4,9,13,14,15,18,19]],"ec1-es-15":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,18,19]],"ec1-es-16":[25,"Take Responsibility",[2,3,8,12,15,16,19,20]],"ec1-es-17":[26,"Press Forward",[2,3,8,13,-1,16,20,21]],"ec1-es-18":[26,"You Are a Child of God",[3,4,9,13,16,17,20,21]],"ec1-es-19":[26,"Exercise Faith in Jesus Christ",[2,3,8,12,14,17,20,21]],"ec1-es-20":[24,"Love and Teach One Another",[2,3,8,12,13,15,18,19]],"ec1-es-21":[24,"Counsel with the Lord",[2,3,7,11,12,14,18,19]],"ec1-es-22":[24,"You Are a Child of God",[3,4,9,13,14,15,18,19]],"ec1-es-23":[23,"Exercise Faith in Jesus Christ",[2,3,7,11,12,14,17,18]],"ec1-es-24":[29,"Press Forward",[2,3,8,12,16,20,23,24]],"ec1-es-25":[23,"Learn by Study and by Faith",[2,3,8,10,12,16,18,19]],"ec2-en-01":[30,"You Are a Child of God",[3,4,9,18,19,21,24,25]],"ec2-en-02":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,18,19]],"ec2-en-03":[25,"Take Responsibility",[2,3,8,12,15,16,19,20]],"ec2-en-04":[27,"Love and Teach One Another",[2,3,8,12,15,18,21,22]],"ec2-en-05":[25,"Learn by Study and by Faith",[2,3,8,12,14,15,18,19]],"ec2-en-06":[24,"You Are a Child of God",[3,4,8,12,13,15,18,19]],"ec2-en-07":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,13,15,18,19]],"ec2-en-08":[26,"Press Forward",[2,3,8,12,15,17,20,21]],"ec2-en-09":[26,"Counsel with the Lord",[2,3,8,12,14,16,19,20]],"ec2-en-10":[25,"You Are a Child of God",[3,4,9,13,15,16,19,20]],"ec2-en-11":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,18,19]],"ec2-en-12":[25,"Take Responsibility",[2,3,8,12,15,16,19,20]],"ec2-en-13":[28,"Love and Teach One Another",[2,3,8,12,14,18,21,22]],"ec2-en-14":[25,"You Are a Child of God",[3,4,9,13,14,16,19,20]],"ec2-en-15":[27,"Exercise Faith in Jesus Christ",[2,3,8,12,15,18,21,22]],"ec2-en-16":[24,"Take Responsibility",[2,3,8,12,14,15,18,19]],"ec2-en-17":[28,"Press Forward",[2,3,8,12,15,18,21,22]],"ec2-en-18":[25,"You Are a Child of God",[3,4,9,13,15,16,19,20]],"ec2-en-19":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,18,19]],"ec2-en-20":[24,"Love and Teach One Another",[2,3,8,12,14,15,18,19]],"ec2-en-21":[26,"Counsel with the Lord",[2,3,7,11,13,16,19,20]],"ec2-en-22":[27,"You Are a Child of God",[3,4,9,13,16,18,21,22]],"ec2-en-23":[22,"Exercise Faith in Jesus Christ",[2,3,7,11,12,13,16,17]],"ec2-en-24":[24,"Press Forward",[2,3,8,12,14,15,18,19]],"ec2-en-25":[24,"Learn by Study and by Faith",[2,3,8,11,14,18,-1,20]],"ec2-es-01":[30,"You Are a Child of God",[3,4,9,18,19,21,24,25]],"ec2-es-02":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,19,20]],"ec2-es-03":[25,"Take Responsibility",[2,3,8,12,15,16,20,21]],"ec2-es-04":[29,"Love and Teach One Another",[2,3,8,12,18,20,23,24]],"ec2-es-05":[25,"Learn by Study and by Faith",[2,3,8,12,14,15,19,20]],"ec2-es-06":[25,"You Are a Child of God",[3,4,8,12,14,16,19,20]],"ec2-es-07":[25,"Exercise Faith in Jesus Christ",[2,3,8,12,14,16,19,20]],"ec2-es-08":[26,"Press Forward",[2,3,8,12,15,17,20,21]],"ec2-es-09":[26,"Counsel with the Lord",[2,3,8,12,14,16,20,21]],"ec2-es-10":[25,"You Are a Child of God",[3,4,9,13,15,16,19,20]],"ec2-es-11":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,18,19]],"ec2-es-12":[25,"Take Responsibility",[2,3,8,12,15,16,19,20]],"ec2-es-13":[28,"Love and Teach One Another",[2,3,8,12,14,18,22,23]],"ec2-es-14":[25,"You Are a Child of God",[3,4,9,13,14,16,19,20]],"ec2-es-15":[27,"Exercise Faith in Jesus Christ",[2,3,8,12,16,18,21,22]],"ec2-es-16":[24,"Take Responsibility",[2,3,8,12,14,15,18,19]],"ec2-es-17":[28,"Press Forward",[2,3,8,12,15,18,22,23]],"ec2-es-18":[25,"You Are a Child of God",[3,4,9,13,14,16,18,20]],"ec2-es-19":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,17,19]],"ec2-es-20":[24,"Love and Teach One Another",[2,3,8,12,14,15,17,19]],"ec2-es-21":[26,"Counsel with the Lord",[2,3,7,11,13,16,18,21]],"ec2-es-22":[27,"You Are a Child of God",[3,4,9,13,16,18,21,22]],"ec2-es-23":[22,"Exercise Faith in Jesus Christ",[2,3,7,11,12,13,16,17]],"ec2-es-24":[24,"Press Forward",[2,3,8,12,14,15,18,19]],"ec2-es-25":[24,"Learn by Study and by Faith",[2,3,8,11,14,17,19,20]]};          // key -> [slideCount, principle, [prayer, principle, a1, a2, a3, evaluate, faith, closing]] (-1 = not found)
 const PAIRS = {"ec1-en-01":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29],"ec1-es-01":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29],"ec1-en-02":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-02":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-en-03":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],"ec1-es-03":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],"ec1-en-04":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-04":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-en-05":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec1-es-05":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec1-en-06":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-es-06":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-en-07":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-es-07":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-en-08":[0,1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-08":[0,1,2,3,4,5,6,7,8,9,10,11,11,12,13,14,15,16,17,18,19,20,21,22],"ec1-en-09":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-es-09":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-en-10":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-es-10":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-en-11":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec1-es-11":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec1-en-12":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-es-12":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-en-13":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-es-13":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-en-14":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-14":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-en-15":[0,1,2,3,4,5,6,7,8,9,10,11,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-15":[0,1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-en-16":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-es-16":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-en-17":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-es-17":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-en-18":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-es-18":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-en-19":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-es-19":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-en-20":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-20":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-en-21":[0,1,2,3,4,5,6,7,8,9,10,11,12,14,15,16,17,18,19,20,21,22,23],"ec1-es-21":[0,1,2,3,4,5,6,7,8,9,10,11,12,12,13,14,15,16,17,18,19,20,21,22],"ec1-en-22":[0,1,1,2,3,4,5,6,7,8,9,10,11,12,13,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-22":[0,1,3,4,5,6,7,8,9,10,11,12,13,14,16,17,18,19,20,21,22,23,24,25],"ec1-en-23":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],"ec1-es-23":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],"ec1-en-24":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],"ec1-es-24":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],"ec1-en-25":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],"ec1-es-25":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],"ec2-en-01":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29],"ec2-es-01":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29],"ec2-en-02":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,19,20,21,21,22,23],"ec2-es-02":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,17,18,19,20,22,23],"ec2-en-03":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,20,21,22,22,23,24],"ec2-es-03":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,18,19,20,21,23,24],"ec2-en-04":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,16,17,19,20,21,22,23,24,25,26,27,28],"ec2-es-04":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,14,15,16,16,17,18,19,20,21,22,23,24,25,26],"ec2-en-05":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20,21,22,22,23,24],"ec2-es-05":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,16,17,18,19,20,21,23,24],"ec2-en-06":[0,1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-es-06":[0,1,2,3,4,5,6,7,8,9,10,11,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-07":[0,1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-es-07":[0,1,2,3,4,5,6,7,8,9,10,11,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-08":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec2-es-08":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec2-en-09":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,19,20,21,22,23,23,24,25],"ec2-es-09":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,17,18,19,20,21,22,24,25],"ec2-en-10":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-es-10":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-en-11":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-es-11":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-12":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-es-12":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-en-13":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,21,22,23,24,25,25,26,27],"ec2-es-13":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,19,20,21,22,23,24,26,27],"ec2-en-14":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-es-14":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-en-15":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec2-es-15":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec2-en-16":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-es-16":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-17":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,21,22,23,24,25,25,26,27],"ec2-es-17":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,19,20,21,22,23,24,26,27],"ec2-en-18":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-es-18":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-en-19":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-es-19":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-20":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-es-20":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-21":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23,23,24,25],"ec2-es-21":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,20,21,22,24,25],"ec2-en-22":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec2-es-22":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec2-en-23":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],"ec2-es-23":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],"ec2-en-24":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-es-24":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-25":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-es-25":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]};        // key -> for each slide, the matching slide index in the other language's deck
+const MANUALS = {"ec1":{"n":214,"start":[17,23,29,35,41,51,59,65,71,81,89,95,101,111,117,123,131,141,147,155,161,169,175,181,189],"conv":[18,26,32,38,45,56,62,68,74,86,92,98,105,114,120,128,135,144,152,158,164,172,178,185,191]},"ec2":{"n":215,"start":[17,23,29,35,41,49,55,63,71,81,87,93,99,111,117,125,131,141,149,155,161,169,175,181,187],"conv":[18,26,32,38,44,52,60,66,74,84,90,96,104,114,122,128,134,146,152,158,164,172,178,184,189]}};    // course -> { n, start:[first page of each lesson], conv:[first conversation-group page of each lesson] } (0-based)
+const APP_VERSION = 'Version 5 · October 28, 2026';
 const UNITS = [[1,5],[6,9],[10,13],[14,17],[18,21],[22,25]];
 const SECTION_SHORT = ['Prayer','Principle','Activity 1','Activity 2','Activity 3','Evaluate','Act in faith','Closing'];
 const PEN_COLORS = [['#15171C','Black'],['#1F55D6','Blue'],['#D7322B','Red'],['#178A4A','Green'],['#FFFFFF','White']];
@@ -12,10 +14,9 @@ const HL_COLORS = [['#FFE14D','Yellow'],['#7DF0A0','Green'],['#FF94DA','Pink'],[
 const SIZES = { pen:[2.2,3.6,6.5], hl:[14,22,34] };   // thousandths of the page width, at 1x zoom
 const SIZE_DOTS = [5,8,12];
 const Q = 4000;                                        // stored coordinate scale
-const ASPECT = 16/9;
-const APP_VERSION = 'Version 4 · October 28, 2026';
-const GAP = 16;                                        // space between slides when scrolling continuously
+const SLIDE_ASPECT = 16/9;
 const MAXZ = 4;
+const TOOL_NAMES = { pen:'Pen', hl:'Highlighter', eraser:'Eraser', laser:'Laser pointer' };
 const ALL_KEYS = [];
 for (const c of ['ec1','ec2']) for (const l of ['en','es']) for (let n = 1; n <= 25; n++) ALL_KEYS.push(`${c}-${l}-${String(n).padStart(2,'0')}`);
 
@@ -39,7 +40,8 @@ function icon(id){ const s = document.createElementNS('http://www.w3.org/2000/sv
 /* ---------- Per-device preferences ---------- */
 function lsGet(k, d){ try { const v = localStorage.getItem('cgs:' + k); return v == null ? d : JSON.parse(v); } catch { return d; } }
 function lsSet(k, v){ try { localStorage.setItem('cgs:' + k, JSON.stringify(v)); return true; } catch { return false; } }
-const prefs = Object.assign({course:'ec1', lang:'en', tool:'pen', penColor:0, hlColor:0, penSize:1, hlSize:1, fingerDraw:true, sawPen:false, scroll:false}, lsGet('prefs', {}) || {});
+const prefs = Object.assign({course:'ec1', lang:'en', tool:'pen', prevTool:'pen', penColor:0, hlColor:0, penSize:1, hlSize:1,
+  fingerDraw:true, sawPen:false, scroll:false, tapEraser:true}, lsGet('prefs', {}) || {});
 const savePrefs = () => lsSet('prefs', prefs);
 
 function lessonKey(course, lang, num){ return `${course}-${lang}-${String(num).padStart(2,'0')}`; }
@@ -51,8 +53,9 @@ function info(key){
 }
 const otherLangKey = key => key.replace(/-(en|es)-/, (_, l) => l === 'en' ? '-es-' : '-en-');
 const courseLabel = c => c === 'ec1' ? 'EnglishConnect 1' : 'EnglishConnect 2';
+const manualKey = course => 'manual-' + course;
 
-/* ---------- On-device storage (IndexedDB): slides and marks ---------- */
+/* ---------- On-device storage (IndexedDB): slides, manuals and marks ---------- */
 const DB = (() => {
   let dbp = null;
   function open(){
@@ -91,9 +94,10 @@ const DB = (() => {
 })();
 
 const Store = {
-  async loadLesson(key){
+  /* Everything saved under one lesson (or one manual): its marks per page, and its meta record. */
+  async load(owner){
     const out = { ink:{}, meta:null };
-    const docs = await DB.range('docs', key + '_', key + '_￿');
+    const docs = await DB.range('docs', owner + '_', owner + '_￿');
     for (const v of docs){
       if (!v) continue;
       if (v.kind === 'ink' && Array.isArray(v.s)) out.ink[v.page] = Array.from(v.s);
@@ -142,14 +146,32 @@ function setSave(state){
   dot.title = label; txt.textContent = label;
 }
 
-/* ---------- App state ---------- */
-const S = { key:null, info:null, n:0, boards:0, page:0, ink:{}, hist:{ u:[], r:[] }, view:'library', have:new Set() };
-const pk = (i = S.page) => i < S.n ? 's' + i : 'b' + (i - S.n);
-const pkIndex = k => k[0] === 's' ? +k.slice(1) : S.n + +k.slice(1);
-const total = () => S.n + S.boards;
-const strokesFor = k => (S.ink[k] ||= []);
-const continuous = () => !!prefs.scroll;
+/* ---------- App state ----------
+   An open lesson has three views: its slides, an endless scratchpad, and the student manual.
+   Each view keeps its own place and its own undo history, so you can switch back and forth.
+   Page keys: s<i> slide, b<i> scratchpad page, m<i> manual page. */
+const newHist = () => ({ slides:{u:[],r:[]}, pad:{u:[],r:[]}, manual:{u:[],r:[]} });
+const S = {
+  key:null, info:null, n:0, boards:2, ink:{}, view:'library', have:new Set(),
+  mode:'slides', back:'slides', page:0, pos:{}, hist:newHist(),
+  man:{ key:null, n:0, ink:{}, aspect:0.77, loaded:false }
+};
+let PAGES = [];
+function rebuildPages(){
+  const n = S.mode === 'pad' ? S.boards : S.mode === 'manual' ? S.man.n : S.n;
+  const p = S.mode === 'pad' ? 'b' : S.mode === 'manual' ? 'm' : 's';
+  PAGES = Array.from({ length:n }, (_, j) => p + j);
+}
+const total = () => PAGES.length;
+const pk = (i = S.page) => PAGES[i];
+const pkIndex = k => PAGES.indexOf(k);
+const inkFor = k => k[0] === 'm' ? S.man.ink : S.ink;
+const strokesFor = k => { const o = inkFor(k); return (o[k] ||= []); };
+const continuous = () => S.mode === 'pad' || !!prefs.scroll;
 const presenting = () => document.body.classList.contains('presenting');
+const aspect = () => S.mode === 'manual' ? S.man.aspect : SLIDE_ASPECT;
+const gap = () => S.mode === 'pad' ? 0 : 16;
+const histNow = () => S.hist[S.mode];
 
 /* ---------- Library ---------- */
 let libMeta = {};
@@ -159,21 +181,22 @@ function renderLibrary(){
 
   const haveCount = ALL_KEYS.filter(k => S.have.has(k)).length;
   $('#importCard').hidden = haveCount >= ALL_KEYS.length;
-  $('#haveLine').textContent = haveCount >= ALL_KEYS.length
-    ? 'All 100 lessons are on this iPad and work without internet.'
-    : `${haveCount} of 100 lessons are on this iPad.`;
+  const man = ['ec1','ec2'].filter(c => S.have.has(manualKey(c)));
+  $('#haveLine').textContent = (haveCount >= ALL_KEYS.length ? 'All 100 lessons are on this iPad and work without internet. ' : `${haveCount} of 100 lessons are on this iPad. `)
+    + (man.length === 2 ? 'Both student manuals are added.'
+      : man.length ? `The ${courseLabel(man[0])} student manual is added.`
+      : 'To open the student manual from a lesson, tap “Add slides or manuals” and choose “EC1 Manual ES.pdf” and “EC2 Manual ES.pdf”.');
 
   const last = Object.values(libMeta).filter(m => m && info(m.lesson) && S.have.has(m.lesson)).sort((a, b) => (b.at || 0) - (a.at || 0))[0];
   const cont = $('#continue');
   if (last){
     const li = info(last.lesson);
-    const page = (last.last || 0);
-    const where = page < li.n ? `Slide ${page + 1} of ${li.n}` : `Board page ${page - li.n + 1}`;
+    const page = clamp(last.last || 0, 0, li.n - 1);
     cont.replaceChildren(
       h('span', {style:'display:grid;gap:2px;min-width:0'},
         h('span', {class:'c-label', text:'Pick up where you left off'}),
         h('span', {class:'c-title', text:`${li.course === 'ec1' ? 'EC1' : 'EC2'} · Lesson ${li.num} · ${li.title}`}),
-        h('span', {class:'c-sub', text:`${li.lang === 'es' ? 'Spanish' : 'English'} slides · ${where}`})),
+        h('span', {class:'c-sub', text:`${li.lang === 'es' ? 'Spanish' : 'English'} slides · Slide ${page + 1} of ${li.n}`})),
       h('span', {class:'c-go'}, icon('next')));
     cont.onclick = () => openLesson(li.key, page);
     cont.hidden = false;
@@ -184,12 +207,12 @@ function renderLibrary(){
     for (let n = a; n <= b; n++){
       const key = lessonKey(prefs.course, prefs.lang, n), li = info(key), m = libMeta[key];
       const has = S.have.has(key);
-      const inked = m && Array.isArray(m.inked) ? m.inked.length : 0;
+      const inked = m && Array.isArray(m.inked) ? m.inked.filter(k => k[0] === 's').length : 0;
       cards.push(h('button', {type:'button', class:'card' + (has ? '' : ' missing'), onclick: () => has ? openLesson(key) : needSlides()},
         h('span', {class:'top'}, h('span', {class:'num', text: String(n).padStart(2,'0')}), h('span', {class:'count', text:`${li.n} slides`})),
         h('span', {class:'title', text: li.title}),
         li.principle ? h('span', {class:'pl', text: li.principle}) : h('span'),
-        h('span', {class:'notes', text: !has ? 'Slides not added yet' : inked ? `Your marks on ${inked} page${inked === 1 ? '' : 's'}` : ''})));
+        h('span', {class:'notes', text: !has ? 'Slides not added yet' : inked ? `Your marks on ${inked} slide${inked === 1 ? '' : 's'}` : ''})));
     }
     return h('section', {class:'unit'}, h('h2', null, `Unit ${ui + 1}`, h('span', {text:`Lessons ${a}–${b}`})), h('div', {class:'grid c' + cards.length}, ...cards));
   });
@@ -210,10 +233,12 @@ async function refreshLibrary(){
 for (const b of document.querySelectorAll('[data-course]')) b.addEventListener('click', () => { prefs.course = b.dataset.course; savePrefs(); renderLibrary(); });
 for (const b of document.querySelectorAll('[data-lang]')) b.addEventListener('click', () => { prefs.lang = b.dataset.lang; savePrefs(); renderLibrary(); });
 
-/* ---------- Importing slides (a .zip of PDFs, or the PDFs themselves) ---------- */
+/* ---------- Importing slides and manuals (a .zip of PDFs, or the PDFs themselves) ---------- */
 function keyFromName(name){
   const base = String(name).split('/').pop();
   if (!base || base.startsWith('._')) return null;
+  const mm = /\bEC\s*([12])\b[^/]*?manual|englishconnect[\s_-]*([12])[\s_-]*(?:for|para)[\s_-]*(?:learners|los[\s_-]*alumnos)/i.exec(base);
+  if (mm) return manualKey('ec' + (mm[1] || mm[2]));
   const m = /EC\s*([12])\s*[-_ ]\s*(EN|ES)\s*[-_ ]\s*L?\s*(\d{1,2})(?!\d)/i.exec(base);
   if (!m) return null;
   const n = +m[3]; if (n < 1 || n > 25) return null;
@@ -253,7 +278,7 @@ async function importFiles(files){
   const prog = $('#importProgress'), bar = $('#importBar'), btns = document.querySelectorAll('.pick');
   for (const b of btns) b.disabled = true;
   prog.hidden = false; bar.style.width = '0%';
-  const say = t => { $('#importText').textContent = t; };
+  const say = t => { $('#importText').textContent = t; $('#footImport').textContent = t; };
   try { if (navigator.storage && navigator.storage.persist) await navigator.storage.persist(); } catch {}
   const items = []; let skipped = 0, failed = 0;
   say('Reading your file…');
@@ -271,28 +296,33 @@ async function importFiles(files){
       if (key) items.push({ key, get: async () => f }); else skipped++;
     } else skipped++;
   }
-  let done = 0, added = 0;
+  let done = 0, lessons = 0, manuals = 0;
   for (const it of items){
     try {
       const blob = await it.get();
       const buf = await blob.arrayBuffer();
       if (String.fromCharCode(...new Uint8Array(buf, 0, 5)) !== '%PDF-'){ failed++; }
-      else { await DB.put('slides', it.key, new Blob([buf], { type:'application/pdf' })); added++; }
+      else {
+        await DB.put('slides', it.key, new Blob([buf], { type:'application/pdf' }));
+        if (it.key.startsWith('manual-')){ manuals++; if (S.man.key === it.key) S.man.loaded = false; }
+        else lessons++;
+      }
     } catch (err) { failed++; }
     done++;
     bar.style.width = Math.round(done / items.length * 100) + '%';
-    say(`Adding lessons… ${done} of ${items.length}`);
+    say(`Adding… ${done} of ${items.length}`);
   }
   await refreshLibrary();
   renderLibrary();
   for (const b of btns) b.disabled = false;
   const parts = [];
-  if (added) parts.push(`Added ${added} lesson${added === 1 ? '' : 's'}.`);
-  if (skipped) parts.push(`${skipped} file${skipped === 1 ? ' was' : 's were'} not recognized as lesson slides.`);
+  if (lessons) parts.push(`Added ${lessons} lesson${lessons === 1 ? '' : 's'}.`);
+  if (manuals) parts.push(`Added ${manuals} student manual${manuals === 1 ? '' : 's'}.`);
+  if (skipped) parts.push(`${skipped} file${skipped === 1 ? ' was' : 's were'} not recognized.`);
   if (failed) parts.push(`${failed} could not be read.`);
-  if (!items.length && !failed) parts.push('No lesson slides were found. Choose “EnglishConnect Slides for iPad.zip” or PDFs named like “EC1 EN L08 - Everyday Common Items.pdf”.');
+  if (!items.length && !failed) parts.push('Nothing was recognized. Choose “EnglishConnect Slides for iPad.zip”, lesson PDFs named like “EC1 EN L08 - Everyday Common Items.pdf”, or “EC1 Manual ES.pdf”.');
   say(parts.join(' '));
-  if (added) toast(parts[0]);
+  if (lessons || manuals) toast(parts.filter(p => p.startsWith('Added')).join(' '));
 }
 $('#pickFile').addEventListener('change', e => { const fs = Array.from(e.target.files || []); e.target.value = ''; if (fs.length) importFiles(fs); });
 for (const b of document.querySelectorAll('.pick')) b.addEventListener('click', () => $('#pickFile').click());
@@ -327,59 +357,67 @@ $('#pickBackup').addEventListener('change', async e => {
     if (!j || j.app !== 'conversation-group-slides' || !Array.isArray(j.docs)) throw new Error('bad');
     let n = 0;
     for (const d of j.docs){
-      if (!d || typeof d.id !== 'string' || !d.data || !/^ec[12]-(en|es)-\d\d_(meta|s\d+|b\d+)$/.test(d.id)) continue;
+      if (!d || typeof d.id !== 'string' || !d.data) continue;
+      if (!/^(ec[12]-(en|es)-\d\d_(meta|s\d+|b\d+)|manual-ec[12]_m\d+)$/.test(d.id)) continue;
       await DB.put('docs', d.id, d.data); n++;
     }
+    S.man.loaded = false;
     await refreshLibrary();
     toast(`Restored marks from ${n} saved page${n === 1 ? '' : 's'}.`);
   } catch { toast('That file is not a Conversation Group Slides backup.'); }
 });
 
-/* ---------- PDF ---------- */
+/* ---------- PDF documents: the open lesson's slides, and its course's student manual ---------- */
 const pdfjs = window.pdfjsLib;
 if (pdfjs) pdfjs.GlobalWorkerOptions.workerSrc = 'pdf.worker.min.js';
-let pdfDoc = null, pdfKey = null, pdfLoading = null;
-const pageCache = new Map();   // "i@w" -> canvas, the slide at fitted size
-const thumbCache = new Map();  // i -> canvas
+const PDF = { lesson:{ key:null, doc:null, loading:null }, manual:{ key:null, doc:null, loading:null } };
+const pageCache = new Map();   // "slot:key:i@w" -> canvas of the page at fitted size
+const thumbCache = new Map();
 const inflight = new Map();
 let chain = Promise.resolve();
 function enqueue(fn){ const p = chain.then(fn, fn); chain = p.catch(() => {}); return p; }
-async function loadPdf(key){
-  if (pdfDoc && pdfKey === key) return pdfDoc;
-  if (pdfLoading && pdfLoading.key === key) return pdfLoading.p;
+async function loadPdf(slot, key){
+  const P = PDF[slot];
+  if (P.doc && P.key === key) return P.doc;
+  if (P.loading && P.loading.key === key) return P.loading.p;
   if (!pdfjs) throw new Error('viewer');
-  const old = pdfDoc; pdfDoc = null; pdfKey = null;
-  pageCache.clear(); thumbCache.clear(); inflight.clear(); crispCache = null;
+  const old = P.doc; P.doc = null; P.key = null;
+  for (const k of [...pageCache.keys()]) if (k.startsWith(slot + ':')) pageCache.delete(k);
+  thumbCache.clear(); crispCache = null;
   if (old) old.destroy().catch(() => {});
   const p = (async () => {
     const blob = await DB.get('slides', key);
     if (!blob){ const e = new Error('missing'); e.code = 'missing'; throw e; }
     const data = new Uint8Array(await blob.arrayBuffer());
     const doc = await pdfjs.getDocument({ data, isEvalSupported:false }).promise;
-    if (pdfLoading && pdfLoading.key === key){ pdfDoc = doc; pdfKey = key; pdfLoading = null; }
+    if (P.loading && P.loading.key === key){ P.doc = doc; P.key = key; P.loading = null; }
     else doc.destroy().catch(() => {});
     return doc;
   })();
-  pdfLoading = { key, p };
-  p.catch(() => { if (pdfLoading && pdfLoading.key === key) pdfLoading = null; });
+  P.loading = { key, p };
+  p.catch(() => { if (P.loading && P.loading.key === key) P.loading = null; });
   return p;
 }
-function renderPdfPage(i, w, opts = {}){
+/* Which PDF page a page key shows. Scratchpad pages have none. */
+function pdfFor(k){ return k[0] === 's' ? { slot:'lesson', i:+k.slice(1) } : k[0] === 'm' ? { slot:'manual', i:+k.slice(1) } : null; }
+function cacheKeyFor(k, w){ const src = pdfFor(k); return src ? `${src.slot}:${PDF[src.slot].key}:${src.i}@${w}` : ''; }
+function renderPdfPage(k, w, opts = {}){
+  const src = pdfFor(k); if (!src) return Promise.resolve(null);
+  const P = PDF[src.slot], doc = P.doc, key = P.key;
   const queued = opts.queued !== false, keep = opts.keep !== false;
-  const ck = i + '@' + w;
+  const ck = `${src.slot}:${key}:${src.i}@${w}`;
   if (keep && pageCache.has(ck)) return Promise.resolve(pageCache.get(ck));
   if (keep && inflight.has(ck)) return inflight.get(ck);
-  const doc = pdfDoc, key = pdfKey;
   const run = async () => {
     if (keep && pageCache.has(ck)) return pageCache.get(ck);
-    if (!doc || key !== pdfKey) return null;
-    const page = await doc.getPage(i + 1);
+    if (!doc || key !== P.key) return null;
+    const page = await doc.getPage(src.i + 1);
     const vp0 = page.getViewport({ scale:1 });
     const vp = page.getViewport({ scale: w / vp0.width });
     const c = document.createElement('canvas');
     c.width = Math.round(vp.width); c.height = Math.round(vp.height);
     await page.render({ canvasContext: c.getContext('2d', { alpha:false }), viewport: vp }).promise;
-    if (key !== pdfKey) return null;
+    if (key !== P.key) return null;
     if (keep){
       pageCache.set(ck, c);
       while (pageCache.size > 8) pageCache.delete(pageCache.keys().next().value);
@@ -391,28 +429,33 @@ function renderPdfPage(i, w, opts = {}){
   return p;
 }
 
-/* ---------- The view: fitted slides, zoom and scrolling ----------
-   Slides sit in a "document". Single-slide mode shows one slide; continuous mode stacks every slide
+/* ---------- The view: fitted pages, zoom and scrolling ----------
+   Pages sit in a "document". Single-page mode shows one page; continuous mode stacks every page
    vertically. The view maps document points to the screen: screen = (V.x + docX·z, V.y + docY·z). */
 const stage = $('#stage');
 const pdfc = $('#pdfc'), inkc = $('#inkc'), livec = $('#livec');
 const pctx = pdfc.getContext('2d'), ictx = inkc.getContext('2d'), lctx = livec.getContext('2d');
-const L = { sw:0, sh:0, dpr:1, pw:0, ph:0, pad:8, mode:null };
+const L = { sw:0, sh:0, dpr:1, pw:0, ph:0, pad:8, sig:'' };
 const V = { z:1, x:0, y:0 };
 const baseW = () => Math.round(L.pw * L.dpr);
-const pageTop = k => continuous() ? k * (L.ph + GAP) : 0;
-const docH = () => continuous() ? Math.max(1, total()) * (L.ph + GAP) - GAP : L.ph;
+const pageTop = k => continuous() ? k * (L.ph + gap()) : 0;
+const docH = () => continuous() ? Math.max(1, total()) * (L.ph + gap()) - gap() : L.ph;
 
 function layout(force){
   const sw = stage.clientWidth, sh = stage.clientHeight;
   if (sw <= 0 || sh <= 0) return false;
   const dpr = Math.min(2, window.devicePixelRatio || 1);
   const pad = presenting() ? 0 : 8;
-  if (!force && sw === L.sw && sh === L.sh && dpr === L.dpr && pad === L.pad && L.mode === continuous()) return false;
-  L.sw = sw; L.sh = sh; L.dpr = dpr; L.pad = pad; L.mode = continuous();
-  L.pw = Math.max(1, Math.floor(Math.min(sw - pad * 2, (sh - pad * 2) * ASPECT)));
-  L.ph = Math.floor(L.pw / ASPECT);
-  for (const c of [pdfc, inkc, livec]){ c.width = Math.round(sw * dpr); c.height = Math.round(sh * dpr); }
+  const a = aspect();
+  const sig = [sw, sh, dpr, pad, S.mode, continuous(), a.toFixed(4)].join(',');
+  if (!force && sig === L.sig) return false;
+  L.sig = sig; L.sw = sw; L.sh = sh; L.dpr = dpr; L.pad = pad;
+  if (S.mode === 'pad') L.pw = Math.min(sw - pad * 2, 1600);                       // the scratchpad is as wide as the screen
+  else if (S.mode === 'manual' && continuous()) L.pw = Math.min(sw - pad * 2, 1100); // scrolling manual pages fill the width
+  else L.pw = Math.min(sw - pad * 2, (sh - pad * 2) * a);                          // otherwise a whole page fits on screen
+  L.pw = Math.max(1, Math.floor(L.pw));
+  L.ph = Math.floor(L.pw / a);
+  for (const c of [pdfc, inkc, livec]){ const W = Math.round(sw * dpr), H = Math.round(sh * dpr); if (c.width !== W) c.width = W; if (c.height !== H) c.height = H; }
   crispCache = null;
   return true;
 }
@@ -431,16 +474,25 @@ function zoomAt(sx, sy, k){
   V.x = sx - (sx - V.x) * k; V.y = sy - (sy - V.y) * k; V.z = nz;
   clampView();
 }
-function panBy(dx, dy){ V.x += dx; V.y += dy; clampView(); }
+function panBy(dx, dy){ V.x += dx; V.y += dy; clampView(); if (S.mode === 'pad') growPadIfNearEnd(); }
 function pageRect(k){ const d = L.dpr; return { ox: V.x * d, oy: (V.y + pageTop(k) * V.z) * d, W: L.pw * V.z * d, H: L.ph * V.z * d }; }
 function visiblePages(){
   if (!continuous()) return S.page < total() ? [S.page] : [];
-  const out = [], step = (L.ph + GAP) * V.z;
+  const out = [], step = (L.ph + gap()) * V.z;
   for (let k = Math.max(0, Math.floor(-V.y / step)); k < total(); k++){
     const top = V.y + pageTop(k) * V.z;
     if (top > L.sh) break;
     if (top + L.ph * V.z >= 0) out.push(k);
   }
+  return out;
+}
+/* Scratchpad writing can run across the edge between two pages, so neighbours are drawn too. */
+function inkPages(){
+  const v = visiblePages();
+  if (S.mode !== 'pad' || !v.length) return v;
+  const out = v.slice();
+  if (v[0] > 0) out.unshift(v[0] - 1);
+  if (v[v.length - 1] < total() - 1) out.push(v[v.length - 1] + 1);
   return out;
 }
 function pageAt(clientX, clientY){
@@ -453,12 +505,25 @@ function pageAt(clientX, clientY){
 }
 function syncCurrentPage(){
   if (!continuous() || !total()) return;
-  // Keep the current slide while it is fully on screen; otherwise it is the one under the upper third.
+  // Keep the current page while it is fully on screen; otherwise it is the one under the upper third.
   const top = V.y + pageTop(S.page) * V.z;
   if (S.page >= 0 && S.page < total() && top >= -1 && top + L.ph * V.z <= L.sh + 1) return;
-  const step = (L.ph + GAP) * V.z;
+  const step = (L.ph + gap()) * V.z;
   const k = clamp(Math.floor((L.sh * 0.35 - V.y) / step), 0, total() - 1);
   if (k !== S.page){ S.page = k; updateRails(); scheduleMeta(); prefetch(); }
+}
+
+/* ---------- The endless scratchpad ---------- */
+function lastInkedBoard(){ let last = -1; for (const k of Object.keys(S.ink)) if (k[0] === 'b' && S.ink[k] && S.ink[k].length) last = Math.max(last, +k.slice(1)); return last; }
+/* There is always at least one blank page below the last one written on, so the pad never runs out. */
+function ensurePad(){
+  const want = Math.max(2, lastInkedBoard() + 2);
+  if (want > S.boards){ S.boards = want; if (S.mode === 'pad') rebuildPages(); scheduleMeta(); return true; }
+  return false;
+}
+function growPadIfNearEnd(){
+  const bottom = V.y + docH() * V.z;
+  if (bottom < L.sh + L.ph * V.z * 0.25 && lastInkedBoard() >= S.boards - 2){ S.boards++; rebuildPages(); scheduleMeta(); }
 }
 
 /* ---------- Drawing the view ---------- */
@@ -468,53 +533,55 @@ function drawView(){
   if (S.view !== 'lesson' || !L.pw) return;
   drawPdfLayer(); redrawInk(); syncCurrentPage();
 }
+/* A white page with a light dot grid. The dots line up across pages, so the scratchpad looks seamless. */
 function drawBoard(ctx, P){
   ctx.fillStyle = '#FFFFFF'; ctx.fillRect(P.ox, P.oy, P.W, P.H);
   const step = P.W / 32, r = Math.max(1, P.W / 900);
   ctx.fillStyle = '#D5DBE5';
-  for (let y = step; y < P.H; y += step){
+  for (let y = step; y <= P.H + step * 0.05; y += step){
     const yy = P.oy + y; if (yy < -r || yy > ctx.canvas.height + r) continue;
-    for (let x = step; x < P.W; x += step){ ctx.beginPath(); ctx.arc(P.ox + x, yy, r, 0, Math.PI * 2); ctx.fill(); }
+    for (let x = step; x < P.W - step * 0.5; x += step){ ctx.beginPath(); ctx.arc(P.ox + x, yy, r, 0, Math.PI * 2); ctx.fill(); }
   }
 }
 let crispCache = null, crispTimer = 0, crispTok = 0, crispTask = null;
-const viewKey = () => [S.key, continuous() ? 'c' : S.page, Math.round(V.x), Math.round(V.y), Math.round(V.z * 1000), L.sw, L.sh, L.dpr, total()].join(',');
+const viewKey = () => [S.key, S.mode, continuous() ? 'c' : S.page, Math.round(V.x), Math.round(V.y), Math.round(V.z * 1000), L.sw, L.sh, L.dpr, total()].join(',');
 function drawPdfLayer(){
   const d = L.dpr;
   pctx.setTransform(1, 0, 0, 1, 0, 0); pctx.clearRect(0, 0, pdfc.width, pdfc.height);
   for (const k of visiblePages()){
-    const P = pageRect(k);
+    const P = pageRect(k), key = pk(k);
+    if (key[0] === 'b'){ drawBoard(pctx, P); continue; }
     pctx.save();
     if (!presenting()){ pctx.shadowColor = 'rgba(0,0,0,.28)'; pctx.shadowBlur = 24 * d; pctx.shadowOffsetY = 6 * d; }
     pctx.fillStyle = '#FFFFFF'; pctx.fillRect(P.ox, P.oy, P.W, P.H);
     pctx.restore();
-    if (k >= S.n){ drawBoard(pctx, P); continue; }
-    const base = pageCache.get(k + '@' + baseW());
+    const base = pageCache.get(cacheKeyFor(key, baseW()));
     if (base) pctx.drawImage(base, P.ox, P.oy, P.W, P.H);
-    else if (pdfDoc) renderPdfPage(k, baseW(), { queued:false }).then(c => { if (c) requestDraw(); }).catch(() => {});
+    else renderPdfPage(key, baseW(), { queued:false }).then(c => { if (c) requestDraw(); }).catch(() => {});
   }
   if (crispCache && crispCache.key === viewKey()){ for (const p of crispCache.parts) pctx.drawImage(p.c, p.x, p.y); }
   else scheduleCrisp();
 }
-/* When zoomed in, re-render just the visible part of each slide at full sharpness once movement stops. */
+/* When zoomed in, re-render just the visible part of each page at full sharpness once movement stops. */
 function scheduleCrisp(){
   clearTimeout(crispTimer);
   if (crispTask){ try { crispTask.cancel(); } catch {} crispTask = null; }
   crispTok++;
-  if (V.z < 1.02 || !pdfDoc) return;
+  if (V.z < 1.02 || S.mode === 'pad') return;
   crispTimer = setTimeout(renderCrisp, 170);
 }
 async function renderCrisp(){
-  const key = viewKey(), tok = ++crispTok, doc = pdfDoc;
+  const key = viewKey(), tok = ++crispTok;
   const parts = [];
   for (const k of visiblePages()){
-    if (k >= S.n) continue;
+    const src = pdfFor(pk(k)); if (!src) continue;
+    const doc = PDF[src.slot].doc; if (!doc) continue;
     const P = pageRect(k);
     const x0 = Math.max(0, Math.floor(P.ox)), y0 = Math.max(0, Math.floor(P.oy));
     const x1 = Math.min(pdfc.width, Math.ceil(P.ox + P.W)), y1 = Math.min(pdfc.height, Math.ceil(P.oy + P.H));
     if (x1 <= x0 || y1 <= y0) continue;
     let page;
-    try { page = await doc.getPage(k + 1); } catch { return; }
+    try { page = await doc.getPage(src.i + 1); } catch { return; }
     if (tok !== crispTok) return;
     const vp0 = page.getViewport({ scale:1 });
     const vp = page.getViewport({ scale: P.W / vp0.width, offsetX: P.ox - x0, offsetY: P.oy - y0 });
@@ -530,8 +597,7 @@ async function renderCrisp(){
   drawPdfLayer();
 }
 function prefetch(){
-  if (!pdfDoc) return;
-  for (const j of [S.page + 1, S.page - 1, S.page + 2]) if (j >= 0 && j < S.n) renderPdfPage(j, baseW()).catch(() => {});
+  for (const j of [S.page + 1, S.page - 1, S.page + 2]) if (j >= 0 && j < total()) renderPdfPage(pk(j), baseW()).catch(() => {});
 }
 new ResizeObserver(() => { if (S.view === 'lesson' && layout()){ viewTo(S.page); drawView(); } }).observe(stage);
 
@@ -570,13 +636,15 @@ function drawStroke(ctx, s, W, H, boost = 1){
 }
 function inkOnPage(ctx, k, list){
   const P = pageRect(k);
-  ctx.save(); ctx.beginPath(); ctx.rect(P.ox, P.oy, P.W, P.H); ctx.clip(); ctx.translate(P.ox, P.oy);
+  ctx.save();
+  if (S.mode !== 'pad'){ ctx.beginPath(); ctx.rect(P.ox, P.oy, P.W, P.H); ctx.clip(); }
+  ctx.translate(P.ox, P.oy);
   for (const s of list) drawStroke(ctx, s, P.W, P.H);
   ctx.restore();
 }
 function redrawInk(){
   ictx.setTransform(1, 0, 0, 1, 0, 0); ictx.clearRect(0, 0, inkc.width, inkc.height);
-  for (const k of visiblePages()){ const arr = S.ink[pk(k)]; if (arr && arr.length) inkOnPage(ictx, k, arr); }
+  for (const k of inkPages()){ const key = pk(k), arr = inkFor(key)[key]; if (arr && arr.length) inkOnPage(ictx, k, arr); }
 }
 
 /* ---------- Pointer input ---------- */
@@ -610,7 +678,8 @@ function startAction(e){
 function addPoint(e){
   const s = act.stroke, d = s.d, P = act.P;
   const [x, y] = normOn(act.page, e);
-  const X = Math.round(clamp(x, 0, 1) * Q), Y = Math.round(clamp(y, 0, 1) * Q);
+  // On the scratchpad a stroke may carry on onto the page above or below.
+  const X = Math.round(clamp(x, 0, 1) * Q), Y = Math.round((S.mode === 'pad' ? clamp(y, -1, 2) : clamp(y, 0, 1)) * Q);
   if (d.length){
     const dx = (X - d[d.length - 3]) / Q * P.W / L.dpr, dy = (Y - d[d.length - 2]) / Q * P.H / L.dpr;
     if (dx * dx + dy * dy < 0.64) return;
@@ -672,18 +741,18 @@ function hitStroke(s, px, py, r, W, H){
   }
   return false;
 }
-const eraserR = () => Math.max(9, L.pw * 0.012);
-/* Erase along a line in stage coordinates, across whichever slides it passes over. */
+const eraserR = () => Math.max(9, Math.min(L.pw, 1200) * 0.012);
+/* Erase along a line in stage coordinates, across whichever pages it passes over. */
 function eraseLine(x0, y0, x1, y1){
   const r = eraserR(), steps = Math.max(1, Math.ceil(Math.hypot(x1 - x0, y1 - y0) / (r / 2)));
-  const w = L.pw * V.z, hh = L.ph * V.z;
+  const w = L.pw * V.z, hh = L.ph * V.z, pad = S.mode === 'pad';
   let removed = false;
   for (let k = 0; k <= steps; k++){
     const sx = x0 + (x1 - x0) * k / steps, sy = y0 + (y1 - y0) * k / steps;
-    for (const pg of visiblePages()){
+    for (const pg of inkPages()){
       const top = V.y + pageTop(pg) * V.z;
-      if (sx < V.x - r || sx > V.x + w + r || sy < top - r || sy > top + hh + r) continue;
-      const key = pk(pg), arr = S.ink[key]; if (!arr || !arr.length) continue;
+      if (!pad && (sx < V.x - r || sx > V.x + w + r || sy < top - r || sy > top + hh + r)) continue;
+      const key = pk(pg), arr = inkFor(key)[key]; if (!arr || !arr.length) continue;
       const px = sx - V.x, py = sy - top;
       for (let i = arr.length - 1; i >= 0; i--){
         if (hitStroke(arr[i], px, py, r, w, hh)){ act.erased.push([key, i, arr[i]]); arr.splice(i, 1); removed = true; }
@@ -707,7 +776,7 @@ function laserTick(now){
   const life = 650, d = L.dpr;
   laser = laser.filter(p => now - p.t < life);
   lctx.clearRect(0, 0, livec.width, livec.height);
-  const lw = Math.max(3, L.pw * d * 0.0055);
+  const lw = Math.max(3, Math.min(L.pw, 1200) * d * 0.0055);
   lctx.save(); lctx.lineCap = 'round'; lctx.lineJoin = 'round';
   lctx.shadowColor = 'rgba(255,40,30,.9)'; lctx.shadowBlur = lw * 2.2;
   for (let k = 1; k < laser.length; k++){
@@ -789,20 +858,33 @@ function touchUp(e){
     if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.4 && dt < 800) goto(S.page + (dx < 0 ? 1 : -1));
     return;
   }
-  if (g.max === 1 && !g.moved && dt < 300) handleTap();
+  if (g.max === 1 && !g.moved && dt < 300) handleTap(t.y - stage.getBoundingClientRect().top);
 }
+/* A one-finger tap switches between your tool and the eraser (the web can't see Apple Pencil's
+   double-tap, so this stands in for it). While presenting, a tap near the top shows the tools.
+   When zoomed in, a double tap zooms back out to fit. */
 let lastTap = 0, tapTimer = 0;
-function handleTap(){
-  const now = performance.now();
-  if (now - lastTap < 320){ clearTimeout(tapTimer); lastTap = 0; if (V.z > 1.02) fitZoom(); return; }
+function handleTap(sy){
+  const now = performance.now(), zoomed = V.z > 1.02;
+  if (zoomed && now - lastTap < 320){ clearTimeout(tapTimer); lastTap = 0; fitZoom(); return; }
   lastTap = now;
-  if (presenting()) tapTimer = setTimeout(toggleMini, 280);
+  clearTimeout(tapTimer);
+  if (zoomed) tapTimer = setTimeout(() => tapAction(sy), 280); else tapAction(sy);
+}
+function tapAction(sy){
+  if (presenting() && (!prefs.tapEraser || sy < 90)){ toggleMini(); return; }
+  if (prefs.tapEraser) toggleEraser();
+}
+function toggleEraser(){
+  if (prefs.tool === 'eraser') prefs.tool = prefs.prevTool && prefs.prevTool !== 'eraser' ? prefs.prevTool : 'pen';
+  else { prefs.prevTool = prefs.tool; prefs.tool = 'eraser'; }
+  savePrefs(); renderTools();
+  toast(TOOL_NAMES[prefs.tool] || 'Pen', 1200);
 }
 function fitZoom(){
-  const r = stage.getBoundingClientRect();
   zoomAt(L.sw / 2, L.sh / 2, 1 / V.z);
   if (!continuous()) viewTo(S.page);
-  void r; requestDraw();
+  requestDraw();
 }
 
 stage.addEventListener('pointerdown', e => {
@@ -812,7 +894,7 @@ stage.addEventListener('pointerdown', e => {
   if (e.pointerType === 'pen') lastPenAt = performance.now();
   if (e.pointerType === 'pen' && !prefs.sawPen){
     prefs.sawPen = true;
-    if (prefs.fingerDraw){ prefs.fingerDraw = false; updateMenu(); toast('Apple Pencil found. Fingers now scroll, swipe and pinch, and a two-finger tap undoes.'); }
+    if (prefs.fingerDraw){ prefs.fingerDraw = false; updateMenu(); toast('Apple Pencil found. Fingers now scroll, swipe and pinch. Tap with one finger to switch to the eraser and back.'); }
     savePrefs();
   }
   const draws = e.pointerType === 'pen' || e.pointerType === 'mouse' || (e.pointerType === 'touch' && prefs.fingerDraw && !presenting());
@@ -846,7 +928,7 @@ const upHandler = cancel => e => {
 };
 stage.addEventListener('pointerup', upHandler(false));
 stage.addEventListener('pointercancel', upHandler(true));
-// If a finger lifts outside the slide area, still finish its gesture.
+// If a finger lifts outside the page area, still finish its gesture.
 window.addEventListener('pointerup', e => { if (touches.has(e.pointerId)) touchUp(e); });
 window.addEventListener('pointercancel', e => { if (touches.has(e.pointerId)){ touches.delete(e.pointerId); if (!touches.size) gesture = null; } });
 stage.addEventListener('lostpointercapture', e => { if (act && e.pointerId === act.id) endAction(false); });
@@ -860,47 +942,56 @@ stage.addEventListener('wheel', e => {
   else return;
   requestDraw();
 }, { passive:false });
-// Safari's own pinch gesture events would zoom the whole page; the slides handle pinching instead.
+// Safari's own pinch gesture events would zoom the whole page; the pages handle pinching instead.
 for (const ev of ['gesturestart', 'gesturechange', 'gestureend']) document.addEventListener(ev, e => e.preventDefault(), { passive:false });
 
-/* ---------- Undo / redo (for the whole lesson) ---------- */
-function pushOp(op){ const hh = S.hist; hh.u.push(op); if (hh.u.length > 400) hh.u.shift(); hh.r.length = 0; updateUndo(); }
-function opPages(op){ return op.a === 'erase' ? [...new Set(op.items.map(it => it[0]))] : [op.p]; }
+/* ---------- Undo / redo (each view keeps its own history) ---------- */
+function pushOp(op){ const hh = histNow(); hh.u.push(op); if (hh.u.length > 400) hh.u.shift(); hh.r.length = 0; updateUndo(); }
+function opPages(op){ return op.a === 'erase' || op.a === 'clearMany' ? [...new Set(op.items.map(it => it[0]))] : [op.p]; }
 function reveal(op){
+  if (op.a === 'clearMany') return;
   const idx = pkIndex(opPages(op)[0]);
   if (idx >= 0 && idx < total() && !visiblePages().includes(idx)) goto(idx);
 }
 function undo(){
-  const op = S.hist.u.pop(); if (!op) return;
+  const op = histNow().u.pop(); if (!op) return;
   reveal(op);
   if (op.a === 'add'){ const arr = strokesFor(op.p), i = arr.lastIndexOf(op.s); if (i >= 0) arr.splice(i, 1); }
   else if (op.a === 'erase'){ for (let k = op.items.length - 1; k >= 0; k--){ const [key, i, s] = op.items[k]; const arr = strokesFor(key); arr.splice(Math.min(i, arr.length), 0, s); } }
   else if (op.a === 'clear'){ const arr = strokesFor(op.p); arr.splice(0, arr.length, ...op.items); }
-  S.hist.r.push(op); redrawInk(); for (const key of opPages(op)) inkChanged(key); updateUndo();
+  else if (op.a === 'clearMany'){ for (const [key, list] of op.items){ const arr = strokesFor(key); arr.splice(0, arr.length, ...list); } }
+  histNow().r.push(op); redrawInk(); for (const key of opPages(op)) inkChanged(key); updateUndo();
+  if (op.a === 'clearMany') toast('Marks are back.');
 }
 function redo(){
-  const op = S.hist.r.pop(); if (!op) return;
+  const op = histNow().r.pop(); if (!op) return;
   reveal(op);
   if (op.a === 'add') strokesFor(op.p).push(op.s);
   else if (op.a === 'erase'){ for (const [key, i, s] of op.items){ const arr = strokesFor(key); const j = arr.indexOf(s); if (j >= 0) arr.splice(j, 1); else if (arr[i] === s) arr.splice(i, 1); } }
   else if (op.a === 'clear') strokesFor(op.p).length = 0;
-  S.hist.u.push(op); redrawInk(); for (const key of opPages(op)) inkChanged(key); updateUndo();
+  else if (op.a === 'clearMany') for (const [key] of op.items) strokesFor(key).length = 0;
+  histNow().u.push(op); redrawInk(); for (const key of opPages(op)) inkChanged(key); updateUndo();
 }
 function updateUndo(){
-  for (const b of document.querySelectorAll('.undo')) b.disabled = !S.hist.u.length;
-  for (const b of document.querySelectorAll('.redo')) b.disabled = !S.hist.r.length;
+  const hh = histNow();
+  for (const b of document.querySelectorAll('.undo')) b.disabled = !hh.u.length;
+  for (const b of document.querySelectorAll('.redo')) b.disabled = !hh.r.length;
 }
 
 /* ---------- Saving ---------- */
 function inkChanged(page){
-  const key = S.key, arr = strokesFor(page);
-  Saver.schedule(key + '_' + page, () => arr.length ? { kind:'ink', lesson:key, page, s:arr, at:Date.now() } : null);
-  scheduleMeta();
-  const i = pkIndex(page), th = document.querySelector(`.th[data-i="${i}"]`); if (th) drawThumbInk(th, i);
+  const owner = page[0] === 'm' ? S.man.key : S.key, arr = strokesFor(page);
+  if (!owner) return;
+  Saver.schedule(owner + '_' + page, () => arr.length ? { kind:'ink', lesson:owner, page, s:arr, at:Date.now() } : null);
+  if (page[0] === 'b' && ensurePad()){ layout(true); requestDraw(); }
+  if (page[0] !== 'm') scheduleMeta();
+  const i = pkIndex(page), th = i >= 0 ? document.querySelector(`.th[data-i="${i}"]`) : null; if (th) drawThumbInk(th, i);
 }
 function scheduleMeta(){
   if (!S.key) return;
-  const data = { kind:'meta', lesson:S.key, boards:S.boards, last:S.page, n:S.n,
+  // "last" is always a slide, so the lessons screen can offer to pick up where you left off.
+  const slidePage = S.mode === 'slides' ? S.page : ((S.pos.slides && S.pos.slides.page) || 0);
+  const data = { kind:'meta', lesson:S.key, boards:S.boards, last:clamp(slidePage, 0, Math.max(0, S.n - 1)), n:S.n,
                  inked: Object.keys(S.ink).filter(k => S.ink[k] && S.ink[k].length), at:Date.now() };
   libMeta[S.key] = data;
   Saver.schedule(S.key + '_meta', () => data, 900);
@@ -923,33 +1014,98 @@ function currentSection(){
   for (let k = 0; k < sec.length; k++) if (sec[k] >= 0 && sec[k] <= S.page) cur = k;
   return cur;
 }
+/* Where this lesson sits in its course's student manual. */
+function manualRefs(){
+  const m = S.info && MANUALS[S.info.course];
+  if (!m) return null;
+  const k = S.info.num - 1;
+  return { start: m.start[k], conv: m.conv[k], end: k < 24 ? m.start[k + 1] - 1 : (S.man.n || m.n) - 1 };
+}
+function slidesPage(){ return S.mode === 'slides' ? S.page : ((S.pos.slides && S.pos.slides.page) || 0); }
 function updateRails(){
-  const chips = $('#chips'); const cur = S.page < S.n ? currentSection() : -1;
-  const list = [];
-  S.info.sections.forEach((start, k) => {
-    if (start < 0 || start >= S.n) return;
-    list.push(h('button', {type:'button', class:'chip', 'aria-current': String(k === cur), onclick: () => goto(start), text: SECTION_SHORT[k]}));
-  });
-  for (let b = 0; b < S.boards; b++){
-    const i = S.n + b;
-    list.push(h('button', {type:'button', class:'chip', 'aria-current': String(S.page === i), onclick: () => goto(i), text: `Board ${b + 1}`}));
+  const chips = $('#chips'); const list = [];
+  if (S.mode === 'slides'){
+    const cur = currentSection();
+    S.info.sections.forEach((start, k) => {
+      if (start < 0 || start >= S.n) return;
+      list.push(h('button', {type:'button', class:'chip', 'aria-current': String(k === cur), onclick: () => goto(start), text: SECTION_SHORT[k]}));
+    });
+    $('#counter').textContent = `${S.page + 1} / ${S.n}`;
+  } else {
+    list.push(h('button', {type:'button', class:'chip back', onclick: () => setMode('slides')}, icon('back'), `Slide ${slidesPage() + 1}`));
+    if (S.mode === 'manual'){
+      const r = manualRefs();
+      if (r){
+        const inConv = S.page >= r.conv && S.page <= r.end, inStudy = S.page >= r.start && S.page < r.conv;
+        list.push(h('button', {type:'button', class:'chip', 'aria-current': String(inStudy), onclick: () => goto(r.start), text:`Lesson ${S.info.num}: personal study`}));
+        list.push(h('button', {type:'button', class:'chip', 'aria-current': String(inConv), onclick: () => goto(r.conv), text:'Conversation group'}));
+      }
+      $('#counter').textContent = `p. ${S.page + 1} / ${S.man.n}`;
+    } else $('#counter').textContent = `Pad ${S.page + 1}`;
   }
-  list.push(h('button', {type:'button', class:'chip add', onclick: addBoard, 'aria-label':'Add a blank board page'}, '+ Board'));
   chips.replaceChildren(...list);
   const curChip = chips.querySelector('[aria-current="true"]');
   if (curChip){ const cr = chips.getBoundingClientRect(), r = curChip.getBoundingClientRect(); chips.scrollLeft += (r.left - cr.left) - (cr.width - r.width) / 2; }
-  $('#counter').textContent = S.page < S.n ? `${S.page + 1} / ${S.n}` : `Board ${S.page - S.n + 1}`;
   $('#prevBtn').disabled = S.page <= 0; $('#nextBtn').disabled = S.page >= total() - 1;
   resetClear();
   updateUndo();
   for (const th of document.querySelectorAll('.th[data-i]')) th.setAttribute('aria-current', String(+th.dataset.i === S.page));
 }
-function addBoard(){
-  S.boards++; scheduleMeta(); closePanels();
-  layout(true);
-  goto(S.n + S.boards - 1);
-  toast('Blank board page added at the end of this lesson.');
+
+/* ---------- Switching views: slides, scratchpad, manual ---------- */
+function updateModeUI(){
+  const li = S.info;
+  for (const b of document.querySelectorAll('.padBtn')) b.setAttribute('aria-pressed', String(S.mode === 'pad'));
+  for (const b of document.querySelectorAll('.manBtn')){ b.setAttribute('aria-pressed', String(S.mode === 'manual')); b.hidden = !li || !S.have.has(manualKey(li.course)); }
+  for (const b of document.querySelectorAll('.langBtn')) b.hidden = S.mode !== 'slides';
+  $('#gridBtn').setAttribute('aria-label', S.mode === 'slides' ? 'All slides' : 'All pages');
+  if (!li) return;
+  if (S.mode === 'pad'){ $('#whereTitle').textContent = `Scratchpad · Lesson ${li.num}`; $('#whereSub').textContent = 'Write anywhere. More room appears as you go.'; }
+  else if (S.mode === 'manual'){ $('#whereTitle').textContent = `Student manual · Lesson ${li.num}`; $('#whereSub').textContent = `${courseLabel(li.course)} para los alumnos`; }
+  else { $('#whereTitle').textContent = `Lesson ${li.num} · ${li.title}`; $('#whereSub').textContent = `${courseLabel(li.course)} · ${li.lang === 'es' ? 'Spanish slides' : 'English slides'}${li.principle ? ' · ' + li.principle : ''}`; }
 }
+async function setMode(mode, page){
+  if (!S.key || mode === S.mode) return false;
+  if (act) endAction(true);
+  stopLaser(); stopMomentum(); closePanels();
+  if (mode === 'manual'){
+    const mk = manualKey(S.info.course);
+    if (!S.have.has(mk)){ toast('Add the student manual first: on the lessons screen, tap “Add slides or manuals”.'); return false; }
+    if (S.man.key !== mk || !S.man.loaded){
+      stageMsg('Opening the manual…');
+      try {
+        const [doc, data] = await Promise.all([loadPdf('manual', mk), Store.load(mk)]);
+        const vp = (await doc.getPage(1)).getViewport({ scale:1 });
+        S.man = { key:mk, n:doc.numPages, ink:data.ink || {}, aspect: vp.width / vp.height, loaded:true };
+      } catch (e) { stageMsg(null); toast('The manual could not be opened. Try adding it again from the lessons screen.'); return false; }
+      stageMsg(null);
+      if (S.mode === mode) return false;
+    }
+  }
+  S.pos[S.mode] = { page:S.page, z:V.z, x:V.x, y:V.y };
+  S.mode = mode;
+  if (mode === 'pad') ensurePad();
+  rebuildPages();
+  layout(true);
+  const saved = S.pos[mode];
+  if (page != null){ S.page = clamp(page, 0, total() - 1); viewTo(S.page); }
+  else if (saved){ S.page = clamp(saved.page, 0, total() - 1); V.z = saved.z; V.x = saved.x; V.y = saved.y; clampView(); }
+  else { S.page = 0; viewTo(0); }
+  crispCache = null;
+  updateModeUI(); drawView(); updateRails(); prefetch();
+  return true;
+}
+/* The Scratchpad and Manual buttons open that view, and tapping again goes back to where you were. */
+async function toggleMode(mode){
+  if (!S.key) return;
+  if (S.mode === mode){ setMode(S.back && S.back !== mode ? S.back : 'slides'); return; }
+  const from = S.mode;
+  let page = null;
+  if (mode === 'manual' && !S.pos.manual){ const r = manualRefs(); if (r) page = r.conv; }   // first time: this lesson's conversation group
+  if (await setMode(mode, page)) S.back = from;
+}
+for (const b of document.querySelectorAll('.padBtn')) b.addEventListener('click', () => { toggleMode('pad'); bumpMini(); });
+for (const b of document.querySelectorAll('.manBtn')) b.addEventListener('click', () => { toggleMode('manual'); bumpMini(); });
 
 /* ---------- Switching between the English and Spanish slides ---------- */
 function updateLangButtons(){
@@ -960,14 +1116,14 @@ function updateLangButtons(){
   }
 }
 function switchLanguage(){
-  if (!S.key) return;
+  if (!S.key || S.mode !== 'slides') return;
   const other = otherLangKey(S.key), oi = info(other);
   if (!oi) return;
   if (!S.have.has(other)){ toast(`The ${oi.lang === 'es' ? 'Spanish' : 'English'} slides for this lesson are not on this iPad yet.`); return; }
   const map = PAIRS[S.key];
-  const target = S.page < S.n ? (map && map[S.page] != null ? map[S.page] : S.page) : (oi.n - 1);
+  const target = map && map[S.page] != null ? map[S.page] : S.page;
   Saver.flushNow();
-  openLesson(other, clamp(target, 0, oi.n - 1), { keepLaserless:true });
+  openLesson(other, clamp(target, 0, oi.n - 1));
 }
 for (const b of document.querySelectorAll('.langBtn')) b.addEventListener('click', switchLanguage);
 
@@ -989,13 +1145,16 @@ function renderTools(){
     sz.hidden = false;
   } else { sz.replaceChildren(); sz.hidden = true; }
 }
-for (const b of document.querySelectorAll('[data-tool]')) b.addEventListener('click', () => { prefs.tool = b.dataset.tool; savePrefs(); renderTools(); });
+for (const b of document.querySelectorAll('[data-tool]')) b.addEventListener('click', () => {
+  if (b.dataset.tool !== 'eraser') prefs.prevTool = b.dataset.tool;
+  prefs.tool = b.dataset.tool; savePrefs(); renderTools();
+});
 
-/* ---------- Present mode: only the slides show, for screen mirroring ---------- */
+/* ---------- Present mode: only the pages show, for screen mirroring ---------- */
 let miniTimer = 0, presentHinted = false;
 function showMini(){ $('#mini').hidden = false; bumpMini(); }
 function hideMini(){ $('#mini').hidden = true; clearTimeout(miniTimer); }
-function bumpMini(){ clearTimeout(miniTimer); miniTimer = setTimeout(hideMini, 4000); }
+function bumpMini(){ clearTimeout(miniTimer); if (!$('#mini').hidden) miniTimer = setTimeout(hideMini, 4000); }
 function toggleMini(){ $('#mini').hidden ? showMini() : hideMini(); }
 $('#mini').addEventListener('pointerdown', bumpMini);
 function setPresent(on){
@@ -1003,7 +1162,10 @@ function setPresent(on){
   document.body.classList.toggle('presenting', on);
   closePanels(); hideMini(); stopLaser();
   layout(true); viewTo(S.page); drawView(); updateRails();
-  if (on && !presentHinted){ presentHinted = true; toast('Presenting. Tap for tools, swipe or drag to move, pinch to zoom, double-tap to fit.'); }
+  if (on && !presentHinted){
+    presentHinted = true;
+    toast(prefs.tapEraser ? 'Presenting. Tap near the top for tools. Tap anywhere else to switch to the eraser and back.' : 'Presenting. Tap for tools, swipe or drag to move, pinch to zoom.');
+  }
 }
 $('#presentBtn').addEventListener('click', () => setPresent(true));
 $('#miniDone').addEventListener('click', () => setPresent(false));
@@ -1013,31 +1175,37 @@ $('#miniFit').addEventListener('click', () => { fitZoom(); bumpMini(); });
 let thumbIO = null;
 function buildThumbs(){
   const box = $('#thumbs');
+  $('#drawerTitle').textContent = S.mode === 'manual' ? 'Manual pages' : S.mode === 'pad' ? 'Scratchpad pages' : 'All slides';
   if (thumbIO) thumbIO.disconnect();
-  thumbIO = new IntersectionObserver(entries => { for (const en of entries) if (en.isIntersecting){ thumbIO.unobserve(en.target); paintThumb(en.target); } }, { root: box, rootMargin:'200px' });
-  const items = [];
+  thumbIO = new IntersectionObserver(entries => { for (const en of entries) if (en.isIntersecting){ thumbIO.unobserve(en.target); paintThumb(en.target); } }, { root: box, rootMargin:'300px' });
+  const items = [], ar = aspect().toFixed(4), r = S.mode === 'manual' ? manualRefs() : null;
   for (let i = 0; i < total(); i++){
-    const sec = S.info.sections.indexOf(i);
-    const label = i < S.n ? `Slide ${i + 1}` : `Board ${i - S.n + 1}`;
+    let label, tag = '';
+    if (S.mode === 'slides'){ label = `Slide ${i + 1}`; const sec = S.info.sections.indexOf(i); if (sec >= 0) tag = ' · ' + SECTION_SHORT[sec]; }
+    else {
+      label = `Page ${i + 1}`;
+      if (r && i === r.start) tag = ` · Lesson ${S.info.num}`;
+      else if (r && i === r.conv) tag = ' · Conversation group';
+    }
     items.push(h('button', {type:'button', class:'th', 'data-i': i, 'aria-current': String(i === S.page), onclick: () => { goto(i); closePanels(); }},
-      h('span', {class:'pic'}, h('canvas', {class:'tp'}), h('canvas', {class:'ti'})),
-      h('small', null, h('b', {text: label}), sec >= 0 ? ' · ' + SECTION_SHORT[sec] : '')));
+      h('span', {class:'pic', style:`aspect-ratio:${ar}`}, h('canvas', {class:'tp'}), h('canvas', {class:'ti'})),
+      h('small', null, h('b', {text: label}), tag)));
   }
-  items.push(h('button', {type:'button', class:'th add', onclick: addBoard}, h('span', {class:'pic'}, icon('plus')), h('small', {text:'Add a board page'})));
   box.replaceChildren(...items);
   for (const th of box.querySelectorAll('.th[data-i]')) thumbIO.observe(th);
   const cur = box.querySelector('[aria-current="true"]');
-  if (cur){ const br = box.getBoundingClientRect(), r = cur.getBoundingClientRect(); box.scrollTop += (r.top - br.top) - (br.height - r.height) / 2; }
+  if (cur){ const br = box.getBoundingClientRect(), rr = cur.getBoundingClientRect(); box.scrollTop += (rr.top - br.top) - (br.height - rr.height) / 2; }
 }
 async function paintThumb(th){
-  const i = +th.dataset.i, tp = th.querySelector('.tp');
-  const pic = th.querySelector('.pic'), cw = Math.max(1, Math.round(pic.clientWidth * L.dpr)), ch = Math.round(cw / ASPECT);
+  const i = +th.dataset.i, tp = th.querySelector('.tp'), key = pk(i);
+  const pic = th.querySelector('.pic'), cw = Math.max(1, Math.round(pic.clientWidth * L.dpr)), ch = Math.round(cw / aspect());
   tp.width = cw; tp.height = ch;
   const ctx = tp.getContext('2d');
-  if (i >= S.n) drawBoard(ctx, { ox:0, oy:0, W:cw, H:ch });
+  if (key[0] === 'b') drawBoard(ctx, { ox:0, oy:0, W:cw, H:ch });
   else {
-    let c = thumbCache.get(i);
-    if (!c){ try { c = await renderPdfPage(i, cw, { keep:false }); } catch { c = null; } if (c) thumbCache.set(i, c); }
+    const tk = key + '@' + PDF[key[0] === 'm' ? 'manual' : 'lesson'].key;
+    let c = thumbCache.get(tk);
+    if (!c){ try { c = await renderPdfPage(key, cw, { keep:false }); } catch { c = null; } if (c) thumbCache.set(tk, c); }
     if (c) ctx.drawImage(c, 0, 0, cw, ch);
   }
   drawThumbInk(th, i);
@@ -1047,7 +1215,8 @@ function drawThumbInk(th, i){
   if (!tp.width) return;
   ti.width = tp.width; ti.height = tp.height;
   const ctx = ti.getContext('2d'); ctx.clearRect(0, 0, ti.width, ti.height);
-  for (const s of (S.ink[pk(i)] || [])) drawStroke(ctx, s, ti.width, ti.height, 1.8);
+  const key = pk(i);
+  for (const s of (inkFor(key)[key] || [])) drawStroke(ctx, s, ti.width, ti.height, 1.8);
 }
 
 /* ---------- Panels & menu ---------- */
@@ -1055,29 +1224,55 @@ function closePanels(){ $('#drawer').hidden = true; $('#menu').hidden = true; re
 $('#gridBtn').addEventListener('click', () => { const d = $('#drawer'); const open = d.hidden; closePanels(); if (open){ d.hidden = false; buildThumbs(); } });
 $('#drawerClose').addEventListener('click', closePanels);
 $('#moreBtn').addEventListener('click', () => { const m = $('#menu'); const open = m.hidden; closePanels(); if (open){ updateMenu(); m.hidden = false; } });
-$('#mAddBoard').addEventListener('click', addBoard);
-function resetClear(){ const b = $('#mClear'); b.dataset.armed = 'false'; $('#mClearLabel').textContent = S.page < S.n ? 'Clear marks on this slide' : 'Clear this board page'; }
+
+/* "Clear marks in this lesson": every slide of the open lesson (or the whole scratchpad, or this
+   lesson's pages of the manual, depending on the view). Two taps to confirm, and Undo brings them back. */
+function clearLabel(){
+  if (S.mode === 'pad') return 'Clear the scratchpad';
+  if (S.mode === 'manual') return `Clear marks on Lesson ${S.info ? S.info.num : ''} manual pages`;
+  return 'Clear marks in this lesson';
+}
+function clearTargets(){
+  if (S.mode === 'slides') return Object.keys(S.ink).filter(k => k[0] === 's' && S.ink[k].length);
+  if (S.mode === 'pad') return Object.keys(S.ink).filter(k => k[0] === 'b' && S.ink[k].length);
+  const r = manualRefs();
+  return Object.keys(S.man.ink).filter(k => S.man.ink[k].length && (!r || (+k.slice(1) >= r.start && +k.slice(1) <= r.end)));
+}
+function resetClear(){ const b = $('#mClear'); b.dataset.armed = 'false'; $('#mClearLabel').textContent = clearLabel(); }
 $('#mClear').addEventListener('click', () => {
-  const b = $('#mClear'), key = pk(), arr = strokesFor(key);
-  if (!arr.length){ toast('There are no marks on this page.'); return; }
-  if (b.dataset.armed !== 'true'){ b.dataset.armed = 'true'; $('#mClearLabel').textContent = 'Tap again to clear. You can undo this.'; return; }
-  pushOp({ a:'clear', p:key, items: arr.slice() }); arr.length = 0; redrawInk(); inkChanged(key); closePanels(); toast('Marks cleared. Tap Undo to bring them back.');
+  const b = $('#mClear'), keys = clearTargets();
+  if (!keys.length){ toast(S.mode === 'pad' ? 'The scratchpad is already empty.' : S.mode === 'manual' ? 'There are no marks on this lesson’s manual pages.' : 'There are no marks in this lesson.'); return; }
+  const what = S.mode === 'slides' ? `${keys.length} slide${keys.length === 1 ? '' : 's'}` : `${keys.length} page${keys.length === 1 ? '' : 's'}`;
+  if (b.dataset.armed !== 'true'){ b.dataset.armed = 'true'; $('#mClearLabel').textContent = `Tap again to clear marks on ${what}. You can undo this.`; return; }
+  const items = keys.map(k => [k, strokesFor(k).slice()]);
+  for (const k of keys) strokesFor(k).length = 0;
+  pushOp({ a:'clearMany', items });
+  closePanels();
+  if (S.mode === 'pad'){ S.boards = 2; rebuildPages(); layout(true); goto(0); }
+  redrawInk();
+  for (const k of keys) inkChanged(k);
+  toast(`Cleared marks on ${what}. Tap Undo to bring them back.`);
 });
 function updateMenu(){
   $('#mFinger').setAttribute('aria-checked', String(!!prefs.fingerDraw));
   $('#mFingerSub').textContent = prefs.fingerDraw ? 'On: one finger draws like the pencil. Two fingers pinch and scroll.' : 'Off: fingers scroll, swipe and pinch, and a two-finger tap undoes. Apple Pencil always draws.';
-  $('#mScroll').setAttribute('aria-checked', String(continuous()));
-  $('#mScrollSub').textContent = continuous() ? 'On: slides are stacked; drag up and down to move through them.' : 'Off: one slide at a time; swipe sideways to turn.';
+  $('#mScroll').setAttribute('aria-checked', String(!!prefs.scroll));
+  $('#mScrollSub').textContent = prefs.scroll ? 'On: pages are stacked; drag up and down to move through them.' : 'Off: one page at a time; swipe sideways to turn.';
+  $('#mTap').setAttribute('aria-checked', String(!!prefs.tapEraser));
+  $('#mTapSub').textContent = prefs.fingerDraw
+    ? 'Works when “Draw with finger” is off. A quick one-finger tap then switches between your tool and the eraser.'
+    : 'A quick one-finger tap switches between your tool and the eraser, like double-tapping the pencil in other apps.';
   setSave(Saver.timers.size || Saver.busy.size ? 'saving' : (Saver.errors ? 'error' : 'idle'));
 }
 $('#mFinger').addEventListener('click', () => { prefs.fingerDraw = !prefs.fingerDraw; savePrefs(); updateMenu(); });
+$('#mTap').addEventListener('click', () => { prefs.tapEraser = !prefs.tapEraser; savePrefs(); updateMenu(); });
 $('#mScroll').addEventListener('click', () => {
   prefs.scroll = !prefs.scroll; savePrefs(); updateMenu();
   layout(true); viewTo(S.page); drawView(); updateRails();
 });
 
 let toastTimer = 0;
-function toast(msg){ const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), 3800); }
+function toast(msg, ms = 3800){ const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), ms); }
 function stageMsg(text, btnLabel, onBtn){
   const m = $('#stageMsg');
   if (!text){ m.hidden = true; m.replaceChildren(); return; }
@@ -1094,19 +1289,19 @@ async function openLesson(key, page){
   const li = info(key); if (!li){ showLibrary(); return; }
   if (act) endAction(true);
   closePanels(); stopLaser(); stopMomentum();
-  S.key = key; S.info = li; S.n = li.n; S.boards = 0; S.page = 0; S.ink = {}; S.hist = { u:[], r:[] };
+  Object.assign(S, { key, info:li, n:li.n, boards:2, page:0, ink:{}, mode:'slides', back:'slides', pos:{}, hist:newHist() });
+  if (S.man.key !== manualKey(li.course)) S.man = { key:null, n:0, ink:{}, aspect:0.77, loaded:false };
   S.view = 'lesson';
+  rebuildPages();
   $('#library').hidden = true; $('#lesson').hidden = false; document.body.classList.add('in-lesson');
-  $('#whereTitle').textContent = `Lesson ${li.num} · ${li.title}`;
-  $('#whereSub').textContent = `${courseLabel(li.course)} · ${li.lang === 'es' ? 'Spanish slides' : 'English slides'}${li.principle ? ' · ' + li.principle : ''}`;
   if (location.hash !== '#' + key) history.replaceState(null, '', '#' + key);
-  renderTools(); updateRails(); updateLangButtons();
+  updateModeUI(); renderTools(); updateRails(); updateLangButtons();
   layout(true); viewTo(0);
   pctx.setTransform(1, 0, 0, 1, 0, 0); pctx.clearRect(0, 0, pdfc.width, pdfc.height); ictx.clearRect(0, 0, inkc.width, inkc.height);
   stageMsg('Opening slides…');
   keepAwake();
   let data, err = null;
-  try { [data] = await Promise.all([Store.loadLesson(key), loadPdf(key)]); }
+  try { [data] = await Promise.all([Store.load(key), loadPdf('lesson', key)]); }
   catch (e) { err = e; }
   if (S.key !== key) return;
   if (err){
@@ -1115,18 +1310,22 @@ async function openLesson(key, page){
     return;
   }
   stageMsg(null);
-  if (pdfDoc && pdfDoc.numPages) S.n = pdfDoc.numPages;
+  if (PDF.lesson.doc && PDF.lesson.doc.numPages) S.n = PDF.lesson.doc.numPages;
   S.ink = data.ink || {};
-  S.boards = Math.max(0, (data.meta && data.meta.boards) || 0);
+  S.boards = Math.max(2, (data.meta && data.meta.boards) || 0);
+  ensurePad();
+  rebuildPages();
   const start = page != null ? page : (data.meta && data.meta.last) || 0;
   S.page = -1;
   layout(true);
-  goto(start);
+  goto(clamp(start, 0, S.n - 1));
+  updateModeUI();
 }
 function showLibrary(){
   if (act) endAction(true);
   if (presenting()) document.body.classList.remove('presenting');
   stopLaser(); stopMomentum(); closePanels(); hideMini();
+  Saver.flushNow();
   S.view = 'library';
   $('#lesson').hidden = true; $('#library').hidden = false; document.body.classList.remove('in-lesson');
   if (wake){ wake.release().catch(() => {}); wake = null; }
@@ -1153,7 +1352,9 @@ document.addEventListener('keydown', e => {
   if (k === 'ArrowRight' || k === 'ArrowDown' || k === 'PageDown' || k === ' '){ e.preventDefault(); goto(S.page + 1); }
   else if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp'){ e.preventDefault(); goto(S.page - 1); }
   else if (k === 'Escape'){ if (presenting()) setPresent(false); else closePanels(); }
-  else if (k === 'p' || k === 'h' || k === 'e' || k === 'l'){ prefs.tool = { p:'pen', h:'hl', e:'eraser', l:'laser' }[k]; savePrefs(); renderTools(); }
+  else if (k === 'p' || k === 'h' || k === 'e' || k === 'l'){ const t = { p:'pen', h:'hl', e:'eraser', l:'laser' }[k]; if (t !== 'eraser') prefs.prevTool = t; prefs.tool = t; savePrefs(); renderTools(); }
+  else if (k === 's'){ toggleMode('pad'); }
+  else if (k === 'm'){ toggleMode('manual'); }
   else if (k === '0'){ fitZoom(); }
 });
 
@@ -1176,8 +1377,8 @@ $('#updateBar').addEventListener('click', () => { Saver.flushNow(); setTimeout((
 $('#verLine').textContent = APP_VERSION;
 $('#verText').textContent = APP_VERSION;
 
-/* Read-only hook for automated checks of zoom and scrolling. */
-window.__cgsView = () => ({ z: V.z, x: V.x, y: V.y, page: S.page, continuous: continuous() });
+/* Read-only hook for automated checks of zoom, scrolling and views. */
+window.__cgsView = () => ({ z: V.z, x: V.x, y: V.y, page: S.page, mode: S.mode, total: total(), continuous: continuous(), boards: S.boards, tool: prefs.tool });
 
 /* ---------- Boot ---------- */
 (async function start(){
