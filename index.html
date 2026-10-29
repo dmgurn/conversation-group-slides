@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Conversation Group Slides</title>
+<meta name="description" content="Teach EnglishConnect conversation group lessons from an iPad: slides, Apple Pencil ink, and a laser pointer. Works offline.">
+<meta name="theme-color" content="#141C33">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Group Slides">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-192.png">
+<style>@font-face{font-family:"Atkinson Hyperlegible";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/atkinson-400.woff2) format("woff2")}
+@font-face{font-family:"Atkinson Hyperlegible";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/atkinson-700.woff2) format("woff2")}
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/bricolage-600.woff2) format("woff2")}
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:800;font-display:swap;src:url(fonts/bricolage-800.woff2) format("woff2")}
+
+/* Layout: two screens. A lesson shelf grouped by unit, and a full-bleed slide stage framed by a tool rail on top and a section rail below. */
+:root{
+  --paper:#EEF1F5;
+  --surface:#FFFFFF;
+  --ink:#141C33;
+  --muted:#5A6378;
+  --line:#D6DCE6;
+  --chip:#E3E8F0;
+  --accent:#EDA810;
+  --accent-ink:#271A00;
+  --accent-text:#8A5C00;
+  --stage:#C7CFDB;
+  --danger:#C2302A;
+  --ok:#2A9A58;
+  --shadow:0 1px 2px rgba(20,28,51,.06),0 8px 24px rgba(20,28,51,.08);
+  --font-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --font-body:"Atkinson Hyperlegible",-apple-system,"Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0D1220; --surface:#151C2D; --ink:#E6E9F0; --muted:#98A1B5; --line:#263049; --chip:#1E273B;
+    --accent:#F2B632; --accent-ink:#231700; --accent-text:#F2B632; --stage:#05070D; --danger:#FF6A5C;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0D1220; --surface:#151C2D; --ink:#E6E9F0; --muted:#98A1B5; --line:#263049; --chip:#1E273B;
+  --accent:#F2B632; --accent-ink:#231700; --accent-text:#F2B632; --stage:#05070D; --danger:#FF6A5C;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.45 var(--font-body);-webkit-text-size-adjust:100%;touch-action:manipulation}
+body.in-lesson{overflow:hidden;overscroll-behavior:none}
+button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+svg.i{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* ---------- Library ---------- */
+#library{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-top:calc(24px + env(safe-area-inset-top,0px));padding-bottom:calc(48px + env(safe-area-inset-bottom,0px));display:grid;gap:28px}
+.lib-head{display:grid;gap:14px}
+.kicker{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:0}
+h1{font-family:var(--font-display);font-weight:800;font-size:clamp(30px,5.2vw,48px);line-height:1.02;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.lede{margin:0;color:var(--muted);max-width:62ch}
+.switches{display:flex;flex-wrap:wrap;gap:10px}
+.seg{display:inline-flex;background:var(--chip);border-radius:999px;padding:4px;gap:2px}
+.seg button{border:0;background:transparent;border-radius:999px;padding:9px 16px;font-size:15px;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);font-weight:700;box-shadow:var(--shadow)}
+#continue{display:flex;align-items:center;gap:16px;width:100%;text-align:left;border:0;border-radius:16px;padding:16px 20px;background:var(--ink);color:var(--paper)}
+#continue .c-label{font-size:13px;opacity:.75}
+#continue .c-title{font-family:var(--font-display);font-weight:800;font-size:22px;line-height:1.15}
+#continue .c-sub{font-size:14px;opacity:.8}
+#continue .c-go{margin-left:auto;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:var(--accent-ink);flex:none}
+.unit{display:grid;gap:12px}
+.unit h2{margin:0;font-family:var(--font-display);font-weight:800;font-size:20px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.unit h2 span{font-family:var(--font-body);font-weight:400;font-size:14px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));gap:12px}
+.grid.c4{--cols:4}.grid.c5{--cols:5}
+@media (max-width:1000px){ .grid.c4{--cols:2} .grid.c5{--cols:3} }
+@media (max-width:560px){ .grid.c4,.grid.c5{--cols:1} }
+.card{display:grid;grid-template-rows:auto auto 1fr auto;gap:6px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px 12px;min-width:0;transition:transform .12s ease,box-shadow .12s ease}
+.card:hover{box-shadow:var(--shadow)}
+.card:active{transform:scale(.985)}
+.card .top{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.card .num{font-family:var(--font-display);font-weight:800;font-size:34px;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.card .count{font-size:13px;color:var(--muted)}
+.card .title{font-weight:700;font-size:17px;line-height:1.25}
+.card .pl{align-self:start;justify-self:start;font-size:13px;background:var(--chip);border-radius:6px;padding:2px 8px;color:var(--ink)}
+.card .notes{font-size:13px;color:var(--accent-text);font-weight:700;min-height:1.2em}
+.lib-foot{display:grid;gap:12px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:20px}
+.lib-foot p{margin:0;max-width:70ch}
+.foot-actions{display:flex;flex-wrap:wrap;gap:8px}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:10px 16px;font-weight:700;font-size:15px}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+.btn:disabled{opacity:.5}
+#importCard{display:grid;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px 22px;box-shadow:var(--shadow)}
+#importCard h2{margin:0;font-family:var(--font-display);font-weight:800;font-size:24px;line-height:1.15}
+#importCard p{margin:0;max-width:66ch}
+#importCard ol{margin:0;padding-left:1.25em;display:grid;gap:4px;max-width:66ch}
+#importCard code{font-family:inherit;font-weight:700;background:var(--chip);border-radius:6px;padding:1px 6px}
+#importCard.flash{animation:flash 1.2s ease}
+@keyframes flash{0%,100%{box-shadow:var(--shadow)}30%{box-shadow:0 0 0 4px var(--accent)}}
+#importProgress{display:grid;gap:8px}
+.track{height:8px;border-radius:999px;background:var(--chip);overflow:hidden}
+#importBar{height:100%;width:0;background:var(--accent);transition:width .2s}
+#importText{font-size:14px;color:var(--muted)}
+.card.missing{opacity:.55}
+.card.missing .notes{color:var(--muted);font-weight:400}
+
+/* ---------- Lesson ---------- */
+#lesson{position:fixed;inset:0;display:grid;grid-template-rows:auto 1fr auto;background:var(--stage);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);z-index:5}
+.rail{-webkit-user-select:none;user-select:none;display:flex;align-items:center;gap:6px;background:var(--surface);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:6px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;min-width:0}
+.rail::-webkit-scrollbar{display:none}
+.rail.top{border-bottom:1px solid var(--line)}
+.rail.bottom{border-top:1px solid var(--line)}
+.tb{flex:none;min-width:44px;height:42px;border:0;border-radius:11px;background:transparent;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:0 8px;color:var(--ink)}
+.tb:disabled{opacity:.35}
+.tb[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.tb.back{padding:0 12px 0 6px;font-weight:700}
+.where{min-width:0;flex:0 1 auto;display:grid;line-height:1.15;padding:0 6px;white-space:nowrap}
+.where b{font-family:var(--font-display);font-weight:800;font-size:15px;overflow:hidden;text-overflow:ellipsis}
+.where small{color:var(--muted);font-size:12px;overflow:hidden;text-overflow:ellipsis}
+.sep{flex:none;width:1px;height:26px;background:var(--line);margin:0 4px}
+.spacer{flex:1 1 0;min-width:4px}
+.group{display:flex;align-items:center;gap:2px;flex:none}
+.sw{flex:none;width:34px;height:42px;border:0;background:transparent;display:grid;place-items:center;padding:0}
+.sw i{display:block;width:24px;height:24px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
+.sw[aria-pressed="true"] i{box-shadow:0 0 0 2px var(--surface),0 0 0 4px var(--ink)}
+.sz{flex:none;width:34px;height:42px;border:0;background:transparent;display:grid;place-items:center;border-radius:10px}
+.sz i{display:block;border-radius:50%;background:var(--ink);width:var(--d);height:var(--d)}
+.sz[aria-pressed="true"]{background:var(--chip)}
+#saveDot{flex:none;width:10px;height:10px;border-radius:50%;background:var(--muted);opacity:.5;margin:0 4px}
+#saveDot[data-state="saving"]{background:var(--accent);opacity:1}
+#saveDot[data-state="error"]{background:var(--danger);opacity:1}
+#saveDot[data-state="cloud"]{background:var(--ok);opacity:1}
+
+#stage{position:relative;overflow:hidden;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;display:grid;place-items:center;min-height:0}
+#sheet{position:relative;background:#FFFFFF;box-shadow:0 10px 40px rgba(0,0,0,.28)}
+#sheet canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+#stageMsg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--surface);color:var(--ink);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);max-width:min(420px,86%);text-align:center;display:grid;gap:10px;z-index:3}
+#stageMsg button{justify-self:center;border:0;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-weight:700;padding:9px 18px}
+
+.chips{display:flex;gap:6px;flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:0;border-radius:999px;background:var(--chip);padding:8px 13px;font-size:14px;white-space:nowrap;color:var(--ink)}
+.chip[aria-current="true"]{background:var(--ink);color:var(--surface);font-weight:700}
+.chip.add{background:transparent;border:1px dashed var(--line);color:var(--muted)}
+#counter{flex:none;font-variant-numeric:tabular-nums;font-weight:700;min-width:76px;text-align:center;font-size:15px}
+
+.panel{position:absolute;z-index:6;background:var(--surface);color:var(--ink);border:1px solid var(--line);box-shadow:0 12px 40px rgba(0,0,0,.25);touch-action:auto}
+#drawer{top:0;right:0;bottom:0;width:min(440px,92vw);border-radius:0;border-width:0 0 0 1px;display:grid;grid-template-rows:auto 1fr;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px)}
+#drawer header{display:flex;align-items:center;gap:8px;padding:12px 12px 10px 18px;border-bottom:1px solid var(--line)}
+#drawer header h3{margin:0;font-family:var(--font-display);font-weight:800;font-size:18px;flex:1}
+#thumbs{overflow-y:auto;touch-action:pan-y;padding:14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-content:start;-webkit-overflow-scrolling:touch}
+.th{border:0;background:transparent;padding:0;display:grid;gap:5px;text-align:left;min-width:0}
+.th .pic{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:8px;overflow:hidden;background:#FFFFFF;box-shadow:inset 0 0 0 1px var(--line)}
+.th canvas{position:absolute;inset:0;width:100%;height:100%}
+.th[aria-current="true"] .pic{box-shadow:0 0 0 3px var(--accent)}
+.th small{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.th small b{color:var(--ink)}
+.th.add .pic{display:grid;place-items:center;background:var(--chip);color:var(--muted);box-shadow:inset 0 0 0 1px var(--line)}
+#menu{top:calc(60px + env(safe-area-inset-top,0px));right:max(12px,env(safe-area-inset-right,0px));width:min(330px,calc(100vw - 24px));border-radius:16px;padding:8px;display:grid;gap:2px}
+#menu .mi{display:flex;align-items:center;gap:12px;width:100%;border:0;background:transparent;border-radius:10px;padding:11px 12px;text-align:left}
+#menu .mi:hover{background:var(--chip)}
+#menu .mi.danger{color:var(--danger)}
+#menu .mi.danger[data-armed="true"]{background:var(--danger);color:#fff}
+#menu .mi .txt{display:grid;flex:1;min-width:0}
+#menu .mi small{color:var(--muted);font-size:13px;line-height:1.3}
+#menu hr{border:0;border-top:1px solid var(--line);margin:4px 6px}
+.switch{flex:none;width:44px;height:26px;border-radius:999px;background:var(--line);position:relative;transition:background .15s}
+.switch::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.3);transition:transform .15s}
+[aria-checked="true"] .switch{background:var(--ok)}
+[aria-checked="true"] .switch::after{transform:translateX(18px)}
+#saveText{padding:8px 12px 6px;font-size:13px;color:var(--muted)}
+
+#toast{position:fixed;left:50%;bottom:calc(76px + env(safe-area-inset-bottom,0px));transform:translate(-50%,12px);background:var(--ink);color:var(--surface);border-radius:999px;padding:10px 18px;font-size:14px;max-width:min(560px,calc(100vw - 32px));text-align:center;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:20}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+.where{max-width:300px}
+@media (max-width:1240px){ .where small{display:none} }
+@media (max-width:1000px){ .where{display:none} }
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+  <symbol id="i-next" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l1-4.5L16.5 4a2.1 2.1 0 0 1 3 3L8 18.5z"/><path d="M14.5 6l3 3"/></symbol>
+  <symbol id="i-hl" viewBox="0 0 24 24"><path d="M9 14l-2.5 2.5L4 21h5l2-2"/><path d="M7.5 13.5l7-9.5 5.5 4-8 8.5z"/><path d="M13 21h7"/></symbol>
+  <symbol id="i-eraser" viewBox="0 0 24 24"><path d="M9 20h11"/><path d="M5.6 15.4l8.8-8.8a2 2 0 0 1 2.8 0l2.2 2.2a2 2 0 0 1 0 2.8L12 19.1a3 3 0 0 1-4.2 0l-2.2-2.2a1.2 1.2 0 0 1 0-1.5z"/><path d="M9.5 11.5l5 5"/></symbol>
+  <symbol id="i-laser" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></symbol>
+  <symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 14L4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></symbol>
+  <symbol id="i-redo" viewBox="0 0 24 24"><path d="M15 14l5-5-5-5"/><path d="M20 9H9.5a5.5 5.5 0 0 0 0 11H13"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="7.5" height="6" rx="1.5"/><rect x="13" y="4.5" width="7.5" height="6" rx="1.5"/><rect x="3.5" y="13.5" width="7.5" height="6" rx="1.5"/><rect x="13" y="13.5" width="7.5" height="6" rx="1.5"/></symbol>
+  <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5.5" cy="12" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/><circle cx="18.5" cy="12" r="1.3" fill="currentColor"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9.5 7V4.5h5V7M6.5 7l1 13h9l1-13"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M8 13V6.5a1.5 1.5 0 0 1 3 0V12M11 11V4.5a1.5 1.5 0 0 1 3 0V11M14 11V6a1.5 1.5 0 0 1 3 0v7.5c0 4-2.5 7-6 7-3 0-4.5-1.5-6-4L3.5 13a1.5 1.5 0 0 1 2.4-1.8L8 13.5"/></symbol>
+  <symbol id="i-full" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+</svg>
+
+<main id="library" aria-label="Lessons">
+  <header class="lib-head">
+    <p class="kicker">EnglishConnect conversation groups</p>
+    <h1>Conversation Group Slides</h1>
+    <p class="lede">Pick a lesson, then write on the slides with Apple Pencil while you teach. Slides and marks stay on this iPad and work without internet.</p>
+    <div class="switches">
+      <div class="seg" role="group" aria-label="Course">
+        <button type="button" id="c-ec1" data-course="ec1">EnglishConnect 1</button>
+        <button type="button" id="c-ec2" data-course="ec2">EnglishConnect 2</button>
+      </div>
+      <div class="seg" role="group" aria-label="Slide language">
+        <button type="button" id="l-en" data-lang="en">English slides</button>
+        <button type="button" id="l-es" data-lang="es">Diapositivas en español</button>
+      </div>
+    </div>
+  </header>
+
+  <section id="importCard" aria-labelledby="importTitle">
+    <h2 id="importTitle">Add your lesson slides</h2>
+    <p>This happens once. The slides are saved on this iPad, so lessons open without internet.</p>
+    <ol>
+      <li>Tap <b>Choose slides</b>.</li>
+      <li>In iCloud Drive, pick <code>EnglishConnect Slides for iPad.zip</code>. You can also select lesson PDFs named like <code>EC1 EN L08 - Everyday Common Items.pdf</code>.</li>
+      <li>Wait for all 100 lessons to be added. It takes about a minute.</li>
+    </ol>
+    <div><button type="button" class="btn primary pick">Choose slides</button></div>
+    <div id="importProgress" hidden>
+      <div class="track"><div id="importBar"></div></div>
+      <span id="importText"></span>
+    </div>
+  </section>
+
+  <button type="button" id="continue" hidden></button>
+  <div id="shelf"></div>
+
+  <footer class="lib-foot">
+    <p id="haveLine"></p>
+    <p>Your pen marks are saved on this iPad. Make a backup now and then so you can restore them if you get a new iPad.</p>
+    <div class="foot-actions">
+      <button type="button" class="btn pick">Add or replace slides</button>
+      <button type="button" class="btn" id="backupBtn">Back up my marks</button>
+      <button type="button" class="btn" id="restoreBtn">Restore marks from a backup</button>
+    </div>
+  </footer>
+  <input type="file" id="pickFile" accept=".zip,.pdf,application/zip,application/pdf" multiple hidden>
+  <input type="file" id="pickBackup" accept=".json,application/json" hidden>
+</main>
+
+<section id="lesson" hidden aria-label="Lesson slides">
+  <div class="rail top" role="toolbar" aria-label="Tools">
+    <button type="button" class="tb back" id="backBtn"><svg class="i"><use href="#i-back"/></svg>Lessons</button>
+    <div class="where"><b id="whereTitle"></b><small id="whereSub"></small></div>
+    <div class="spacer"></div>
+    <div class="group" id="tools">
+      <button type="button" class="tb" data-tool="pen" aria-label="Pen"><svg class="i"><use href="#i-pen"/></svg></button>
+      <button type="button" class="tb" data-tool="hl" aria-label="Highlighter"><svg class="i"><use href="#i-hl"/></svg></button>
+      <button type="button" class="tb" data-tool="eraser" aria-label="Eraser"><svg class="i"><use href="#i-eraser"/></svg></button>
+      <button type="button" class="tb" data-tool="laser" aria-label="Laser pointer"><svg class="i"><use href="#i-laser"/></svg></button>
+    </div>
+    <span class="sep"></span>
+    <div class="group" id="swatches"></div>
+    <div class="group" id="sizes"></div>
+    <span class="sep"></span>
+    <button type="button" class="tb" id="undoBtn" aria-label="Undo"><svg class="i"><use href="#i-undo"/></svg></button>
+    <button type="button" class="tb" id="redoBtn" aria-label="Redo"><svg class="i"><use href="#i-redo"/></svg></button>
+    <button type="button" class="tb" id="gridBtn" aria-label="All slides"><svg class="i"><use href="#i-grid"/></svg></button>
+    <span id="saveDot" title="Saved"></span>
+    <button type="button" class="tb" id="moreBtn" aria-label="More options" aria-haspopup="true"><svg class="i"><use href="#i-more"/></svg></button>
+  </div>
+  <div id="stage">
+    <div id="sheet">
+      <canvas id="pdfc"></canvas>
+      <canvas id="inkc"></canvas>
+      <canvas id="livec"></canvas>
+    </div>
+    <div id="stageMsg" hidden></div>
+  </div>
+  <aside id="drawer" class="panel" hidden aria-label="All slides">
+    <header><h3>All slides</h3><button type="button" class="tb" id="drawerClose" aria-label="Close"><svg class="i"><use href="#i-close"/></svg></button></header>
+    <div id="thumbs"></div>
+  </aside>
+  <div id="menu" class="panel" hidden role="menu">
+    <button type="button" class="mi" id="mAddBoard" role="menuitem"><svg class="i"><use href="#i-plus"/></svg><span class="txt">Add a blank board page<small>A white page at the end of this lesson for writing words and drawings.</small></span></button>
+    <button type="button" class="mi danger" id="mClear" role="menuitem"><svg class="i"><use href="#i-trash"/></svg><span class="txt"><span id="mClearLabel">Clear marks on this slide</span></span></button>
+    <hr>
+    <button type="button" class="mi" id="mFinger" role="menuitemcheckbox" aria-checked="false"><svg class="i"><use href="#i-hand"/></svg><span class="txt">Draw with finger<small id="mFingerSub">Off: fingers swipe between slides and a two-finger tap undoes. Apple Pencil always draws.</small></span><span class="switch"></span></button>
+    <hr>
+    <div id="saveText">Saved</div>
+  </div>
+  <div class="rail bottom">
+    <button type="button" class="tb" id="prevBtn" aria-label="Previous slide"><svg class="i"><use href="#i-back"/></svg></button>
+    <div class="chips" id="chips"></div>
+    <span id="counter"></span>
+    <button type="button" class="tb" id="nextBtn" aria-label="Next slide"><svg class="i"><use href="#i-next"/></svg></button>
+  </div>
+</section>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="pdf.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
