@@ -1,5 +1,5 @@
 // Keeps the app itself available offline. Slides and marks live in IndexedDB, not here.
-const CACHE = 'cgs-shell-v1';
+const CACHE = 'cgs-shell-v2';
 const SHELL = [
   './', './index.html', './app.js', './pdf.min.js', './pdf.worker.min.js', './manifest.webmanifest',
   './icon-180.png', './icon-192.png', './icon-512.png',

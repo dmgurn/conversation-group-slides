@@ -137,9 +137,8 @@ h1{font-family:var(--font-display);font-weight:800;font-size:clamp(30px,5.2vw,48
 #saveDot[data-state="error"]{background:var(--danger);opacity:1}
 #saveDot[data-state="cloud"]{background:var(--ok);opacity:1}
 
-#stage{position:relative;overflow:hidden;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;display:grid;place-items:center;min-height:0}
-#sheet{position:relative;background:#FFFFFF;box-shadow:0 10px 40px rgba(0,0,0,.28)}
-#sheet canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+#stage{position:relative;overflow:hidden;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;min-height:0}
+#stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 #stageMsg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--surface);color:var(--ink);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);max-width:min(420px,86%);text-align:center;display:grid;gap:10px;z-index:3}
 #stageMsg button{justify-self:center;border:0;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-weight:700;padding:9px 18px}
 
@@ -179,8 +178,16 @@ h1{font-family:var(--font-display);font-weight:800;font-size:clamp(30px,5.2vw,48
 #toast{position:fixed;left:50%;bottom:calc(76px + env(safe-area-inset-bottom,0px));transform:translate(-50%,12px);background:var(--ink);color:var(--surface);border-radius:999px;padding:10px 18px;font-size:14px;max-width:min(560px,calc(100vw - 32px));text-align:center;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:20}
 #toast.show{opacity:1;transform:translate(-50%,0)}
 .where{max-width:300px}
-@media (max-width:1240px){ .where small{display:none} }
-@media (max-width:1000px){ .where{display:none} }
+@media (max-width:1366px){ .where small{display:none} }
+@media (max-width:1280px){ .where{display:none} }
+
+.tb.langBtn{font-weight:700;font-size:15px;padding:0 12px;background:var(--chip)}
+#mini{top:calc(10px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);border-radius:16px;padding:6px 8px;display:flex;align-items:center;gap:4px;max-width:calc(100vw - 24px);overflow-x:auto;scrollbar-width:none}
+#mini::-webkit-scrollbar{display:none}
+#mini .tb.done{font-weight:700;padding:0 14px;background:var(--ink);color:var(--surface)}
+body.presenting #lesson{grid-template-rows:1fr;padding:0;background:#000}
+body.presenting #lesson > .rail{display:none}
+body.presenting #stage{background:#000}
 @media (prefers-reduced-motion:reduce){ *{transition:none!important} }
 </style>
 </head>
@@ -200,6 +207,8 @@ h1{font-family:var(--font-display);font-weight:800;font-size:clamp(30px,5.2vw,48
   <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
   <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9.5 7V4.5h5V7M6.5 7l1 13h9l1-13"/></symbol>
   <symbol id="i-hand" viewBox="0 0 24 24"><path d="M8 13V6.5a1.5 1.5 0 0 1 3 0V12M11 11V4.5a1.5 1.5 0 0 1 3 0V11M14 11V6a1.5 1.5 0 0 1 3 0v7.5c0 4-2.5 7-6 7-3 0-4.5-1.5-6-4L3.5 13a1.5 1.5 0 0 1 2.4-1.8L8 13.5"/></symbol>
+  <symbol id="i-present" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></symbol>
+  <symbol id="i-scroll" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="8" rx="1.5"/><rect x="5" y="13" width="14" height="8" rx="1.5"/></symbol>
   <symbol id="i-full" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
 </svg>
 
@@ -266,19 +275,33 @@ h1{font-family:var(--font-display);font-weight:800;font-size:clamp(30px,5.2vw,48
     <div class="group" id="swatches"></div>
     <div class="group" id="sizes"></div>
     <span class="sep"></span>
-    <button type="button" class="tb" id="undoBtn" aria-label="Undo"><svg class="i"><use href="#i-undo"/></svg></button>
-    <button type="button" class="tb" id="redoBtn" aria-label="Redo"><svg class="i"><use href="#i-redo"/></svg></button>
+    <button type="button" class="tb undo" id="undoBtn" aria-label="Undo"><svg class="i"><use href="#i-undo"/></svg></button>
+    <button type="button" class="tb redo" id="redoBtn" aria-label="Redo"><svg class="i"><use href="#i-redo"/></svg></button>
+    <span class="sep"></span>
+    <button type="button" class="tb langBtn">Español</button>
+    <button type="button" class="tb" id="presentBtn" aria-label="Present: hide the toolbars"><svg class="i"><use href="#i-present"/></svg></button>
     <button type="button" class="tb" id="gridBtn" aria-label="All slides"><svg class="i"><use href="#i-grid"/></svg></button>
     <span id="saveDot" title="Saved"></span>
     <button type="button" class="tb" id="moreBtn" aria-label="More options" aria-haspopup="true"><svg class="i"><use href="#i-more"/></svg></button>
   </div>
   <div id="stage">
-    <div id="sheet">
-      <canvas id="pdfc"></canvas>
-      <canvas id="inkc"></canvas>
-      <canvas id="livec"></canvas>
-    </div>
+    <canvas id="pdfc"></canvas>
+    <canvas id="inkc"></canvas>
+    <canvas id="livec"></canvas>
     <div id="stageMsg" hidden></div>
+  </div>
+  <div id="mini" class="panel" hidden role="toolbar" aria-label="Presenting tools">
+    <button type="button" class="tb" data-tool="pen" aria-label="Pen"><svg class="i"><use href="#i-pen"/></svg></button>
+    <button type="button" class="tb" data-tool="hl" aria-label="Highlighter"><svg class="i"><use href="#i-hl"/></svg></button>
+    <button type="button" class="tb" data-tool="eraser" aria-label="Eraser"><svg class="i"><use href="#i-eraser"/></svg></button>
+    <button type="button" class="tb" data-tool="laser" aria-label="Laser pointer"><svg class="i"><use href="#i-laser"/></svg></button>
+    <span class="sep"></span>
+    <div class="group" id="miniSwatches"></div>
+    <span class="sep"></span>
+    <button type="button" class="tb undo" aria-label="Undo"><svg class="i"><use href="#i-undo"/></svg></button>
+    <button type="button" class="tb" id="miniFit" aria-label="Zoom to fit"><svg class="i"><use href="#i-full"/></svg></button>
+    <button type="button" class="tb langBtn">Español</button>
+    <button type="button" class="tb done" id="miniDone">Done</button>
   </div>
   <aside id="drawer" class="panel" hidden aria-label="All slides">
     <header><h3>All slides</h3><button type="button" class="tb" id="drawerClose" aria-label="Close"><svg class="i"><use href="#i-close"/></svg></button></header>
@@ -288,6 +311,7 @@ h1{font-family:var(--font-display);font-weight:800;font-size:clamp(30px,5.2vw,48
     <button type="button" class="mi" id="mAddBoard" role="menuitem"><svg class="i"><use href="#i-plus"/></svg><span class="txt">Add a blank board page<small>A white page at the end of this lesson for writing words and drawings.</small></span></button>
     <button type="button" class="mi danger" id="mClear" role="menuitem"><svg class="i"><use href="#i-trash"/></svg><span class="txt"><span id="mClearLabel">Clear marks on this slide</span></span></button>
     <hr>
+    <button type="button" class="mi" id="mScroll" role="menuitemcheckbox" aria-checked="false"><svg class="i"><use href="#i-scroll"/></svg><span class="txt">Scroll slides continuously<small id="mScrollSub">Off: one slide at a time; swipe sideways to turn.</small></span><span class="switch"></span></button>
     <button type="button" class="mi" id="mFinger" role="menuitemcheckbox" aria-checked="false"><svg class="i"><use href="#i-hand"/></svg><span class="txt">Draw with finger<small id="mFingerSub">Off: fingers swipe between slides and a two-finger tap undoes. Apple Pencil always draws.</small></span><span class="switch"></span></button>
     <hr>
     <div id="saveText">Saved</div>
