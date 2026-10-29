@@ -5,8 +5,8 @@
 const LESSONS = {"ec1":[{"en":"Introductory Lesson","es":"Lección introductoria"},{"en":"Greetings and Introductions","es":"Saludos y presentaciones"},{"en":"Personal Introduction","es":"Presentación personal"},{"en":"Hobbies and Interests","es":"Aficiones e intereses"},{"en":"Hobbies and Interests","es":"Aficiones e intereses"},{"en":"Family","es":"Familia"},{"en":"Family","es":"Familia"},{"en":"Everyday Common Items","es":"Objetos comunes cotidianos"},{"en":"Clothing and Colors","es":"Ropa y colores"},{"en":"Daily Routines","es":"Rutinas diarias"},{"en":"Current Activities","es":"Actividades actuales"},{"en":"Time and Calendar","es":"Tiempo y calendario"},{"en":"Weather","es":"El clima"},{"en":"Jobs and Careers","es":"Trabajos y carreras profesionales"},{"en":"Jobs and Careers","es":"Trabajos y carreras profesionales"},{"en":"Food","es":"Comida"},{"en":"Food","es":"Comida"},{"en":"Food","es":"Comida"},{"en":"Money","es":"Dinero"},{"en":"Home","es":"El hogar"},{"en":"Home","es":"El hogar"},{"en":"Community","es":"Comunidad"},{"en":"Health","es":"Salud"},{"en":"Health","es":"Salud"},{"en":"Review","es":"Repaso"}],"ec2":[{"en":"Introductory Lesson","es":"Lección introductoria"},{"en":"Introductions","es":"Presentaciones"},{"en":"Interests","es":"Intereses"},{"en":"Family and Friends","es":"Familia y amigos"},{"en":"Family and Friends","es":"Familia y amigos"},{"en":"Feelings and Emotions","es":"Sentimientos y emociones"},{"en":"Interests","es":"Intereses"},{"en":"At Home","es":"En casa"},{"en":"At Home","es":"En casa"},{"en":"Daily Routines","es":"Rutinas diarias"},{"en":"Daily and Weekly Routines","es":"Rutinas diarias y semanales"},{"en":"Past Experiences","es":"Experiencias pasadas"},{"en":"Past Experiences","es":"Experiencias pasadas"},{"en":"Shopping and Food","es":"Compras y comida"},{"en":"Money and Shopping","es":"El dinero y las compras"},{"en":"In the Community","es":"En la comunidad"},{"en":"In the Community","es":"En la comunidad"},{"en":"Holidays","es":"Vacaciones"},{"en":"Going on Vacation","es":"Irse de vacaciones"},{"en":"Health and Sickness","es":"Salud y enfermedad"},{"en":"Health and Sickness","es":"Salud y enfermedad"},{"en":"Special Occasions","es":"Ocasiones especiales"},{"en":"Special Occasions","es":"Ocasiones especiales"},{"en":"Goals and Dreams","es":"Metas y sueños"},{"en":"Review","es":"Repaso"}]};
 const META = {"ec1-en-01":[30,"You Are a Child of God",[3,4,9,18,19,21,24,25]],"ec1-en-02":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,18,19]],"ec1-en-03":[29,"Take Responsibility",[2,3,8,12,17,20,23,24]],"ec1-en-04":[24,"Love and Teach One Another",[2,3,8,12,14,15,18,19]],"ec1-en-05":[27,"Learn by Study and by Faith",[2,3,8,11,15,17,20,22]],"ec1-en-06":[25,"You Are a Child of God",[3,4,8,12,15,16,19,20]],"ec1-en-07":[25,"Exercise Faith in Jesus Christ",[2,3,8,12,15,16,19,20]],"ec1-en-08":[23,"Press Forward",[2,3,8,12,13,14,17,18]],"ec1-en-09":[26,"Counsel with the Lord",[2,3,8,12,14,16,19,21]],"ec1-en-10":[26,"You Are a Child of God",[3,4,9,13,15,17,20,21]],"ec1-en-11":[27,"Exercise Faith in Jesus Christ",[2,3,8,12,16,18,21,22]],"ec1-en-12":[26,"Take Responsibility",[2,3,8,12,14,17,20,21]],"ec1-en-13":[25,"Love and Teach One Another",[2,3,8,12,14,15,18,20]],"ec1-en-14":[24,"You Are a Child of God",[3,4,9,13,14,15,18,19]],"ec1-en-15":[25,"Exercise Faith in Jesus Christ",[2,3,8,12,15,16,19,20]],"ec1-en-16":[25,"Take Responsibility",[2,3,8,12,14,16,19,20]],"ec1-en-17":[26,"Press Forward",[2,3,8,12,15,16,19,21]],"ec1-en-18":[26,"You Are a Child of God",[3,4,9,13,16,17,20,21]],"ec1-en-19":[26,"Exercise Faith in Jesus Christ",[2,3,8,12,14,17,20,21]],"ec1-en-20":[24,"Love and Teach One Another",[2,3,8,12,13,15,18,19]],"ec1-en-21":[23,"Counsel with the Lord",[2,3,7,11,12,13,16,18]],"ec1-en-22":[26,"You Are a Child of God",[2,5,10,14,15,17,20,21]],"ec1-en-23":[23,"Exercise Faith in Jesus Christ",[2,3,7,11,12,14,17,18]],"ec1-en-24":[29,"Press Forward",[2,3,8,12,16,20,23,24]],"ec1-en-25":[23,"Learn by Study and by Faith",[2,3,8,10,12,16,18,19]],"ec1-es-01":[30,"You Are a Child of God",[3,4,9,18,19,21,24,25]],"ec1-es-02":[24,"Exercise Faith in Jesus Christ",[2,3,8,13,-1,15,18,19]],"ec1-es-03":[29,"Take Responsibility",[2,3,8,12,17,20,23,24]],"ec1-es-04":[24,"Love and Teach One Another",[2,3,8,12,14,15,18,19]],"ec1-es-05":[27,"Learn by Study and by Faith",[2,3,8,11,15,17,21,22]],"ec1-es-06":[25,"You Are a Child of God",[3,4,8,12,15,16,19,20]],"ec1-es-07":[25,"Exercise Faith in Jesus Christ",[2,3,8,12,15,16,19,20]],"ec1-es-08":[24,"Press Forward",[2,3,8,12,14,15,18,19]],"ec1-es-09":[26,"Counsel with the Lord",[2,3,8,12,14,16,20,21]],"ec1-es-10":[26,"You Are a Child of God",[3,4,9,13,15,17,20,21]],"ec1-es-11":[27,"Exercise Faith in Jesus Christ",[2,3,8,12,16,18,21,22]],"ec1-es-12":[26,"Take Responsibility",[2,3,8,12,14,17,20,21]],"ec1-es-13":[25,"Love and Teach One Another",[2,3,8,12,14,15,19,20]],"ec1-es-14":[24,"You Are a Child of God",[3,4,9,13,14,15,18,19]],"ec1-es-15":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,18,19]],"ec1-es-16":[25,"Take Responsibility",[2,3,8,12,15,16,19,20]],"ec1-es-17":[26,"Press Forward",[2,3,8,13,-1,16,20,21]],"ec1-es-18":[26,"You Are a Child of God",[3,4,9,13,16,17,20,21]],"ec1-es-19":[26,"Exercise Faith in Jesus Christ",[2,3,8,12,14,17,20,21]],"ec1-es-20":[24,"Love and Teach One Another",[2,3,8,12,13,15,18,19]],"ec1-es-21":[24,"Counsel with the Lord",[2,3,7,11,12,14,18,19]],"ec1-es-22":[24,"You Are a Child of God",[3,4,9,13,14,15,18,19]],"ec1-es-23":[23,"Exercise Faith in Jesus Christ",[2,3,7,11,12,14,17,18]],"ec1-es-24":[29,"Press Forward",[2,3,8,12,16,20,23,24]],"ec1-es-25":[23,"Learn by Study and by Faith",[2,3,8,10,12,16,18,19]],"ec2-en-01":[30,"You Are a Child of God",[3,4,9,18,19,21,24,25]],"ec2-en-02":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,18,19]],"ec2-en-03":[25,"Take Responsibility",[2,3,8,12,15,16,19,20]],"ec2-en-04":[27,"Love and Teach One Another",[2,3,8,12,15,18,21,22]],"ec2-en-05":[25,"Learn by Study and by Faith",[2,3,8,12,14,15,18,19]],"ec2-en-06":[24,"You Are a Child of God",[3,4,8,12,13,15,18,19]],"ec2-en-07":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,13,15,18,19]],"ec2-en-08":[26,"Press Forward",[2,3,8,12,15,17,20,21]],"ec2-en-09":[26,"Counsel with the Lord",[2,3,8,12,14,16,19,20]],"ec2-en-10":[25,"You Are a Child of God",[3,4,9,13,15,16,19,20]],"ec2-en-11":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,18,19]],"ec2-en-12":[25,"Take Responsibility",[2,3,8,12,15,16,19,20]],"ec2-en-13":[28,"Love and Teach One Another",[2,3,8,12,14,18,21,22]],"ec2-en-14":[25,"You Are a Child of God",[3,4,9,13,14,16,19,20]],"ec2-en-15":[27,"Exercise Faith in Jesus Christ",[2,3,8,12,15,18,21,22]],"ec2-en-16":[24,"Take Responsibility",[2,3,8,12,14,15,18,19]],"ec2-en-17":[28,"Press Forward",[2,3,8,12,15,18,21,22]],"ec2-en-18":[25,"You Are a Child of God",[3,4,9,13,15,16,19,20]],"ec2-en-19":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,18,19]],"ec2-en-20":[24,"Love and Teach One Another",[2,3,8,12,14,15,18,19]],"ec2-en-21":[26,"Counsel with the Lord",[2,3,7,11,13,16,19,20]],"ec2-en-22":[27,"You Are a Child of God",[3,4,9,13,16,18,21,22]],"ec2-en-23":[22,"Exercise Faith in Jesus Christ",[2,3,7,11,12,13,16,17]],"ec2-en-24":[24,"Press Forward",[2,3,8,12,14,15,18,19]],"ec2-en-25":[24,"Learn by Study and by Faith",[2,3,8,11,14,18,-1,20]],"ec2-es-01":[30,"You Are a Child of God",[3,4,9,18,19,21,24,25]],"ec2-es-02":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,19,20]],"ec2-es-03":[25,"Take Responsibility",[2,3,8,12,15,16,20,21]],"ec2-es-04":[29,"Love and Teach One Another",[2,3,8,12,18,20,23,24]],"ec2-es-05":[25,"Learn by Study and by Faith",[2,3,8,12,14,15,19,20]],"ec2-es-06":[25,"You Are a Child of God",[3,4,8,12,14,16,19,20]],"ec2-es-07":[25,"Exercise Faith in Jesus Christ",[2,3,8,12,14,16,19,20]],"ec2-es-08":[26,"Press Forward",[2,3,8,12,15,17,20,21]],"ec2-es-09":[26,"Counsel with the Lord",[2,3,8,12,14,16,20,21]],"ec2-es-10":[25,"You Are a Child of God",[3,4,9,13,15,16,19,20]],"ec2-es-11":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,18,19]],"ec2-es-12":[25,"Take Responsibility",[2,3,8,12,15,16,19,20]],"ec2-es-13":[28,"Love and Teach One Another",[2,3,8,12,14,18,22,23]],"ec2-es-14":[25,"You Are a Child of God",[3,4,9,13,14,16,19,20]],"ec2-es-15":[27,"Exercise Faith in Jesus Christ",[2,3,8,12,16,18,21,22]],"ec2-es-16":[24,"Take Responsibility",[2,3,8,12,14,15,18,19]],"ec2-es-17":[28,"Press Forward",[2,3,8,12,15,18,22,23]],"ec2-es-18":[25,"You Are a Child of God",[3,4,9,13,14,16,18,20]],"ec2-es-19":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,17,19]],"ec2-es-20":[24,"Love and Teach One Another",[2,3,8,12,14,15,17,19]],"ec2-es-21":[26,"Counsel with the Lord",[2,3,7,11,13,16,18,21]],"ec2-es-22":[27,"You Are a Child of God",[3,4,9,13,16,18,21,22]],"ec2-es-23":[22,"Exercise Faith in Jesus Christ",[2,3,7,11,12,13,16,17]],"ec2-es-24":[24,"Press Forward",[2,3,8,12,14,15,18,19]],"ec2-es-25":[24,"Learn by Study and by Faith",[2,3,8,11,14,17,19,20]]};          // key -> [slideCount, principle, [prayer, principle, a1, a2, a3, evaluate, faith, closing]] (-1 = not found)
 const PAIRS = {"ec1-en-01":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29],"ec1-es-01":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29],"ec1-en-02":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-02":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-en-03":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],"ec1-es-03":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],"ec1-en-04":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-04":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-en-05":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec1-es-05":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec1-en-06":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-es-06":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-en-07":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-es-07":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-en-08":[0,1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-08":[0,1,2,3,4,5,6,7,8,9,10,11,11,12,13,14,15,16,17,18,19,20,21,22],"ec1-en-09":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-es-09":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-en-10":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-es-10":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-en-11":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec1-es-11":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec1-en-12":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-es-12":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-en-13":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-es-13":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-en-14":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-14":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-en-15":[0,1,2,3,4,5,6,7,8,9,10,11,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-15":[0,1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-en-16":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-es-16":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-en-17":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-es-17":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-en-18":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-es-18":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-en-19":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-es-19":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-en-20":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-20":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-en-21":[0,1,2,3,4,5,6,7,8,9,10,11,12,14,15,16,17,18,19,20,21,22,23],"ec1-es-21":[0,1,2,3,4,5,6,7,8,9,10,11,12,12,13,14,15,16,17,18,19,20,21,22],"ec1-en-22":[0,1,1,2,3,4,5,6,7,8,9,10,11,12,13,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-22":[0,1,3,4,5,6,7,8,9,10,11,12,13,14,16,17,18,19,20,21,22,23,24,25],"ec1-en-23":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],"ec1-es-23":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],"ec1-en-24":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],"ec1-es-24":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],"ec1-en-25":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],"ec1-es-25":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],"ec2-en-01":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29],"ec2-es-01":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29],"ec2-en-02":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,19,20,21,21,22,23],"ec2-es-02":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,17,18,19,20,22,23],"ec2-en-03":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,20,21,22,22,23,24],"ec2-es-03":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,18,19,20,21,23,24],"ec2-en-04":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,16,17,19,20,21,22,23,24,25,26,27,28],"ec2-es-04":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,14,15,16,16,17,18,19,20,21,22,23,24,25,26],"ec2-en-05":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20,21,22,22,23,24],"ec2-es-05":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,16,17,18,19,20,21,23,24],"ec2-en-06":[0,1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-es-06":[0,1,2,3,4,5,6,7,8,9,10,11,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-07":[0,1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-es-07":[0,1,2,3,4,5,6,7,8,9,10,11,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-08":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec2-es-08":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec2-en-09":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,19,20,21,22,23,23,24,25],"ec2-es-09":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,17,18,19,20,21,22,24,25],"ec2-en-10":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-es-10":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-en-11":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-es-11":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-12":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-es-12":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-en-13":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,21,22,23,24,25,25,26,27],"ec2-es-13":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,19,20,21,22,23,24,26,27],"ec2-en-14":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-es-14":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-en-15":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec2-es-15":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec2-en-16":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-es-16":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-17":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,21,22,23,24,25,25,26,27],"ec2-es-17":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,19,20,21,22,23,24,26,27],"ec2-en-18":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-es-18":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-en-19":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-es-19":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-20":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-es-20":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-21":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23,23,24,25],"ec2-es-21":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,20,21,22,24,25],"ec2-en-22":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec2-es-22":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec2-en-23":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],"ec2-es-23":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],"ec2-en-24":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-es-24":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-25":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-es-25":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]};        // key -> for each slide, the matching slide index in the other language's deck
-const MANUALS = {"ec1":{"n":214,"start":[17,23,29,35,41,51,59,65,71,81,89,95,101,111,117,123,131,141,147,155,161,169,175,181,189],"conv":[18,26,32,38,45,56,62,68,74,86,92,98,105,114,120,128,135,144,152,158,164,172,178,185,191]},"ec2":{"n":215,"start":[17,23,29,35,41,49,55,63,71,81,87,93,99,111,117,125,131,141,149,155,161,169,175,181,187],"conv":[18,26,32,38,44,52,60,66,74,84,90,96,104,114,122,128,134,146,152,158,164,172,178,184,189]}};    // course -> { n, start:[first page of each lesson], conv:[first conversation-group page of each lesson] } (0-based)
-const APP_VERSION = 'Version 5 · October 28, 2026';
+const MANUALS = {"ec1":{"n":214,"start":[17,23,29,35,41,51,59,65,71,81,89,95,101,111,117,123,131,141,147,155,161,169,175,181,189],"conv":[18,26,32,38,45,56,62,68,74,86,92,98,105,114,120,128,135,144,152,158,164,172,178,185,191]},"ec2":{"n":215,"start":[17,23,29,35,41,49,55,63,71,81,87,93,99,111,117,125,131,141,149,155,161,169,175,181,187],"conv":[18,26,32,38,44,52,60,66,74,84,90,96,104,114,122,128,134,146,152,158,164,172,178,184,189]}};    // course -> { n, start:[first page of each lesson], conv:[first conversation-group page of each lesson] } (0-based; the English and Spanish manuals share this layout)
+const APP_VERSION = 'Version 6 · October 29, 2026';
 const UNITS = [[1,5],[6,9],[10,13],[14,17],[18,21],[22,25]];
 const SECTION_SHORT = ['Prayer','Principle','Activity 1','Activity 2','Activity 3','Evaluate','Act in faith','Closing'];
 const PEN_COLORS = [['#15171C','Black'],['#1F55D6','Blue'],['#D7322B','Red'],['#178A4A','Green'],['#FFFFFF','White']];
@@ -41,7 +41,7 @@ function icon(id){ const s = document.createElementNS('http://www.w3.org/2000/sv
 function lsGet(k, d){ try { const v = localStorage.getItem('cgs:' + k); return v == null ? d : JSON.parse(v); } catch { return d; } }
 function lsSet(k, v){ try { localStorage.setItem('cgs:' + k, JSON.stringify(v)); return true; } catch { return false; } }
 const prefs = Object.assign({course:'ec1', lang:'en', tool:'pen', prevTool:'pen', penColor:0, hlColor:0, penSize:1, hlSize:1,
-  fingerDraw:true, sawPen:false, scroll:false, tapEraser:true}, lsGet('prefs', {}) || {});
+  fingerDraw:true, sawPen:false, scroll:false, tapEraser:true, manualLang:null}, lsGet('prefs', {}) || {});
 const savePrefs = () => lsSet('prefs', prefs);
 
 function lessonKey(course, lang, num){ return `${course}-${lang}-${String(num).padStart(2,'0')}`; }
@@ -53,7 +53,10 @@ function info(key){
 }
 const otherLangKey = key => key.replace(/-(en|es)-/, (_, l) => l === 'en' ? '-es-' : '-en-');
 const courseLabel = c => c === 'ec1' ? 'EnglishConnect 1' : 'EnglishConnect 2';
-const manualKey = course => 'manual-' + course;
+/* Stored manuals: "manual-ec1" is the bilingual Spanish manual, "manual-ec1-en" the English one. */
+const manualKey = (course, lang) => 'manual-' + course + (lang === 'en' ? '-en' : '');
+const manualLangOf = key => /-en$/.test(key || '') ? 'en' : 'es';
+const langName = l => l === 'en' ? 'English' : 'Spanish';
 
 /* ---------- On-device storage (IndexedDB): slides, manuals and marks ---------- */
 const DB = (() => {
@@ -181,11 +184,12 @@ function renderLibrary(){
 
   const haveCount = ALL_KEYS.filter(k => S.have.has(k)).length;
   $('#importCard').hidden = haveCount >= ALL_KEYS.length;
-  const man = ['ec1','ec2'].filter(c => S.have.has(manualKey(c)));
+  const man = [];
+  for (const c of ['ec1','ec2']) for (const l of ['en','es']) if (S.have.has(manualKey(c, l))) man.push(`${c.toUpperCase()} ${langName(l)}`);
   $('#haveLine').textContent = (haveCount >= ALL_KEYS.length ? 'All 100 lessons are on this iPad and work without internet. ' : `${haveCount} of 100 lessons are on this iPad. `)
-    + (man.length === 2 ? 'Both student manuals are added.'
-      : man.length ? `The ${courseLabel(man[0])} student manual is added.`
-      : 'To open the student manual from a lesson, tap “Add slides or manuals” and choose “EC1 Manual ES.pdf” and “EC2 Manual ES.pdf”.');
+    + (man.length === 4 ? 'All four student manuals are added (EC1 and EC2, English and Spanish).'
+      : man.length ? `Student manuals added: ${man.join(', ')}.`
+      : 'To open the student manual from a lesson, tap “Add slides or manuals” and choose the manual PDFs, such as “EC1 Manual ES.pdf” or “EC1 Manual EN.pdf”.');
 
   const last = Object.values(libMeta).filter(m => m && info(m.lesson) && S.have.has(m.lesson)).sort((a, b) => (b.at || 0) - (a.at || 0))[0];
   const cont = $('#continue');
@@ -238,7 +242,7 @@ function keyFromName(name){
   const base = String(name).split('/').pop();
   if (!base || base.startsWith('._')) return null;
   const mm = /\bEC\s*([12])\b[^/]*?manual|englishconnect[\s_-]*([12])[\s_-]*(?:for|para)[\s_-]*(?:learners|los[\s_-]*alumnos)/i.exec(base);
-  if (mm) return manualKey('ec' + (mm[1] || mm[2]));
+  if (mm) return manualKey('ec' + (mm[1] || mm[2]), /\b(EN|ENG|English|Ingl[eé]s)\b/i.test(base.replace(/\.pdf$/i, '')) ? 'en' : 'es');
   const m = /EC\s*([12])\s*[-_ ]\s*(EN|ES)\s*[-_ ]\s*L?\s*(\d{1,2})(?!\d)/i.exec(base);
   if (!m) return null;
   const n = +m[3]; if (n < 1 || n > 25) return null;
@@ -358,7 +362,7 @@ $('#pickBackup').addEventListener('change', async e => {
     let n = 0;
     for (const d of j.docs){
       if (!d || typeof d.id !== 'string' || !d.data) continue;
-      if (!/^(ec[12]-(en|es)-\d\d_(meta|s\d+|b\d+)|manual-ec[12]_m\d+)$/.test(d.id)) continue;
+      if (!/^(ec[12]-(en|es)-\d\d_(meta|s\d+|b\d+)|manual-ec[12](-en)?_m\d+)$/.test(d.id)) continue;
       await DB.put('docs', d.id, d.data); n++;
     }
     S.man.loaded = false;
@@ -1056,12 +1060,17 @@ function updateRails(){
 function updateModeUI(){
   const li = S.info;
   for (const b of document.querySelectorAll('.padBtn')) b.setAttribute('aria-pressed', String(S.mode === 'pad'));
-  for (const b of document.querySelectorAll('.manBtn')){ b.setAttribute('aria-pressed', String(S.mode === 'manual')); b.hidden = !li || !S.have.has(manualKey(li.course)); }
-  for (const b of document.querySelectorAll('.langBtn')) b.hidden = S.mode !== 'slides';
+  for (const b of document.querySelectorAll('.manBtn')){ b.setAttribute('aria-pressed', String(S.mode === 'manual')); b.hidden = !li || !manualsFor(li.course).length; }
+  for (const b of document.querySelectorAll('.langBtn')) b.hidden = S.mode === 'pad';
+  updateLangButtons();
   $('#gridBtn').setAttribute('aria-label', S.mode === 'slides' ? 'All slides' : 'All pages');
   if (!li) return;
   if (S.mode === 'pad'){ $('#whereTitle').textContent = `Scratchpad · Lesson ${li.num}`; $('#whereSub').textContent = 'Write anywhere. More room appears as you go.'; }
-  else if (S.mode === 'manual'){ $('#whereTitle').textContent = `Student manual · Lesson ${li.num}`; $('#whereSub').textContent = `${courseLabel(li.course)} para los alumnos`; }
+  else if (S.mode === 'manual'){
+    const en = manualLangOf(S.man.key) === 'en';
+    $('#whereTitle').textContent = `${en ? 'Student manual' : 'Manual del alumno'} · Lesson ${li.num}`;
+    $('#whereSub').textContent = en ? `${courseLabel(li.course)} for Learners` : `${courseLabel(li.course)} para los alumnos`;
+  }
   else { $('#whereTitle').textContent = `Lesson ${li.num} · ${li.title}`; $('#whereSub').textContent = `${courseLabel(li.course)} · ${li.lang === 'es' ? 'Spanish slides' : 'English slides'}${li.principle ? ' · ' + li.principle : ''}`; }
 }
 async function setMode(mode, page){
@@ -1069,18 +1078,10 @@ async function setMode(mode, page){
   if (act) endAction(true);
   stopLaser(); stopMomentum(); closePanels();
   if (mode === 'manual'){
-    const mk = manualKey(S.info.course);
-    if (!S.have.has(mk)){ toast('Add the student manual first: on the lessons screen, tap “Add slides or manuals”.'); return false; }
-    if (S.man.key !== mk || !S.man.loaded){
-      stageMsg('Opening the manual…');
-      try {
-        const [doc, data] = await Promise.all([loadPdf('manual', mk), Store.load(mk)]);
-        const vp = (await doc.getPage(1)).getViewport({ scale:1 });
-        S.man = { key:mk, n:doc.numPages, ink:data.ink || {}, aspect: vp.width / vp.height, loaded:true };
-      } catch (e) { stageMsg(null); toast('The manual could not be opened. Try adding it again from the lessons screen.'); return false; }
-      stageMsg(null);
-      if (S.mode === mode) return false;
-    }
+    const mk = preferredManual();
+    if (!mk){ toast('Add the student manual first: on the lessons screen, tap “Add slides or manuals”.'); return false; }
+    if (!(await loadManual(mk))) return false;
+    if (S.mode === mode) return false;
   }
   S.pos[S.mode] = { page:S.page, z:V.z, x:V.x, y:V.y };
   S.mode = mode;
@@ -1095,6 +1096,44 @@ async function setMode(mode, page){
   updateModeUI(); drawView(); updateRails(); prefetch();
   return true;
 }
+/* ---------- The student manual: English or Spanish ---------- */
+const manualsFor = course => ['en','es'].map(l => manualKey(course, l)).filter(k => S.have.has(k));
+/* The manual opens in the language you last picked; before that, in the language of the slides. */
+function preferredManual(){
+  const c = S.info.course, have = manualsFor(c);
+  if (!have.length) return null;
+  const want = manualKey(c, prefs.manualLang || S.info.lang);
+  return have.includes(want) ? want : have[0];
+}
+async function loadManual(mk){
+  if (S.man.key === mk && S.man.loaded) return true;
+  stageMsg('Opening the manual…');
+  try {
+    Saver.flushNow();
+    const [doc, data] = await Promise.all([loadPdf('manual', mk), Store.load(mk)]);
+    const vp = (await doc.getPage(1)).getViewport({ scale:1 });
+    if (S.man.key !== mk) S.hist.manual = { u:[], r:[] };   // undo steps belong to the manual they were made on
+    S.man = { key:mk, n:doc.numPages, ink:data.ink || {}, aspect: vp.width / vp.height, loaded:true };
+  } catch (e) { stageMsg(null); toast('The manual could not be opened. Try adding it again from the lessons screen.'); return false; }
+  stageMsg(null);
+  return true;
+}
+/* Both manuals have the same page layout, so switching language keeps you on the same page. */
+async function switchManualLanguage(){
+  const c = S.info.course, cur = manualLangOf(S.man.key), want = cur === 'en' ? 'es' : 'en', mk = manualKey(c, want);
+  if (!S.have.has(mk)){ toast(`The ${langName(want)} ${c.toUpperCase()} manual is not on this iPad yet. Add it from the lessons screen.`); return; }
+  if (act) endAction(true);
+  stopLaser(); stopMomentum();
+  const keep = { page:S.page, z:V.z, x:V.x, y:V.y };
+  if (!(await loadManual(mk)) || S.mode !== 'manual') return;
+  prefs.manualLang = want; savePrefs();
+  rebuildPages(); layout(true);
+  S.page = clamp(keep.page, 0, total() - 1); V.z = keep.z; V.x = keep.x; V.y = keep.y; clampView();
+  crispCache = null;
+  updateModeUI(); drawView(); updateRails(); prefetch();
+  toast(`${langName(want)} manual`, 1200);
+}
+
 /* The Scratchpad and Manual buttons open that view, and tapping again goes back to where you were. */
 async function toggleMode(mode){
   if (!S.key) return;
@@ -1109,13 +1148,15 @@ for (const b of document.querySelectorAll('.manBtn')) b.addEventListener('click'
 
 /* ---------- Switching between the English and Spanish slides ---------- */
 function updateLangButtons(){
-  const toEs = S.info && S.info.lang === 'en';
+  const manual = S.mode === 'manual';
+  const toEs = manual ? manualLangOf(S.man.key) === 'en' : !!(S.info && S.info.lang === 'en');
   for (const b of document.querySelectorAll('.langBtn')){
     b.replaceChildren(h('span', {class:'long', text: toEs ? 'Español' : 'English'}), h('span', {class:'short', text: toEs ? 'ES' : 'EN'}));
-    b.setAttribute('aria-label', toEs ? 'Show this slide in Spanish' : 'Show this slide in English');
+    b.setAttribute('aria-label', manual ? (toEs ? 'Show the Spanish manual' : 'Show the English manual') : (toEs ? 'Show this slide in Spanish' : 'Show this slide in English'));
   }
 }
 function switchLanguage(){
+  if (S.key && S.mode === 'manual'){ switchManualLanguage(); return; }
   if (!S.key || S.mode !== 'slides') return;
   const other = otherLangKey(S.key), oi = info(other);
   if (!oi) return;
@@ -1290,7 +1331,7 @@ async function openLesson(key, page){
   if (act) endAction(true);
   closePanels(); stopLaser(); stopMomentum();
   Object.assign(S, { key, info:li, n:li.n, boards:2, page:0, ink:{}, mode:'slides', back:'slides', pos:{}, hist:newHist() });
-  if (S.man.key !== manualKey(li.course)) S.man = { key:null, n:0, ink:{}, aspect:0.77, loaded:false };
+  if (!S.man.key || !S.man.key.startsWith(manualKey(li.course))) S.man = { key:null, n:0, ink:{}, aspect:0.77, loaded:false };
   S.view = 'lesson';
   rebuildPages();
   $('#library').hidden = true; $('#lesson').hidden = false; document.body.classList.add('in-lesson');

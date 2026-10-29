@@ -2,7 +2,7 @@
 
 A small iPad web app for teaching EnglishConnect conversation group lessons with Apple Pencil:
 lesson library, slide viewer, pen, highlighter, eraser, laser pointer, an endless scratchpad,
-a side-by-side view of the student manual linked to each lesson, and section shortcuts
+the student manual (English or bilingual Spanish) linked to each lesson, and section shortcuts
 (Prayer, Principle, Activities, Evaluate, Act in Faith).
 
 - **No slides or manuals are included in this repository.** Each teacher imports their own copies

@@ -195,7 +195,7 @@ body.presenting #stage{background:#000}
 .mid-in{display:flex;align-items:center;gap:6px;width:max-content;margin:0 auto}
 .right{display:flex;align-items:center;gap:4px;flex:none}
 .langBtn .short{display:none}
-@media (max-width:900px){ .langBtn .long{display:none} .langBtn .short{display:inline} }
+@media (max-width:1279px){ .langBtn .long{display:none} .langBtn .short{display:inline} }
 #updateBar{position:fixed;left:50%;top:calc(10px + env(safe-area-inset-top,0px));transform:translateX(-50%);z-index:30;border:0;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-weight:700;padding:11px 18px;box-shadow:var(--shadow)}
 body.presenting #updateBar{display:none}
 .ver{font-size:13px}
@@ -205,6 +205,9 @@ body.presenting #updateBar{display:none}
 .chip.back{display:inline-flex;align-items:center;gap:4px;padding-left:8px;font-weight:700}
 .chip.back .i{width:18px;height:18px}
 #footImport:empty{display:none}
+.rail.top .where{flex-shrink:20;grid-template-columns:minmax(0,1fr)}
+.rail.top .mid{flex-shrink:.01}
+@media (max-width:1280px){ .rail.top,.rail.top .mid-in{gap:3px} .rail.top .sep{margin:0 2px} }
 @media (prefers-reduced-motion:reduce){ *{transition:none!important} }
 </style>
 </head>
