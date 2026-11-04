@@ -205,7 +205,33 @@ body.presenting #updateBar{display:none}
 @media (max-width:900px){ .rail .seg.views .i{display:none} .seg.views button{padding:7px 10px} }
 #mini .seg.views button{padding:7px 11px;font-size:14px}
 .seg.views button.missing:not([aria-pressed="true"]){opacity:.55}
-@media (max-width:900px){ .rail.top .tb{min-width:37px;padding:0 5px} .rail.top .tb.back{padding:0 8px 0 2px} .rail.top .sw,.rail.top .sz{width:27px} .rail.top .langBtn{padding:0 8px} #mini .tb{min-width:38px;padding:0 5px} #mini .seg.views button{padding:7px 8px} #mini .tb.done{padding:0 10px} }
+.timerBtn{font-weight:600;font-size:15px}
+.timerBtn .long{display:none}
+@media (min-width:1000px){ .timerBtn .long{display:inline} }
+#timerPanel{left:max(12px,env(safe-area-inset-left,0px));bottom:calc(66px + env(safe-area-inset-bottom,0px));width:min(380px,calc(100vw - 24px));border-radius:18px;padding:12px 14px 14px;display:grid;gap:14px}
+body.presenting #timerPanel{bottom:auto;top:calc(72px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%)}
+#timerPanel header{display:flex;align-items:center;justify-content:space-between;font-family:var(--font-display);font-size:18px}
+#timerPanel header b{font-weight:800}
+.t-row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px}
+#timerTime{text-align:center;font-family:var(--font-display);font-weight:800;font-size:46px;font-variant-numeric:tabular-nums;line-height:1}
+.t-presets{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.t-presets .chip{text-align:center}
+.t-actions{display:grid;grid-template-columns:1fr auto;gap:8px}
+.t-actions .btn{padding:12px 18px;font-size:16px}
+.t-foot{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.t-foot .seg button{padding:7px 14px;font-size:14px}
+.t-test{border:0;background:transparent;color:var(--accent-text,var(--ink));text-decoration:underline;font-size:14px;padding:8px 4px}
+#timerBadge{position:fixed;z-index:8;bottom:calc(68px + env(safe-area-inset-bottom,0px));right:max(16px,env(safe-area-inset-right,0px));display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;background:rgba(21,23,28,.88);color:#fff;font-family:var(--font-display);font-weight:800;font-size:26px;font-variant-numeric:tabular-nums;padding:8px 18px 8px 14px;box-shadow:0 6px 24px rgba(0,0,0,.3)}
+#timerBadge .i{width:24px;height:24px}
+#timerBadge.big{font-size:60px;padding:10px 28px 10px 22px;gap:14px}
+#timerBadge.big .i{width:48px;height:48px}
+#timerBadge[data-state="paused"]{background:rgba(90,96,110,.9)}
+#timerBadge[data-warn="true"]{background:#D97706}
+#timerBadge[data-state="done"]{background:#D7322B;animation:tpulse 1s ease-in-out infinite}
+@keyframes tpulse{50%{transform:scale(1.06)}}
+body.presenting #timerBadge{bottom:calc(10px + env(safe-area-inset-bottom,0px));right:max(12px,env(safe-area-inset-right,0px))}
+body:not(.in-lesson) #timerBadge{bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+@media (max-width:900px){ .rail.top .tb{min-width:37px;padding:0 5px} .rail.top .tb.back{padding:0 8px 0 2px} .rail.top .sw,.rail.top .sz{width:27px} .rail.top .langBtn{padding:0 8px} #mini .tb{min-width:38px;padding:0 5px} #mini .seg.views button{padding:7px 8px} #mini .tb.done{padding:0 10px} #miniFit{display:none} }
 .chip.back{display:inline-flex;align-items:center;gap:4px;padding-left:8px;font-weight:700}
 .chip.back .i{width:18px;height:18px}
 #footImport:empty{display:none}
@@ -234,6 +260,7 @@ body.presenting #updateBar{display:none}
   <symbol id="i-scroll" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="8" rx="1.5"/><rect x="5" y="13" width="14" height="8" rx="1.5"/></symbol>
   <symbol id="i-pad" viewBox="0 0 24 24"><rect x="4.5" y="3" width="15" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></symbol>
   <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5z"/><path d="M12 6.5v13"/></symbol>
+  <symbol id="i-timer" viewBox="0 0 24 24"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 13.5V9.5M9.5 2.5h5M12 2.5V6M18.4 6.6l1.6-1.6"/></symbol>
   <symbol id="i-full" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
 </svg>
 
@@ -329,6 +356,7 @@ body.presenting #updateBar{display:none}
     <span class="sep"></span>
     <button type="button" class="tb undo" aria-label="Undo"><svg class="i"><use href="#i-undo"/></svg></button>
     <button type="button" class="tb" id="miniFit" aria-label="Zoom to fit"><svg class="i"><use href="#i-full"/></svg></button>
+    <button type="button" class="tb timerBtn" aria-label="Timer" aria-pressed="false"><svg class="i"><use href="#i-timer"/></svg></button>
     <div class="seg views" role="group" aria-label="Show">
       <button type="button" data-view="slides" aria-pressed="true">Slides</button>
       <button type="button" data-view="manual" aria-pressed="false">Manual</button>
@@ -341,6 +369,33 @@ body.presenting #updateBar{display:none}
     <header><h3 id="drawerTitle">All slides</h3><button type="button" class="tb" id="drawerClose" aria-label="Close"><svg class="i"><use href="#i-close"/></svg></button></header>
     <div id="thumbs"></div>
   </aside>
+  <div id="timerPanel" class="panel" hidden role="dialog" aria-label="Timer">
+    <header><b>Timer</b><button type="button" class="tb" id="timerClose" aria-label="Close"><svg class="i"><use href="#i-close"/></svg></button></header>
+    <div class="t-row">
+      <button type="button" class="btn t-adj" data-tadd="-60" aria-label="One minute less">−1 min</button>
+      <output id="timerTime">5:00</output>
+      <button type="button" class="btn t-adj" data-tadd="60" aria-label="One minute more">+1 min</button>
+    </div>
+    <div class="t-presets" role="group" aria-label="Start a timer">
+      <button type="button" class="chip" data-tset="60">1 min</button>
+      <button type="button" class="chip" data-tset="120">2 min</button>
+      <button type="button" class="chip" data-tset="180">3 min</button>
+      <button type="button" class="chip" data-tset="300">5 min</button>
+      <button type="button" class="chip" data-tset="600">10 min</button>
+      <button type="button" class="chip" data-tset="900">15 min</button>
+    </div>
+    <div class="t-actions">
+      <button type="button" class="btn primary" id="timerGo">Start</button>
+      <button type="button" class="btn" id="timerReset">Reset</button>
+    </div>
+    <div class="t-foot">
+      <div class="seg" role="group" aria-label="Timer size on screen">
+        <button type="button" data-tsize="small">Small</button>
+        <button type="button" data-tsize="big">Large</button>
+      </div>
+      <button type="button" class="t-test" id="timerTest">Test the chime</button>
+    </div>
+  </div>
   <div id="menu" class="panel" hidden role="menu">
     <button type="button" class="mi danger" id="mClear" role="menuitem"><svg class="i"><use href="#i-trash"/></svg><span class="txt"><span id="mClearLabel">Clear marks in this lesson</span></span></button>
     <hr>
@@ -357,6 +412,7 @@ body.presenting #updateBar{display:none}
       <button type="button" data-view="manual" aria-pressed="false"><svg class="i"><use href="#i-book"/></svg>Manual</button>
       <button type="button" data-view="pad" aria-pressed="false"><svg class="i"><use href="#i-pad"/></svg>Scratchpad</button>
     </div>
+    <button type="button" class="tb timerBtn" aria-label="Timer" aria-pressed="false"><svg class="i"><use href="#i-timer"/></svg><span class="long">Timer</span></button>
     <span class="sep"></span>
     <button type="button" class="tb" id="prevBtn" aria-label="Previous slide"><svg class="i"><use href="#i-back"/></svg></button>
     <div class="chips" id="chips"></div>
@@ -366,6 +422,7 @@ body.presenting #updateBar{display:none}
 </section>
 
 <button type="button" id="updateBar" hidden>A new version is ready. Tap to update.</button>
+<button type="button" id="timerBadge" hidden aria-label="Timer"><svg class="i"><use href="#i-timer"/></svg><span id="timerBadgeTime">5:00</span></button>
 <div id="toast" role="status" aria-live="polite"></div>
 
 <script src="pdf.min.js"></script>
