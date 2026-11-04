@@ -195,18 +195,21 @@ body.presenting #stage{background:#000}
 .mid-in{display:flex;align-items:center;gap:6px;width:max-content;margin:0 auto}
 .right{display:flex;align-items:center;gap:4px;flex:none}
 .langBtn .short{display:none}
-@media (max-width:1279px){ .langBtn .long{display:none} .langBtn .short{display:inline} }
+@media (max-width:1100px){ .langBtn .long{display:none} .langBtn .short{display:inline} }
 #updateBar{position:fixed;left:50%;top:calc(10px + env(safe-area-inset-top,0px));transform:translateX(-50%);z-index:30;border:0;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-weight:700;padding:11px 18px;box-shadow:var(--shadow)}
 body.presenting #updateBar{display:none}
 .ver{font-size:13px}
-.tb.modeBtn{font-weight:700;font-size:15px;padding:0 10px}
-.modeBtn .long{display:none}
-@media (min-width:1100px){ .modeBtn .long{display:inline} }
+.seg.views{flex:none;padding:3px}
+.seg.views button{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;font-size:15px;font-weight:600;white-space:nowrap}
+.seg.views .i{width:18px;height:18px}
+@media (max-width:900px){ .rail .seg.views .i{display:none} .seg.views button{padding:7px 10px} }
+#mini .seg.views button{padding:7px 11px;font-size:14px}
+.seg.views button.missing:not([aria-pressed="true"]){opacity:.55}
+@media (max-width:900px){ .rail.top .tb{min-width:37px;padding:0 5px} .rail.top .tb.back{padding:0 8px 0 2px} .rail.top .sw,.rail.top .sz{width:27px} .rail.top .langBtn{padding:0 8px} #mini .tb{min-width:38px;padding:0 5px} #mini .seg.views button{padding:7px 8px} #mini .tb.done{padding:0 10px} }
 .chip.back{display:inline-flex;align-items:center;gap:4px;padding-left:8px;font-weight:700}
 .chip.back .i{width:18px;height:18px}
 #footImport:empty{display:none}
-.rail.top .where{flex-shrink:20;grid-template-columns:minmax(0,1fr)}
-.rail.top .mid{flex-shrink:.01}
+.rail.top .where{flex-shrink:100;grid-template-columns:minmax(0,1fr)}
 @media (max-width:1280px){ .rail.top,.rail.top .mid-in{gap:3px} .rail.top .sep{margin:0 2px} }
 @media (prefers-reduced-motion:reduce){ *{transition:none!important} }
 </style>
@@ -304,8 +307,6 @@ body.presenting #updateBar{display:none}
     <button type="button" class="tb redo" id="redoBtn" aria-label="Redo"><svg class="i"><use href="#i-redo"/></svg></button>
     <span class="sep"></span>
     <button type="button" class="tb langBtn"><span class="long">Español</span><span class="short">ES</span></button>
-    <button type="button" class="tb modeBtn padBtn" aria-label="Scratchpad" aria-pressed="false"><svg class="i"><use href="#i-pad"/></svg><span class="long">Scratchpad</span></button>
-    <button type="button" class="tb modeBtn manBtn" aria-label="Student manual" aria-pressed="false" hidden><svg class="i"><use href="#i-book"/></svg><span class="long">Manual</span></button>
     <button type="button" class="tb" id="presentBtn" aria-label="Present: hide the toolbars"><svg class="i"><use href="#i-present"/></svg></button>
     <button type="button" class="tb" id="gridBtn" aria-label="All slides"><svg class="i"><use href="#i-grid"/></svg></button>
     <span id="saveDot" title="Saved"></span>
@@ -328,8 +329,11 @@ body.presenting #updateBar{display:none}
     <span class="sep"></span>
     <button type="button" class="tb undo" aria-label="Undo"><svg class="i"><use href="#i-undo"/></svg></button>
     <button type="button" class="tb" id="miniFit" aria-label="Zoom to fit"><svg class="i"><use href="#i-full"/></svg></button>
-    <button type="button" class="tb padBtn" aria-label="Scratchpad" aria-pressed="false"><svg class="i"><use href="#i-pad"/></svg></button>
-    <button type="button" class="tb manBtn" aria-label="Student manual" aria-pressed="false" hidden><svg class="i"><use href="#i-book"/></svg></button>
+    <div class="seg views" role="group" aria-label="Show">
+      <button type="button" data-view="slides" aria-pressed="true">Slides</button>
+      <button type="button" data-view="manual" aria-pressed="false">Manual</button>
+      <button type="button" data-view="pad" aria-pressed="false">Pad</button>
+    </div>
     <button type="button" class="tb langBtn"><span class="long">Español</span><span class="short">ES</span></button>
     <button type="button" class="tb done" id="miniDone">Done</button>
   </div>
@@ -348,6 +352,12 @@ body.presenting #updateBar{display:none}
     <div id="verText" class="ver" style="padding:0 12px 8px;color:var(--muted)"></div>
   </div>
   <div class="rail bottom">
+    <div class="seg views" role="group" aria-label="Show">
+      <button type="button" data-view="slides" aria-pressed="true"><svg class="i"><use href="#i-present"/></svg>Slides</button>
+      <button type="button" data-view="manual" aria-pressed="false"><svg class="i"><use href="#i-book"/></svg>Manual</button>
+      <button type="button" data-view="pad" aria-pressed="false"><svg class="i"><use href="#i-pad"/></svg>Scratchpad</button>
+    </div>
+    <span class="sep"></span>
     <button type="button" class="tb" id="prevBtn" aria-label="Previous slide"><svg class="i"><use href="#i-back"/></svg></button>
     <div class="chips" id="chips"></div>
     <span id="counter"></span>
