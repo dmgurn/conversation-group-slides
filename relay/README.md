@@ -13,6 +13,6 @@ answers the app's own website.
 3. Select **Edit code**, delete everything in the editor, paste the contents of
    [`worker.js`](worker.js), and select **Deploy**.
 4. Copy the Worker's address, which looks like `https://ec-relay.<your-name>.workers.dev`, and put it
-   in the app's `RELAY` setting.
+   in the app.s `RELAY` setting (the live app uses `https://ec-relay.davidmichaelgurney.workers.dev/`).
 
 The free plan allows 100,000 requests a day; one complete download is 104 requests.
