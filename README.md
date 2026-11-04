@@ -15,3 +15,9 @@ Open it in Safari on iPad, tap Share → Add to Home Screen, and keep "Open as W
 Third-party components: [PDF.js](https://mozilla.github.io/pdf.js/) (Apache License 2.0, see
 `PDFJS-LICENSE.txt`), Atkinson Hyperlegible and Bricolage Grotesque fonts (SIL Open Font License,
 see `fonts/`).
+
+## Downloading the official slides
+
+The app can download the official slides and learner manuals straight from EnglishConnect.org through a
+small relay (EnglishConnect's servers don't allow other websites to download them directly). See
+[relay/README.md](relay/README.md). Until the relay address is set, teachers add the files from their device instead.

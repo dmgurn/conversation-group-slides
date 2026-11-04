@@ -102,6 +102,18 @@ h1{font-family:var(--font-display);font-weight:800;font-size:clamp(30px,5.2vw,48
 #importCard ol{margin:0;padding-left:1.25em;display:grid;gap:4px;max-width:66ch}
 #importCard code{font-family:inherit;font-weight:700;background:var(--chip);border-radius:6px;padding:1px 6px}
 #importCard.flash{animation:flash 1.2s ease}
+#dlBox{display:grid;gap:14px}
+.dl-opts{display:grid;gap:10px}
+.dl-group{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.dl-label{min-width:130px;font-weight:700;color:var(--ink)}
+.tick{display:inline-flex;align-items:center;gap:8px;background:var(--chip);border-radius:999px;padding:8px 14px 8px 10px;font-size:15px;cursor:pointer}
+.tick input{width:20px;height:20px;margin:0;accent-color:var(--accent)}
+.dl-go{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+#dlNote{color:var(--muted);font-size:14px}
+#fileBox summary{cursor:pointer;font-weight:700;padding:4px 0}
+#fileBox[open]{display:grid;gap:10px}
+#fileBox ol{margin:6px 0 0}
+.fine{font-size:13px}
 @keyframes flash{0%,100%{box-shadow:var(--shadow)}30%{box-shadow:0 0 0 4px var(--accent)}}
 #importProgress{display:grid;gap:8px}
 .track{height:8px;border-radius:999px;background:var(--chip);overflow:hidden}
@@ -282,14 +294,37 @@ body:not(.in-lesson) #timerBadge{bottom:calc(16px + env(safe-area-inset-bottom,0
   </header>
 
   <section id="importCard" aria-labelledby="importTitle">
-    <h2 id="importTitle">Add your lesson slides</h2>
-    <p>This happens once. The slides are saved on this iPad, so lessons open without internet.</p>
-    <ol>
-      <li>Tap <b>Choose slides</b>.</li>
-      <li>Pick <code>EnglishConnect Slides for iPad.zip</code>. If it isn't on this iPad yet, AirDrop it from your Mac or put it in iCloud Drive first. You can also select lesson PDFs named like <code>EC1 EN L08 - Everyday Common Items.pdf</code>.</li>
-      <li>Wait for all 100 lessons to be added. It takes about a minute.</li>
-    </ol>
-    <div><button type="button" class="btn primary pick">Choose slides</button></div>
+    <h2 id="importTitle">Get the lesson slides</h2>
+    <div id="dlBox" hidden>
+      <p>Download the official conversation group slides and student manuals from EnglishConnect.org. This happens once. Everything is saved on this device, so lessons open without internet.</p>
+      <div class="dl-opts">
+        <div class="dl-group"><span class="dl-label">Course</span>
+          <label class="tick"><input type="checkbox" data-dl="ec1" checked>EnglishConnect 1</label>
+          <label class="tick"><input type="checkbox" data-dl="ec2" checked>EnglishConnect 2</label>
+        </div>
+        <div class="dl-group"><span class="dl-label">Slides</span>
+          <label class="tick"><input type="checkbox" data-dl="en" checked>English</label>
+          <label class="tick"><input type="checkbox" data-dl="es" checked>Spanish</label>
+        </div>
+        <div class="dl-group"><span class="dl-label">Student manual</span>
+          <label class="tick"><input type="checkbox" data-dl="man-en" checked>English</label>
+          <label class="tick"><input type="checkbox" data-dl="man-es" checked>Spanish (side by side)</label>
+        </div>
+      </div>
+      <div class="dl-go">
+        <button type="button" class="btn primary" id="dlBtn">Download</button>
+        <button type="button" class="btn" id="dlStop" hidden>Stop</button>
+        <span id="dlNote"></span>
+      </div>
+    </div>
+    <details id="fileBox">
+      <summary>Already have the files? Add them from this device</summary>
+      <ol>
+        <li>Tap <b>Choose files</b>.</li>
+        <li>Pick <code>EnglishConnect Slides for iPad.zip</code>, or lesson PDFs named like <code>EC1 EN L08 - Everyday Common Items.pdf</code>, or manuals named like <code>EC1 Manual EN.pdf</code>.</li>
+      </ol>
+      <div><button type="button" class="btn pick">Choose files</button></div>
+    </details>
     <div id="importProgress" hidden>
       <div class="track"><div id="importBar"></div></div>
       <span id="importText"></span>
@@ -303,11 +338,12 @@ body:not(.in-lesson) #timerBadge{bottom:calc(16px + env(safe-area-inset-bottom,0
     <p id="haveLine"></p>
     <p>Your pen marks are saved on this iPad. Make a backup now and then so you can restore them if you get a new iPad.</p>
     <div class="foot-actions">
-      <button type="button" class="btn pick">Add slides or manuals</button>
+      <button type="button" class="btn" id="getBtn">Download or add slides and manuals</button>
       <button type="button" class="btn" id="backupBtn">Back up my marks</button>
       <button type="button" class="btn" id="restoreBtn">Restore marks from a backup</button>
     </div>
     <p id="footImport" aria-live="polite"></p>
+    <p class="fine">Made by a volunteer EnglishConnect teacher. This is not an official app of The Church of Jesus Christ of Latter-day Saints or EnglishConnect. Slides and manuals are downloaded straight from EnglishConnect.org and ChurchofJesusChrist.org and stay on this device.</p>
     <p class="ver" id="verLine"></p>
   </footer>
   <input type="file" id="pickFile" accept=".zip,.pdf,application/zip,application/pdf" multiple hidden>
