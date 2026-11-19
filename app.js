@@ -6,7 +6,7 @@ const LESSONS = {"ec1":[{"en":"Introductory Lesson","es":"Lección introductoria
 const META = {"ec1-en-01":[30,"You Are a Child of God",[3,4,9,18,19,21,24,25]],"ec1-en-02":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,18,19]],"ec1-en-03":[29,"Take Responsibility",[2,3,8,12,17,20,23,24]],"ec1-en-04":[24,"Love and Teach One Another",[2,3,8,12,14,15,18,19]],"ec1-en-05":[27,"Learn by Study and by Faith",[2,3,8,11,15,17,20,22]],"ec1-en-06":[25,"You Are a Child of God",[3,4,8,12,15,16,19,20]],"ec1-en-07":[25,"Exercise Faith in Jesus Christ",[2,3,8,12,15,16,19,20]],"ec1-en-08":[23,"Press Forward",[2,3,8,12,13,14,17,18]],"ec1-en-09":[26,"Counsel with the Lord",[2,3,8,12,14,16,19,21]],"ec1-en-10":[26,"You Are a Child of God",[3,4,9,13,15,17,20,21]],"ec1-en-11":[27,"Exercise Faith in Jesus Christ",[2,3,8,12,16,18,21,22]],"ec1-en-12":[26,"Take Responsibility",[2,3,8,12,14,17,20,21]],"ec1-en-13":[25,"Love and Teach One Another",[2,3,8,12,14,15,18,20]],"ec1-en-14":[24,"You Are a Child of God",[3,4,9,13,14,15,18,19]],"ec1-en-15":[25,"Exercise Faith in Jesus Christ",[2,3,8,12,15,16,19,20]],"ec1-en-16":[25,"Take Responsibility",[2,3,8,12,14,16,19,20]],"ec1-en-17":[26,"Press Forward",[2,3,8,12,15,16,19,21]],"ec1-en-18":[26,"You Are a Child of God",[3,4,9,13,16,17,20,21]],"ec1-en-19":[26,"Exercise Faith in Jesus Christ",[2,3,8,12,14,17,20,21]],"ec1-en-20":[24,"Love and Teach One Another",[2,3,8,12,13,15,18,19]],"ec1-en-21":[23,"Counsel with the Lord",[2,3,7,11,12,13,16,18]],"ec1-en-22":[26,"You Are a Child of God",[2,5,10,14,15,17,20,21]],"ec1-en-23":[23,"Exercise Faith in Jesus Christ",[2,3,7,11,12,14,17,18]],"ec1-en-24":[29,"Press Forward",[2,3,8,12,16,20,23,24]],"ec1-en-25":[23,"Learn by Study and by Faith",[2,3,8,10,12,16,18,19]],"ec1-es-01":[30,"You Are a Child of God",[3,4,9,18,19,21,24,25]],"ec1-es-02":[24,"Exercise Faith in Jesus Christ",[2,3,8,13,-1,15,18,19]],"ec1-es-03":[29,"Take Responsibility",[2,3,8,12,17,20,23,24]],"ec1-es-04":[24,"Love and Teach One Another",[2,3,8,12,14,15,18,19]],"ec1-es-05":[27,"Learn by Study and by Faith",[2,3,8,11,15,17,21,22]],"ec1-es-06":[25,"You Are a Child of God",[3,4,8,12,15,16,19,20]],"ec1-es-07":[25,"Exercise Faith in Jesus Christ",[2,3,8,12,15,16,19,20]],"ec1-es-08":[24,"Press Forward",[2,3,8,12,14,15,18,19]],"ec1-es-09":[26,"Counsel with the Lord",[2,3,8,12,14,16,20,21]],"ec1-es-10":[26,"You Are a Child of God",[3,4,9,13,15,17,20,21]],"ec1-es-11":[27,"Exercise Faith in Jesus Christ",[2,3,8,12,16,18,21,22]],"ec1-es-12":[26,"Take Responsibility",[2,3,8,12,14,17,20,21]],"ec1-es-13":[25,"Love and Teach One Another",[2,3,8,12,14,15,19,20]],"ec1-es-14":[24,"You Are a Child of God",[3,4,9,13,14,15,18,19]],"ec1-es-15":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,18,19]],"ec1-es-16":[25,"Take Responsibility",[2,3,8,12,15,16,19,20]],"ec1-es-17":[26,"Press Forward",[2,3,8,13,-1,16,20,21]],"ec1-es-18":[26,"You Are a Child of God",[3,4,9,13,16,17,20,21]],"ec1-es-19":[26,"Exercise Faith in Jesus Christ",[2,3,8,12,14,17,20,21]],"ec1-es-20":[24,"Love and Teach One Another",[2,3,8,12,13,15,18,19]],"ec1-es-21":[24,"Counsel with the Lord",[2,3,7,11,12,14,18,19]],"ec1-es-22":[24,"You Are a Child of God",[3,4,9,13,14,15,18,19]],"ec1-es-23":[23,"Exercise Faith in Jesus Christ",[2,3,7,11,12,14,17,18]],"ec1-es-24":[29,"Press Forward",[2,3,8,12,16,20,23,24]],"ec1-es-25":[23,"Learn by Study and by Faith",[2,3,8,10,12,16,18,19]],"ec2-en-01":[30,"You Are a Child of God",[3,4,9,18,19,21,24,25]],"ec2-en-02":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,18,19]],"ec2-en-03":[25,"Take Responsibility",[2,3,8,12,15,16,19,20]],"ec2-en-04":[27,"Love and Teach One Another",[2,3,8,12,15,18,21,22]],"ec2-en-05":[25,"Learn by Study and by Faith",[2,3,8,12,14,15,18,19]],"ec2-en-06":[24,"You Are a Child of God",[3,4,8,12,13,15,18,19]],"ec2-en-07":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,13,15,18,19]],"ec2-en-08":[26,"Press Forward",[2,3,8,12,15,17,20,21]],"ec2-en-09":[26,"Counsel with the Lord",[2,3,8,12,14,16,19,20]],"ec2-en-10":[25,"You Are a Child of God",[3,4,9,13,15,16,19,20]],"ec2-en-11":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,18,19]],"ec2-en-12":[25,"Take Responsibility",[2,3,8,12,15,16,19,20]],"ec2-en-13":[28,"Love and Teach One Another",[2,3,8,12,14,18,21,22]],"ec2-en-14":[25,"You Are a Child of God",[3,4,9,13,14,16,19,20]],"ec2-en-15":[27,"Exercise Faith in Jesus Christ",[2,3,8,12,15,18,21,22]],"ec2-en-16":[24,"Take Responsibility",[2,3,8,12,14,15,18,19]],"ec2-en-17":[28,"Press Forward",[2,3,8,12,15,18,21,22]],"ec2-en-18":[25,"You Are a Child of God",[3,4,9,13,15,16,19,20]],"ec2-en-19":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,18,19]],"ec2-en-20":[24,"Love and Teach One Another",[2,3,8,12,14,15,18,19]],"ec2-en-21":[26,"Counsel with the Lord",[2,3,7,11,13,16,19,20]],"ec2-en-22":[27,"You Are a Child of God",[3,4,9,13,16,18,21,22]],"ec2-en-23":[22,"Exercise Faith in Jesus Christ",[2,3,7,11,12,13,16,17]],"ec2-en-24":[24,"Press Forward",[2,3,8,12,14,15,18,19]],"ec2-en-25":[24,"Learn by Study and by Faith",[2,3,8,11,14,18,-1,20]],"ec2-es-01":[30,"You Are a Child of God",[3,4,9,18,19,21,24,25]],"ec2-es-02":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,19,20]],"ec2-es-03":[25,"Take Responsibility",[2,3,8,12,15,16,20,21]],"ec2-es-04":[29,"Love and Teach One Another",[2,3,8,12,18,20,23,24]],"ec2-es-05":[25,"Learn by Study and by Faith",[2,3,8,12,14,15,19,20]],"ec2-es-06":[25,"You Are a Child of God",[3,4,8,12,14,16,19,20]],"ec2-es-07":[25,"Exercise Faith in Jesus Christ",[2,3,8,12,14,16,19,20]],"ec2-es-08":[26,"Press Forward",[2,3,8,12,15,17,20,21]],"ec2-es-09":[26,"Counsel with the Lord",[2,3,8,12,14,16,20,21]],"ec2-es-10":[25,"You Are a Child of God",[3,4,9,13,15,16,19,20]],"ec2-es-11":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,18,19]],"ec2-es-12":[25,"Take Responsibility",[2,3,8,12,15,16,19,20]],"ec2-es-13":[28,"Love and Teach One Another",[2,3,8,12,14,18,22,23]],"ec2-es-14":[25,"You Are a Child of God",[3,4,9,13,14,16,19,20]],"ec2-es-15":[27,"Exercise Faith in Jesus Christ",[2,3,8,12,16,18,21,22]],"ec2-es-16":[24,"Take Responsibility",[2,3,8,12,14,15,18,19]],"ec2-es-17":[28,"Press Forward",[2,3,8,12,15,18,22,23]],"ec2-es-18":[25,"You Are a Child of God",[3,4,9,13,14,16,18,20]],"ec2-es-19":[24,"Exercise Faith in Jesus Christ",[2,3,8,12,14,15,17,19]],"ec2-es-20":[24,"Love and Teach One Another",[2,3,8,12,14,15,17,19]],"ec2-es-21":[26,"Counsel with the Lord",[2,3,7,11,13,16,18,21]],"ec2-es-22":[27,"You Are a Child of God",[3,4,9,13,16,18,21,22]],"ec2-es-23":[22,"Exercise Faith in Jesus Christ",[2,3,7,11,12,13,16,17]],"ec2-es-24":[24,"Press Forward",[2,3,8,12,14,15,18,19]],"ec2-es-25":[24,"Learn by Study and by Faith",[2,3,8,11,14,17,19,20]]};          // key -> [slideCount, principle, [prayer, principle, a1, a2, a3, evaluate, faith, closing]] (-1 = not found)
 const PAIRS = {"ec1-en-01":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29],"ec1-es-01":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29],"ec1-en-02":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-02":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-en-03":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],"ec1-es-03":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],"ec1-en-04":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-04":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-en-05":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec1-es-05":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec1-en-06":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-es-06":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-en-07":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-es-07":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-en-08":[0,1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-08":[0,1,2,3,4,5,6,7,8,9,10,11,11,12,13,14,15,16,17,18,19,20,21,22],"ec1-en-09":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-es-09":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-en-10":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-es-10":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-en-11":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec1-es-11":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec1-en-12":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-es-12":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-en-13":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-es-13":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-en-14":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-14":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-en-15":[0,1,2,3,4,5,6,7,8,9,10,11,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-15":[0,1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-en-16":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-es-16":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec1-en-17":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-es-17":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-en-18":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-es-18":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-en-19":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-es-19":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec1-en-20":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-20":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec1-en-21":[0,1,2,3,4,5,6,7,8,9,10,11,12,14,15,16,17,18,19,20,21,22,23],"ec1-es-21":[0,1,2,3,4,5,6,7,8,9,10,11,12,12,13,14,15,16,17,18,19,20,21,22],"ec1-en-22":[0,1,1,2,3,4,5,6,7,8,9,10,11,12,13,13,14,15,16,17,18,19,20,21,22,23],"ec1-es-22":[0,1,3,4,5,6,7,8,9,10,11,12,13,14,16,17,18,19,20,21,22,23,24,25],"ec1-en-23":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],"ec1-es-23":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],"ec1-en-24":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],"ec1-es-24":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],"ec1-en-25":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],"ec1-es-25":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],"ec2-en-01":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29],"ec2-es-01":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29],"ec2-en-02":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,19,20,21,21,22,23],"ec2-es-02":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,17,18,19,20,22,23],"ec2-en-03":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,20,21,22,22,23,24],"ec2-es-03":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,18,19,20,21,23,24],"ec2-en-04":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,16,17,19,20,21,22,23,24,25,26,27,28],"ec2-es-04":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,14,15,16,16,17,18,19,20,21,22,23,24,25,26],"ec2-en-05":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20,21,22,22,23,24],"ec2-es-05":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,16,17,18,19,20,21,23,24],"ec2-en-06":[0,1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-es-06":[0,1,2,3,4,5,6,7,8,9,10,11,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-07":[0,1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-es-07":[0,1,2,3,4,5,6,7,8,9,10,11,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-08":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec2-es-08":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ec2-en-09":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,19,20,21,22,23,23,24,25],"ec2-es-09":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,17,18,19,20,21,22,24,25],"ec2-en-10":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-es-10":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-en-11":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-es-11":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-12":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-es-12":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-en-13":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,21,22,23,24,25,25,26,27],"ec2-es-13":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,19,20,21,22,23,24,26,27],"ec2-en-14":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-es-14":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-en-15":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec2-es-15":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec2-en-16":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-es-16":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-17":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,21,22,23,24,25,25,26,27],"ec2-es-17":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,19,20,21,22,23,24,26,27],"ec2-en-18":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-es-18":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"ec2-en-19":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-es-19":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-20":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-es-20":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-21":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23,23,24,25],"ec2-es-21":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,20,21,22,24,25],"ec2-en-22":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec2-es-22":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"ec2-en-23":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],"ec2-es-23":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],"ec2-en-24":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-es-24":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-en-25":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"ec2-es-25":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]};        // key -> for each slide, the matching slide index in the other language's deck
 const MANUALS = {"ec1":{"n":214,"start":[17,23,29,35,41,51,59,65,71,81,89,95,101,111,117,123,131,141,147,155,161,169,175,181,189],"conv":[18,26,32,38,45,56,62,68,74,86,92,98,105,114,120,128,135,144,152,158,164,172,178,185,191]},"ec2":{"n":215,"start":[17,23,29,35,41,49,55,63,71,81,87,93,99,111,117,125,131,141,149,155,161,169,175,181,187],"conv":[18,26,32,38,44,52,60,66,74,84,90,96,104,114,122,128,134,146,152,158,164,172,178,184,189]}};    // course -> { n, start:[first page of each lesson], conv:[first conversation-group page of each lesson] } (0-based; the English and Spanish manuals share this layout)
-const APP_VERSION = 'Version 10 · November 3, 2026';
+const APP_VERSION = 'Version 11 · November 18, 2026';
 /* Official download addresses (from EnglishConnect.org's conversation group presentation pages and the
    learner manual listings), their sizes in bytes, and the relay that fetches them for this app. */
 const SOURCES = {"ec1-en-01":"https://byu-pathway.brightspotcdn.com/67/b9/6a5e05e94cd4912e1acb6534619a/ec1-lesson-01-slides.pdf","ec1-en-02":"https://www.englishconnect.org/ec1-lesson-2-slides.pdf","ec1-en-03":"https://www.englishconnect.org/ec1-lesson-3-slides.pdf","ec1-en-04":"https://www.englishconnect.org/ec1-lesson-4-slides.pdf","ec1-en-05":"https://www.englishconnect.org/ec1-lesson-5-slides.pdf","ec1-en-06":"https://www.englishconnect.org/ec1-lesson-6-slides.pdf","ec1-en-07":"https://www.englishconnect.org/ec1-lesson-7-slides.pdf","ec1-en-08":"https://byu-pathway.brightspotcdn.com/be/c5/b4172f0245dda08c4f234bafcf9f/ec1-lesson-08-slides.pdf","ec1-en-09":"https://www.englishconnect.org/ec1-lesson-9-slides.pdf","ec1-en-10":"https://www.englishconnect.org/ec1-lesson-10-slides.pdf","ec1-en-11":"https://www.englishconnect.org/ec1-lesson-11-slides.pdf","ec1-en-12":"https://www.englishconnect.org/ec1-lesson-12-slides.pdf","ec1-en-13":"https://www.englishconnect.org/ec1-lesson-13-slides.pdf","ec1-en-14":"https://www.englishconnect.org/ec1-lesson-14-slides.pdf","ec1-en-15":"https://byu-pathway.brightspotcdn.com/0d/63/9645a33643af8a97e9fba9886ded/ec1-lesson-15-slides.pdf","ec1-en-16":"https://www.englishconnect.org/ec1-lesson-16-slides.pdf","ec1-en-17":"https://www.englishconnect.org/ec-lesson-17-slides.pdf","ec1-en-18":"https://www.englishconnect.org/ec1-lesson-18-slides.pdf","ec1-en-19":"https://www.englishconnect.org/ec1-lesson-19-slides.pdf","ec1-en-20":"https://www.englishconnect.org/ec-lesson-20-slides.pdf","ec1-en-21":"https://www.englishconnect.org/ec1-lesson-21-slides.pdf","ec1-en-22":"https://www.englishconnect.org/ec1-lesson-22-slides.pdf","ec1-en-23":"https://www.englishconnect.org/ec1-lesson-23-slides.pdf","ec1-en-24":"https://www.englishconnect.org/ec1-lesson-24-slides.pdf","ec1-en-25":"https://www.englishconnect.org/ec1-lesson-25-slides.pdf","ec1-es-01":"https://www.englishconnect.org/es/ec1-lesson-1-slides.pdf","ec1-es-02":"https://byu-pathway.brightspotcdn.com/74/1d/ebfbb98b4807af5473eff43526d8/ec1-lesson-02-slides-spa-web-optimized.pdf","ec1-es-03":"https://www.englishconnect.org/es/ec1-lesson-3-slides.pdf","ec1-es-04":"https://www.englishconnect.org/es/ec1-lesson-4-slides.pdf","ec1-es-05":"https://www.englishconnect.org/es/ec1-lesson-5-slides.pdf","ec1-es-06":"https://www.englishconnect.org/es/ec1-lesson-6-slides.pdf","ec1-es-07":"https://www.englishconnect.org/es/ec1-lesson-7-slides.pdf","ec1-es-08":"https://www.englishconnect.org/es/ec1-lesson-8-slides.pdf","ec1-es-09":"https://www.englishconnect.org/es/ec1-lesson-9-slides.pdf","ec1-es-10":"https://www.englishconnect.org/es/ec1-lesson-slides.pdf","ec1-es-11":"https://www.englishconnect.org/es/ec1-lesson-11-slides.pdf","ec1-es-12":"https://www.englishconnect.org/es/ec1-lesson-12-slides.pdf","ec1-es-13":"https://www.englishconnect.org/es/ec1-lesson-13-slides.pdf","ec1-es-14":"https://www.englishconnect.org/es/ec1-lesson-14-slides.pdf","ec1-es-15":"https://www.englishconnect.org/es/ec1-lesson-15-slides.pdf","ec1-es-16":"https://www.englishconnect.org/es/ec1-lesson-16-slides.pdf","ec1-es-17":"https://www.englishconnect.org/es/ec1-lesson-17-slides.pdf","ec1-es-18":"https://www.englishconnect.org/es/ec1-lesson-18-slides.pdf","ec1-es-19":"https://www.englishconnect.org/es/ec1-lesson-19-slides.pdf","ec1-es-20":"https://www.englishconnect.org/es/ec1-lesson-20-slides.pdf","ec1-es-21":"https://www.englishconnect.org/es/ec1-lesson-21-slides.pdf","ec1-es-22":"https://www.englishconnect.org/es/ec1-lesson-22-slides.pdf","ec1-es-23":"https://www.englishconnect.org/es/ec1-lesson-23-slides.pdf","ec1-es-24":"https://www.englishconnect.org/es/ec1-lesson-24-slides.pdf","ec1-es-25":"https://www.englishconnect.org/es/ec1-lesson-25-slides.pdf","ec2-en-01":"https://www.englishconnect.org/ec2-lesson-1-slides.pdf","ec2-en-02":"https://www.englishconnect.org/ec2-lesson-2-slides.pdf","ec2-en-03":"https://www.englishconnect.org/ec2-lesson-3-slides.pdf","ec2-en-04":"https://www.englishconnect.org/ec2-lesson-4-slides.pdf","ec2-en-05":"https://www.englishconnect.org/ec2-lesson-5-slides.pdf","ec2-en-06":"https://www.englishconnect.org/ec2-lesson-6-slides.pdf","ec2-en-07":"https://www.englishconnect.org/ec2-lesson-7-slides.pdf","ec2-en-08":"https://www.englishconnect.org/ec2-lesson-8-slides.pdf","ec2-en-09":"https://www.englishconnect.org/ec2-lesson-9-slides.pdf","ec2-en-10":"https://www.englishconnect.org/ec2-lesson-10-slides.pdf","ec2-en-11":"https://www.englishconnect.org/ec2-lesson-11-slides.pdf","ec2-en-12":"https://www.englishconnect.org/ec2-lesson-12-slides.pdf","ec2-en-13":"https://www.englishconnect.org/ec2-lesson-13-slides.pdf","ec2-en-14":"https://www.englishconnect.org/ec2-lesson-14-slides.pdf","ec2-en-15":"https://www.englishconnect.org/ec2-lesson-15-slides.pdf","ec2-en-16":"https://www.englishconnect.org/ec2-lesson16-slides.pdf","ec2-en-17":"https://www.englishconnect.org/ec2-lesson-17-slides.pdf","ec2-en-18":"https://www.englishconnect.org/ec2-lesson-18-slides.pdf","ec2-en-19":"https://www.englishconnect.org/ec2-lesson-19-slides.pdf","ec2-en-20":"https://www.englishconnect.org/ec2-lesson-20-slides.pdf","ec2-en-21":"https://www.englishconnect.org/ec2-lesson-21-slides.pdf","ec2-en-22":"https://www.englishconnect.org/ec2-lesson-22-slides.pdf","ec2-en-23":"https://www.englishconnect.org/ec2-lesson-23-slides.pdf","ec2-en-24":"https://www.englishconnect.org/ec2-lesson24-slides.pdf","ec2-en-25":"https://www.englishconnect.org/ec2-lesson-25-slides.pdf","ec2-es-01":"https://www.englishconnect.org/es/ec2-lesson-1-slides.pdf","ec2-es-02":"https://www.englishconnect.org/es/ec2-lesson-2-slides.pdf","ec2-es-03":"https://www.englishconnect.org/es/ec2-lesson-3-slides.pdf","ec2-es-04":"https://www.englishconnect.org/es/ec2-lesson-4-slides.pdf","ec2-es-05":"https://www.englishconnect.org/es/ec2-lesson-5-slides.pdf","ec2-es-06":"https://www.englishconnect.org/es/ec2-lesson-6-slides.pdf","ec2-es-07":"https://www.englishconnect.org/es/ec2-lesson-7-slides.pdf","ec2-es-08":"https://www.englishconnect.org/es/ec2-lesson-8-slides.pdf","ec2-es-09":"https://www.englishconnect.org/es/ec2-lesson-9-slides.pdf","ec2-es-10":"https://www.englishconnect.org/es/ec2-lesson-10-slides.pdf","ec2-es-11":"https://www.englishconnect.org/es/ec2-lesson-11-slides.pdf","ec2-es-12":"https://www.englishconnect.org/es/ec2-lesson-12-slides.pdf","ec2-es-13":"https://www.englishconnect.org/es/ec2-lesson-13-slides.pdf","ec2-es-14":"https://www.englishconnect.org/es/ec2-lesson-14-slides.pdf","ec2-es-15":"https://www.englishconnect.org/es/ec2-lesson-15-slides.pdf","ec2-es-16":"https://www.englishconnect.org/es/ec2-lesson-16-slides.pdf","ec2-es-17":"https://www.englishconnect.org/es/ec2-lesson-17-slides.pdf","ec2-es-18":"https://www.englishconnect.org/es/ec2-lesson-18-slides.pdf","ec2-es-19":"https://www.englishconnect.org/es/ec2-lesson-19-slides.pdf","ec2-es-20":"https://www.englishconnect.org/es/ec2-lesson-20-slides.pdf","ec2-es-21":"https://www.englishconnect.org/es/ec2-lesson-21-slides.pdf","ec2-es-22":"https://www.englishconnect.org/es/ec2-lesson-22-slides.pdf","ec2-es-23":"https://www.englishconnect.org/es/ec2-lesson-23-slides.pdf","ec2-es-24":"https://www.englishconnect.org/es/ec2-lesson-24-slides.pdf","ec2-es-25":"https://www.englishconnect.org/es/ec2-lesson-25-slides.pdf","manual-ec1-en":"https://assets.churchofjesuschrist.org/70/21/7021e009becf11ee90e3eeeeac1e2bd48baec3a5/englishconnect_1_for_learners.pdf","manual-ec1":"https://assets.churchofjesuschrist.org/04/41/0441b6d8325111efa193eeeeac1e0b122ae4aafa/englishconnect_1_for_learners.pdf","manual-ec2-en":"https://assets.churchofjesuschrist.org/7b/14/7b14f4c1bed011ee82ebeeeeac1e9da54ec75082/englishconnect_2_for_learners.pdf","manual-ec2":"https://assets.churchofjesuschrist.org/fq/he/fqhe5drlpoo9od2z6mm90ovau0awhllvok2v93ut/englishconnect_2_for_learners.pdf"};
@@ -127,7 +127,11 @@ const Saver = {
   schedule(id, get, delay = 500){
     clearTimeout(this.timers.get(id));
     this.getters.set(id, get);
-    this.timers.set(id, setTimeout(() => { this.timers.delete(id); this.getters.delete(id); this.flush(id, get()); }, delay));
+    const fire = () => {
+      if (typeof act !== 'undefined' && act){ this.timers.set(id, setTimeout(fire, 400)); return; }   // wait until the pen is lifted
+      this.timers.delete(id); this.getters.delete(id); this.flush(id, get());
+    };
+    this.timers.set(id, setTimeout(fire, delay));
     setSave('saving');
   },
   flushNow(){
@@ -145,7 +149,10 @@ const Saver = {
     }
   }
 };
+let saveState = '';
 function setSave(state){
+  if (state === saveState) return;
+  saveState = state;
   const dot = $('#saveDot'), txt = $('#saveText');
   let label;
   if (state === 'saving'){ label = 'Saving…'; dot.dataset.state = 'saving'; }
@@ -543,7 +550,8 @@ function renderPdfPage(k, w, opts = {}){
    vertically. The view maps document points to the screen: screen = (V.x + docX·z, V.y + docY·z). */
 const stage = $('#stage');
 const pdfc = $('#pdfc'), inkc = $('#inkc'), livec = $('#livec');
-const pctx = pdfc.getContext('2d'), ictx = inkc.getContext('2d'), lctx = livec.getContext('2d');
+const pctx = pdfc.getContext('2d'), ictx = inkc.getContext('2d');
+const lctx = livec.getContext('2d', { desynchronized: true }) || livec.getContext('2d');
 const L = { sw:0, sh:0, dpr:1, pw:0, ph:0, pad:8, sig:'' };
 const V = { z:1, x:0, y:0 };
 const baseW = () => Math.round(L.pw * L.dpr);
@@ -565,6 +573,8 @@ function layout(force){
   L.pw = Math.max(1, Math.floor(L.pw));
   L.ph = Math.floor(L.pw / a);
   for (const c of [pdfc, inkc, livec]){ const W = Math.round(sw * dpr), H = Math.round(sh * dpr); if (c.width !== W) c.width = W; if (c.height !== H) c.height = H; }
+  // Touch the drawing layers once now, so the iPad sets them up before the first stroke rather than during it.
+  for (const c of [lctx]){ c.fillStyle = 'rgba(0,0,0,0.004)'; c.fillRect(0, 0, 1, 1); c.clearRect(0, 0, 2, 2); }
   crispCache = null;
   return true;
 }
@@ -705,7 +715,11 @@ async function renderCrisp(){
   crispCache = { key, parts };
   drawPdfLayer();
 }
+let prefetchTimer = 0;
 function prefetch(){
+  clearTimeout(prefetchTimer);
+  // Rendering pages ties up the iPad for a moment, so neighbouring pages are prepared only when the pen is resting.
+  if (act || performance.now() - lastPenAt < 700){ prefetchTimer = setTimeout(prefetch, 700); return; }
   for (const j of [S.page + 1, S.page - 1, S.page + 2]) if (j >= 0 && j < total()) renderPdfPage(pk(j), baseW()).catch(() => {});
 }
 new ResizeObserver(() => { if (S.view === 'lesson' && layout()){ viewTo(S.page); drawView(); } }).observe(stage);
@@ -732,15 +746,18 @@ function drawStroke(ctx, s, W, H, boost = 1){
     ctx.stroke(); ctx.restore(); return;
   }
   if (n === 1){ ctx.beginPath(); ctx.arc(d[0] * sx, d[1] * sy, penWidth(base, d[2]) / 2, 0, Math.PI * 2); ctx.fill(); ctx.restore(); return; }
-  let px = d[0] * sx, py = d[1] * sy, pw = penWidth(base, d[2]), mx = px, my = py;
+  // Pressure changes the width along the stroke. Consecutive pieces of (nearly) the same width are
+  // drawn as one path, which looks the same but is far quicker than one path per piece.
+  const step = Math.max(0.25, base * 0.08);
+  let px = d[0] * sx, py = d[1] * sy, pw = penWidth(base, d[2]), mx = px, my = py, cur = -1;
   for (let k = 1; k < n; k++){
     const x = d[k*3] * sx, y = d[k*3+1] * sy, w = penWidth(base, d[k*3+2]);
-    const nmx = (px + x) / 2, nmy = (py + y) / 2;
-    ctx.lineWidth = (pw + w) / 2;
-    ctx.beginPath(); ctx.moveTo(mx, my); ctx.quadraticCurveTo(px, py, nmx, nmy); ctx.stroke();
+    const nmx = (px + x) / 2, nmy = (py + y) / 2, lw = Math.round(((pw + w) / 2) / step) * step || step;
+    if (lw !== cur){ if (cur > 0) ctx.stroke(); ctx.lineWidth = cur = lw; ctx.beginPath(); ctx.moveTo(mx, my); }
+    ctx.quadraticCurveTo(px, py, nmx, nmy);
     mx = nmx; my = nmy; px = x; py = y; pw = w;
   }
-  ctx.lineWidth = pw; ctx.beginPath(); ctx.moveTo(mx, my); ctx.lineTo(px, py); ctx.stroke();
+  ctx.lineTo(px, py); ctx.stroke();
   ctx.restore();
 }
 function inkOnPage(ctx, k, list){
@@ -752,9 +769,49 @@ function inkOnPage(ctx, k, list){
   ctx.restore();
 }
 function redrawInk(){
+  if (inkRAF){ cancelAnimationFrame(inkRAF); inkRAF = 0; }
+  inkDirty = null;
   ictx.setTransform(1, 0, 0, 1, 0, 0); ictx.clearRect(0, 0, inkc.width, inkc.height);
   for (const k of inkPages()){ const key = pk(k), arr = inkFor(key)[key]; if (arr && arr.length) inkOnPage(ictx, k, arr); }
 }
+let inkRAF = 0;
+function requestInkRedraw(){ inkDirty = null; if (!inkRAF) inkRAF = requestAnimationFrame(() => { inkRAF = 0; redrawInk(); }); }
+/* Erasing: only the patch around the removed strokes is cleared and redrawn, once per frame. */
+const boxCache = new WeakMap();
+function strokeBox(s){
+  let b = boxCache.get(s);
+  if (!b){
+    let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity; const d = s.d;
+    for (let i = 0; i < d.length; i += 3){ const x = d[i], y = d[i+1]; if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }
+    b = [x0, y0, x1, y1]; boxCache.set(s, b);
+  }
+  return b;
+}
+function strokeRect(k, s){
+  const P = pageRect(k), b = strokeBox(s), m = s.w / 1000 * P.W + 2 * L.dpr;
+  return [P.ox + b[0] * P.W / Q - m, P.oy + b[1] * P.H / Q - m, P.ox + b[2] * P.W / Q + m, P.oy + b[3] * P.H / Q + m];
+}
+let inkDirty = null;
+function redrawInkArea(k, s){
+  const r = strokeRect(k, s);
+  if (inkDirty) inkDirty = [Math.min(inkDirty[0], r[0]), Math.min(inkDirty[1], r[1]), Math.max(inkDirty[2], r[2]), Math.max(inkDirty[3], r[3])];
+  else inkDirty = r;
+  if (!inkRAF) inkRAF = requestAnimationFrame(() => {
+    inkRAF = 0; const a = inkDirty; inkDirty = null; if (!a) return;
+    const x0 = Math.max(0, Math.floor(a[0])), y0 = Math.max(0, Math.floor(a[1])), x1 = Math.min(inkc.width, Math.ceil(a[2])), y1 = Math.min(inkc.height, Math.ceil(a[3]));
+    if (x1 <= x0 || y1 <= y0) return;
+    ictx.setTransform(1, 0, 0, 1, 0, 0);
+    ictx.save(); ictx.beginPath(); ictx.rect(x0, y0, x1 - x0, y1 - y0); ictx.clip(); ictx.clearRect(x0, y0, x1 - x0, y1 - y0);
+    for (const pg of inkPages()){
+      const key = pk(pg), arr = inkFor(key)[key]; if (!arr || !arr.length) continue;
+      const hits = arr.filter(st => { const q = strokeRect(pg, st); return q[0] < x1 && q[2] > x0 && q[1] < y1 && q[3] > y0; });
+      if (hits.length) inkOnPage(ictx, pg, hits);
+    }
+    ictx.restore();
+  });
+}
+/* A finished stroke sits on top of everything already drawn, so it is simply added to the ink layer. */
+function appendInk(k, s){ ictx.setTransform(1, 0, 0, 1, 0, 0); inkOnPage(ictx, k, [s]); }
 
 /* ---------- Pointer input ---------- */
 let act = null;
@@ -780,12 +837,17 @@ function startAction(e){
   act = { id:e.pointerId, ptype:e.pointerType, tool, R, page:k, P:pageRect(k), erased:[], cx:e.clientX, cy:e.clientY, last:[sx, sy] };
   if (tool === 'pen' || tool === 'hl'){
     act.stroke = { t: tool === 'pen' ? 'p' : 'h', c: currentColor(), w: Math.round(currentSize() / V.z * 100) / 100, d: [] };
-    addPoint(e);
+    // The highlighter is drawn solid on the live layer and the whole layer is made see-through,
+    // so each new piece can be added on its own without overlaps showing darker.
+    const op = tool === 'hl' ? '0.36' : '';
+    livec.style.opacity = op;
+    addPoint(e, e.pointerType);
   } else if (tool === 'eraser'){ eraseLine(sx, sy, sx, sy); eraserCursor(sx, sy); }
   return true;
 }
-function addPoint(e){
+function addPoint(e, ptype){
   const s = act.stroke, d = s.d, P = act.P;
+  if (!Number.isFinite(e.clientX) || !Number.isFinite(e.clientY)) return;
   const [x, y] = normOn(act.page, e);
   // On the scratchpad a stroke may carry on onto the page above or below.
   const X = Math.round(clamp(x, 0, 1) * Q), Y = Math.round((S.mode === 'pad' ? clamp(y, -1, 2) : clamp(y, 0, 1)) * Q);
@@ -793,10 +855,9 @@ function addPoint(e){
     const dx = (X - d[d.length - 3]) / Q * P.W / L.dpr, dy = (Y - d[d.length - 2]) / Q * P.H / L.dpr;
     if (dx * dx + dy * dy < 0.64) return;
   }
-  d.push(X, Y, e.pointerType === 'pen' ? pressureLevel(e.pressure) : 5);
-  if (s.t === 'h'){ lctx.clearRect(0, 0, livec.width, livec.height); inkOnPage(lctx, act.page, [s]); return; }
+  d.push(X, Y, (ptype || e.pointerType) === 'pen' ? pressureLevel(e.pressure) : 5);
   const sx = P.W / Q, sy = P.H / Q, base = s.w / 1000 * P.W, k = d.length / 3;
-  const px = P.ox + d[(k-1)*3] * sx, py = P.oy + d[(k-1)*3+1] * sy, w = penWidth(base, d[(k-1)*3+2]);
+  const px = P.ox + d[(k-1)*3] * sx, py = P.oy + d[(k-1)*3+1] * sy, w = s.t === 'h' ? base : penWidth(base, d[(k-1)*3+2]);
   lctx.strokeStyle = s.c; lctx.fillStyle = s.c; lctx.lineCap = 'round'; lctx.lineJoin = 'round';
   if (k === 1){ act.seg = { mx:px, my:py, px, py, pw:w }; lctx.beginPath(); lctx.arc(px, py, w / 2, 0, Math.PI * 2); lctx.fill(); return; }
   const g = act.seg, nmx = (g.px + px) / 2, nmy = (g.py + py) / 2;
@@ -805,9 +866,11 @@ function addPoint(e){
   act.seg = { mx:nmx, my:nmy, px, py, pw:w };
 }
 function moveAction(e){
-  const evs = (e.getCoalescedEvents && e.getCoalescedEvents().length) ? e.getCoalescedEvents() : [e];
+  let evs = null;
+  try { evs = e.getCoalescedEvents ? e.getCoalescedEvents() : null; } catch {}
+  if (!evs || !evs.length) evs = [e];
   act.cx = e.clientX; act.cy = e.clientY;
-  if (act.tool === 'pen' || act.tool === 'hl'){ for (const ev of evs) addPoint(ev); return; }
+  if (act.tool === 'pen' || act.tool === 'hl'){ for (const ev of evs) addPoint(ev, e.pointerType); return; }
   const sx = e.clientX - act.R.left, sy = e.clientY - act.R.top;
   if (act.tool === 'eraser'){ eraseLine(act.last[0], act.last[1], sx, sy); eraserCursor(sx, sy); }
   else if (act.tool === 'laser'){ for (const ev of evs) laserAdd(ev.clientX - act.R.left, ev.clientY - act.R.top); }
@@ -818,15 +881,18 @@ function endAction(cancel){
   if (!a) return;
   if (a.tool === 'pen' || a.tool === 'hl'){
     lctx.clearRect(0, 0, livec.width, livec.height);
+    livec.style.opacity = '';
     if (!cancel && a.stroke.d.length >= 3){
       const key = pk(a.page);
       strokesFor(key).push(a.stroke);
       pushOp({ a:'add', p:key, s:a.stroke });
-      redrawInk();
+      appendInk(a.page, a.stroke);
       inkChanged(key);
     }
   } else if (a.tool === 'eraser'){
-    lctx.clearRect(0, 0, livec.width, livec.height);
+    lctx.clearRect(0, 0, livec.width, livec.height); cursorBox = null;
+    if (inkRAF) redrawInk();
+    inkDirty = null;
     if (a.erased.length){
       pushOp({ a:'erase', items:a.erased });
       for (const key of new Set(a.erased.map(it => it[0]))) inkChanged(key);
@@ -864,17 +930,18 @@ function eraseLine(x0, y0, x1, y1){
       const key = pk(pg), arr = inkFor(key)[key]; if (!arr || !arr.length) continue;
       const px = sx - V.x, py = sy - top;
       for (let i = arr.length - 1; i >= 0; i--){
-        if (hitStroke(arr[i], px, py, r, w, hh)){ act.erased.push([key, i, arr[i]]); arr.splice(i, 1); removed = true; }
+        if (hitStroke(arr[i], px, py, r, w, hh)){ const st = arr[i]; act.erased.push([key, i, st]); arr.splice(i, 1); removed = true; redrawInkArea(pg, st); }
       }
     }
   }
-  if (removed) redrawInk();
 }
+let cursorBox = null;
 function eraserCursor(sx, sy){
-  lctx.clearRect(0, 0, livec.width, livec.height);
-  const d = L.dpr, r = eraserR() * d;
+  if (cursorBox) lctx.clearRect(cursorBox[0], cursorBox[1], cursorBox[2], cursorBox[2]);
+  const d = L.dpr, r = eraserR() * d, cx = sx * d, cy = sy * d, m = r + 3 * d;
+  cursorBox = [Math.floor(cx - m), Math.floor(cy - m), Math.ceil(m * 2) + 1];
   lctx.save(); lctx.lineWidth = 1.5 * d; lctx.strokeStyle = 'rgba(20,28,51,.7)'; lctx.fillStyle = 'rgba(255,255,255,.35)';
-  lctx.beginPath(); lctx.arc(sx * d, sy * d, r, 0, Math.PI * 2); lctx.fill(); lctx.stroke(); lctx.restore();
+  lctx.beginPath(); lctx.arc(cx, cy, r, 0, Math.PI * 2); lctx.fill(); lctx.stroke(); lctx.restore();
 }
 
 /* Laser pointer: a fading red trail in screen space, never saved. */
@@ -924,6 +991,8 @@ function startMomentum(vx, vy){
 function newGesture(){ return { t0: performance.now(), max:0, moved:false, invalid:false, mode:null, vx:0, vy:0, lt: performance.now() }; }
 function touchDown(e){
   stopMomentum();
+  // The first finger of a new touch means no other fingers are down; forget any the iPad never reported lifting.
+  if (e.isPrimary && touches.size){ touches.clear(); gesture = null; }
   touches.set(e.pointerId, { x0:e.clientX, y0:e.clientY, x:e.clientX, y:e.clientY });
   if (!gesture) gesture = newGesture();
   gesture.max = Math.max(gesture.max, touches.size);
@@ -970,7 +1039,7 @@ function touchUp(e){
   if (g.max === 1 && !g.moved && dt < 300) handleTap(t.y - stage.getBoundingClientRect().top);
 }
 /* A one-finger tap switches between your tool and the eraser (the web can't see Apple Pencil's
-   double-tap, so this stands in for it). While presenting, a tap near the top shows the tools.
+   double-tap, so this stands in for it). While presenting, a tap anywhere shows or hides the tools.
    When zoomed in, a double tap zooms back out to fit. */
 let lastTap = 0, tapTimer = 0;
 function handleTap(sy){
@@ -981,7 +1050,7 @@ function handleTap(sy){
   if (zoomed) tapTimer = setTimeout(() => tapAction(sy), 280); else tapAction(sy);
 }
 function tapAction(sy){
-  if (presenting() && (!prefs.tapEraser || sy < 90)){ toggleMini(); return; }
+  if (presenting()){ toggleMini(); return; }
   if (prefs.tapEraser) toggleEraser();
 }
 function toggleEraser(){
@@ -1312,7 +1381,7 @@ for (const b of document.querySelectorAll('[data-tool]')) b.addEventListener('cl
 let miniTimer = 0, presentHinted = false;
 function showMini(){ $('#mini').hidden = false; bumpMini(); }
 function hideMini(){ $('#mini').hidden = true; clearTimeout(miniTimer); }
-function bumpMini(){ clearTimeout(miniTimer); if (!$('#mini').hidden) miniTimer = setTimeout(hideMini, 4000); }
+function bumpMini(){ clearTimeout(miniTimer); if (!$('#mini').hidden) miniTimer = setTimeout(hideMini, 6000); }
 function toggleMini(){ $('#mini').hidden ? showMini() : hideMini(); }
 $('#mini').addEventListener('pointerdown', bumpMini);
 function setPresent(on){
@@ -1320,10 +1389,7 @@ function setPresent(on){
   document.body.classList.toggle('presenting', on);
   closePanels(); hideMini(); stopLaser();
   layout(true); viewTo(S.page); drawView(); updateRails();
-  if (on && !presentHinted){
-    presentHinted = true;
-    toast(prefs.tapEraser ? 'Presenting. Tap near the top for tools. Tap anywhere else to switch to the eraser and back.' : 'Presenting. Tap for tools, swipe or drag to move, pinch to zoom.');
-  }
+  if (on) toast('Presenting. Tap the screen with a finger to show the tools. Tap Done to stop presenting.', 4500);
 }
 $('#presentBtn').addEventListener('click', () => setPresent(true));
 $('#miniDone').addEventListener('click', () => setPresent(false));
@@ -1448,16 +1514,21 @@ function timerTick(){
 // If the app was in the background when time ran out, finish (and chime) as soon as it comes back.
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && T.state === 'running') timerTick(); });
 let lastBadge = '';
+let lastTimerSig = '';
 function renderTimer(){
   const left = timerLeft(), b = $('#timerBadge');
   const text = T.state === 'done' ? 'Time’s up!' : fmtTime(left);
-  b.hidden = T.state === 'idle';
-  b.dataset.state = T.state;
-  b.dataset.warn = String(T.state === 'running' && left <= 10);
-  b.classList.toggle('big', !!prefs.timerBig);
-  if (text !== lastBadge){ $('#timerBadgeTime').textContent = text; lastBadge = text; }
-  b.setAttribute('aria-label', T.state === 'done' ? 'Time is up. Tap to dismiss.' : `Timer: ${text} left. Tap for timer controls.`);
-  for (const x of document.querySelectorAll('.timerBtn')) x.setAttribute('aria-pressed', String(T.state !== 'idle'));
+  const sig = [T.state, text, T.state === 'running' && left <= 10, !!prefs.timerBig].join('|');
+  if (sig !== lastTimerSig){
+    lastTimerSig = sig;
+    b.hidden = T.state === 'idle';
+    b.dataset.state = T.state;
+    b.dataset.warn = String(T.state === 'running' && left <= 10);
+    b.classList.toggle('big', !!prefs.timerBig);
+    if (text !== lastBadge){ $('#timerBadgeTime').textContent = text; lastBadge = text; }
+    b.setAttribute('aria-label', T.state === 'done' ? 'Time is up. Tap to dismiss.' : `Timer: ${text} left. Tap for timer controls.`);
+    for (const x of document.querySelectorAll('.timerBtn')) x.setAttribute('aria-pressed', String(T.state !== 'idle'));
+  }
   if ($('#timerPanel').hidden) return;
   $('#timerTime').textContent = T.state === 'done' ? '0:00' : fmtTime(left);
   $('#timerGo').textContent = T.state === 'running' ? 'Pause' : T.state === 'paused' ? 'Resume' : 'Start';
@@ -1487,7 +1558,7 @@ for (const b of document.querySelectorAll('[data-tadd]')) b.addEventListener('cl
 for (const b of document.querySelectorAll('[data-tsize]')) b.addEventListener('click', () => { prefs.timerBig = b.dataset.tsize === 'big'; savePrefs(); renderTimer(); });
 
 /* ---------- Panels & menu ---------- */
-function closePanels(){ $('#drawer').hidden = true; $('#menu').hidden = true; $('#timerPanel').hidden = true; resetClear(); }
+function closePanels(){ for (const id of ['#drawer', '#menu', '#timerPanel']){ const el = $(id); if (!el.hidden) el.hidden = true; } resetClear(); }
 $('#gridBtn').addEventListener('click', () => { const d = $('#drawer'); const open = d.hidden; closePanels(); if (open){ d.hidden = false; buildThumbs(); } });
 $('#drawerClose').addEventListener('click', closePanels);
 $('#moreBtn').addEventListener('click', () => { const m = $('#menu'); const open = m.hidden; closePanels(); if (open){ updateMenu(); m.hidden = false; } });
@@ -1505,7 +1576,7 @@ function clearTargets(){
   const r = manualRefs();
   return Object.keys(S.man.ink).filter(k => S.man.ink[k].length && (!r || (+k.slice(1) >= r.start && +k.slice(1) <= r.end)));
 }
-function resetClear(){ const b = $('#mClear'); b.dataset.armed = 'false'; $('#mClearLabel').textContent = clearLabel(); }
+function resetClear(){ const b = $('#mClear'), l = $('#mClearLabel'), t = clearLabel(); if (b.dataset.armed !== 'false') b.dataset.armed = 'false'; if (l.textContent !== t) l.textContent = t; }
 $('#mClear').addEventListener('click', () => {
   const b = $('#mClear'), keys = clearTargets();
   if (!keys.length){ toast(S.mode === 'pad' ? 'The scratchpad is already empty.' : S.mode === 'manual' ? 'There are no marks on this lesson’s manual pages.' : 'There are no marks in this lesson.'); return; }
@@ -1527,8 +1598,8 @@ function updateMenu(){
   $('#mScrollSub').textContent = prefs.scroll ? 'On: pages are stacked; drag up and down to move through them.' : 'Off: one page at a time; swipe sideways to turn.';
   $('#mTap').setAttribute('aria-checked', String(!!prefs.tapEraser));
   $('#mTapSub').textContent = prefs.fingerDraw
-    ? 'Works when “Draw with finger” is off. A quick one-finger tap then switches between your tool and the eraser.'
-    : 'A quick one-finger tap switches between your tool and the eraser, like double-tapping the pencil in other apps.';
+    ? 'Works when “Draw with finger” is off. A quick one-finger tap then switches between your tool and the eraser (except while presenting, where a tap shows the tools).'
+    : 'A quick one-finger tap switches between your tool and the eraser, like double-tapping the pencil in other apps. While presenting, a tap shows the tools instead.';
   setSave(Saver.timers.size || Saver.busy.size ? 'saving' : (Saver.errors ? 'error' : 'idle'));
 }
 $('#mFinger').addEventListener('click', () => { prefs.fingerDraw = !prefs.fingerDraw; savePrefs(); updateMenu(); });
